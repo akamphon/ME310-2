@@ -1,0 +1,195 @@
+=>PYTHONTEX#py#default#default#0#code#####464#
+        from math import *
+        F1 = 20
+        F2 = 2020
+        F = F1+F2
+        rpulley = 0.1
+        L = 0.6
+        T = (F2 - F1)*rpulley
+        K_f = 2.14
+        K_fs = 3
+        sigma = K_f*4*(F1+F2)*L/4/pi
+        tau = K_fs*2*T/pi
+        sigma_e = sqrt(sigma**2 + 3*tau**2)
+        S_y = 4e8
+        S_ut = 6e8
+        N_s = 3
+        r_mdet = (N_s*sigma_e/S_y)**(1/3)
+        sigma_a = sigma
+        sigma_m = 0
+        tau_a = 0
+        tau_m = tau
+        sigma_ae = sqrt(sigma_a**2 + 3*tau_a**2)
+        sigma_me = sqrt(sigma_m**2 + 3*tau_m**2)
+        r_sod = (N_s*(sigma_ae/(0.5*S_ut) + sigma_me/S_y))**(1/3)
+=>PYTHONTEX#py#default#default#1#i#####492#
+F2
+=>PYTHONTEX#py#default#default#2#i#####492#
+F1
+=>PYTHONTEX#py#default#default#3#i#####492#
+rpulley
+=>PYTHONTEX#py#default#default#4#i#####492#
+T
+=>PYTHONTEX#py#default#default#1#i#####492#
+F2
+=>PYTHONTEX#py#default#default#2#i#####492#
+F1
+=>PYTHONTEX#py#default#default#3#i#####492#
+rpulley
+=>PYTHONTEX#py#default#default#4#i#####492#
+T
+=>PYTHONTEX#py#default#default#5#i#####494#
+F2 + F1
+=>PYTHONTEX#py#default#default#6#i#####501#
+K_f
+=>PYTHONTEX#py#default#default#7#i#####501#
+F
+=>PYTHONTEX#py#default#default#8#i#####501#
+L
+=>PYTHONTEX#py#default#default#9#i#####501#
+round(sigma)
+=>PYTHONTEX#py#default#default#10#i#####501#
+K_fs
+=>PYTHONTEX#py#default#default#11#i#####501#
+T
+=>PYTHONTEX#py#default#default#12#i#####501#
+round(tau)
+=>PYTHONTEX#py#default#default#6#i#####501#
+K_f
+=>PYTHONTEX#py#default#default#7#i#####501#
+F
+=>PYTHONTEX#py#default#default#8#i#####501#
+L
+=>PYTHONTEX#py#default#default#9#i#####501#
+round(sigma)
+=>PYTHONTEX#py#default#default#10#i#####501#
+K_fs
+=>PYTHONTEX#py#default#default#11#i#####501#
+T
+=>PYTHONTEX#py#default#default#12#i#####501#
+round(tau)
+=>PYTHONTEX#py#default#default#13#i#####511#
+round(sigma)
+=>PYTHONTEX#py#default#default#14#i#####511#
+round(tau)
+=>PYTHONTEX#py#default#default#15#i#####511#
+round(sigma_e)
+=>PYTHONTEX#py#default#default#16#i#####511#
+round(r_mdet,4)
+=>PYTHONTEX#py#default#default#13#i#####511#
+round(sigma)
+=>PYTHONTEX#py#default#default#14#i#####511#
+round(tau)
+=>PYTHONTEX#py#default#default#15#i#####511#
+round(sigma_e)
+=>PYTHONTEX#py#default#default#16#i#####511#
+round(r_mdet,4)
+=>PYTHONTEX#py#default#default#17#i#####518#
+round(sigma)
+=>PYTHONTEX#py#default#default#18#i#####518#
+round(sigma)
+=>PYTHONTEX#py#default#default#17#i#####518#
+round(sigma)
+=>PYTHONTEX#py#default#default#18#i#####518#
+round(sigma)
+=>PYTHONTEX#py#default#default#19#i#####525#
+round(sigma_ae)
+=>PYTHONTEX#py#default#default#20#i#####525#
+round(sigma_me)
+=>PYTHONTEX#py#default#default#21#i#####525#
+round(r_sod,4)
+=>PYTHONTEX#py#default#default#19#i#####525#
+round(sigma_ae)
+=>PYTHONTEX#py#default#default#20#i#####525#
+round(sigma_me)
+=>PYTHONTEX#py#default#default#21#i#####525#
+round(r_sod,4)
+=>PYTHONTEX#py#default#default#22#code#####531#
+    E = 210e9
+    omega_max = 10000
+    omega_rad = omega_max * 2*pi/60
+    rho = 7800
+    r = N_s*omega_rad*L**2 / pi**2 * sqrt(4 * rho/E)
+=>PYTHONTEX#py#default#default#23#i#####548#
+round(omega_rad)
+=>PYTHONTEX#py#default#default#24#i#####553#
+round(r,3)
+=>PYTHONTEX#py#default#default#24#i#####553#
+round(r,3)
+=>PYTHONTEX#py#default#default#25#i#####2285#
+round(0.6/pi/0.2,2)
+=>PYTHONTEX#py#default#default#26#i#####2285#
+round(0.6/pi/0.2*60,1)
+=>PYTHONTEX#py#default#default#25#i#####2285#
+round(0.6/pi/0.2,2)
+=>PYTHONTEX#py#default#default#26#i#####2285#
+round(0.6/pi/0.2*60,1)
+=>PYTHONTEX#py#default#default#27#i#####2292#
+round(500*2.5/57.3,1)
+=>PYTHONTEX#py#default#default#27#i#####2292#
+round(500*2.5/57.3,1)
+=>PYTHONTEX#py#default#default#28#i#####2293#
+2*round(500*2.5/57.3,1)
+=>PYTHONTEX#py#default#default#29#i#####2299#
+43.6*2
+=>PYTHONTEX#py#default#default#29#i#####2299#
+43.6*2
+=>PYTHONTEX#py#default#default#30#i#####2301#
+round(2*500*2*pi/60,1)
+=>PYTHONTEX#py#default#default#31#i#####2301#
+round(104.7/57.3/2/pi*60,1)
+=>PYTHONTEX#py#default#default#32#i#####2305#
+round(17.4/0.2)
+=>PYTHONTEX#py#default#default#32#i#####2305#
+round(17.4/0.2)
+=>PYTHONTEX#py#default#default#33#i#####2311#
+round(9500/10*0.0013*(0.95*2*pi)**2*0.2**2,2)
+=>PYTHONTEX#py#default#default#34#i#####2326#
+round(17.4/0.2/cos(radians(20)),1)
+=>PYTHONTEX#py#default#default#34#i#####2326#
+round(17.4/0.2/cos(radians(20)),1)
+=>PYTHONTEX#py#default#default#35#i#####2335#
+4200*0.0261+4200*0.0261 - 87
+=>PYTHONTEX#py#default#default#35#i#####2335#
+4200*0.0261+4200*0.0261 - 87
+=>PYTHONTEX#py#default#default#36#i#####2352#
+round(92.6*(0.1)*(0.4-0.1)/0.4,2)
+=>PYTHONTEX#py#default#default#36#i#####2352#
+round(92.6*(0.1)*(0.4-0.1)/0.4,2)
+=>PYTHONTEX#py#default#default#37#i#####2358#
+round(132*(0.1)*(0.4-0.1)/0.4,2)
+=>PYTHONTEX#py#default#default#37#i#####2358#
+round(132*(0.1)*(0.4-0.1)/0.4,2)
+=>PYTHONTEX#py#default#default#38#i#####2366#
+round((6.95+9.9)*2/3,1)
+=>PYTHONTEX#py#default#default#38#i#####2366#
+round((6.95+9.9)*2/3,1)
+=>PYTHONTEX#py#default#default#39#i#####2381#
+round((132*3+92.6)/4,1)
+=>PYTHONTEX#py#default#default#39#i#####2381#
+round((132*3+92.6)/4,1)
+=>PYTHONTEX:SETTINGS#
+version=0.17
+outputdir=pythontex-files-me310-2
+workingdir=.
+workingdirset=false
+gobble=auto
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|
