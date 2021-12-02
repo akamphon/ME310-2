@@ -22,7 +22,7 @@
 
 \begin{titlepage}
   \newgeometry{top=1cm,left=1cm} %defines the geometry for the titlepage
-  \pagecolor{DarkBlue}
+  \pagecolor{Grey!50!Black}
   \includegraphics[scale=0.2]{pictures/logo-tu} \\
   \noindent
   \color{white}
@@ -32,12 +32,12 @@
   \textbf{\textsf{Thammasat University}} \textcolor{yellow}{\textsf{Faculty of Engineering}}
   \vfill
   \hspace{1cm}
-  \includegraphics[scale=0.23]{pictures/tube-connection}
+  \includegraphics[width=\textwidth]{pictures/gear-titlepage}
   \vfill
   \noindent
-  \raggedleft{\Huge {ME 310: Mechanical Design}} \\
+  \raggedleft{\Huge{ME 310: Mechanical Design}} \\
   \vspace{1cm}
-  \raggedleft{\LARGE {Power Transmission}} \\
+  \raggedleft{\huge{Power Transmission}} \\
   \vspace{1cm}
   \noindent
   {\Large {Sappinandana Akamphon}}
@@ -1171,29 +1171,37 @@ We can then find the maximum allowable tangential force
 
 *** Rack and Pinion
 
-Racks are essentially linear spur gears--the teeth line up on a straight rather than a circular path. When used with gears, the pairs can convert torque and rotational motion to force and linear motion. They are less expensive that power screw, but also less accurate and provide no mechanical advantages.
+Racks are essentially linear spur gears--the teeth line up on a straight rather than a circular path. When used with gears, the pairs can convert torque and rotational motion to force and linear motion. They are less expensive than power screws, but also less accurate and provide no mechanical advantages.
 
-\begin{align*}
-  F_{t} = \frac{T}{R_{\text{pitch}}} \\
-  F_{r} = \frac{T \tan \theta}{R_{\text{pitch}}}
-\end{align*}
+As they are considered linear spur gears, the forces acting on them are identical to those on spur gears.
 
-- Rack = linear gear
-
-- Convert torque to force
-
-- Cheaper but less accurate than power screw
-
-- No mechanical advantages
-
+\begin{align}
+  \begin{array}{ll}
+  F_{t} &= \dfrac{T}{R_{\text{pitch}}} \\
+  F_{r} &= F_t \tan \phi \\
+  F_{a} &= 0
+  \end{array}
+\end{align}
 
 ** Helical Gears
 
-\begin{align}
-    F_{t} &= \frac{T}{R_{\text{pitch}}} \\
-    F &= \frac{T}{R_{\text{pitch}} \cos \theta \cos \alpha} \\
-    F_{a} &= F \cos \theta \sin \alpha = \frac{T \tan \alpha}{R_{\text{pitch}}} \\
-    F_{r} &= F \sin \theta
+Another type of gears have teeth that are slanted at a constant angle, forming helices about their axes of rotation. These are called *helical gears*.
+
+
+**** Helical Gear Analysis
+
+Geometrically, they can be analyze similarly to spur gears, the only different being that the teeth are at an angle of $\psi$ with the gear axis.
+
+#+NAME: fig: helical gear forces
+#+CAPTION: Forces acting on a helical gear
+[[./pictures/Gears/helical-gear-forces.png]]
+
+  \begin{align}
+    F_{t} &= \frac{H}{v_{t}} \\
+    F_{r} &= F_{t} \tan \phi_{t} \\
+    F_{a} &= F_{t} \tan \psi \\
+    \tan \phi_{n} &= \tan \phi_{t} \cos \psi \\
+    m_{n} &= m_{t} \cos \psi
   \end{align}
 
 Design Equations Same as spur gear equation with small modification
@@ -1208,9 +1216,67 @@ Design Equations Same as spur gear equation with small modification
 
 Geometry Factor: \(Y_{J}\)
 
-Geometry Factor: \(Y_{J}\)
+Because of the helix angle $\psi$, the geometry factor which accounts for the tooth size and its geometry is slightly modified.
 
-Bevel Gears
+#+NAME: fig: geometry factor for helical gears
+#+CAPTION: Geometry factor for helical gears
+[[./pictures/Gears/geometry-factor-helical.png]]
+
+The geometry factor also has to be modified by another multiplier which accounts for the mating gear.
+
+#+NAME: fig: factor multiplier
+#+CAPTION: Geometry factor multiplier for helical gears
+[[./pictures/Gears/geometry-factor-multiplier-helical.png]]
+
+*** Example: Meshing helical gears
+
+  A pair of meshing helical gears is connected at the input side to a 0.5-hp motor at 1800 rpm and to an output shaft at 600 rpm. The input gear has 18 teeth, $\phi_{n}$ = 20$^{\circ}$, $m_{n}$ = 0.00173, $\psi$ = 30$^{\circ}$, $b$ = 2 cm. From the given information, determine the pitch line velocity $v_{t}$, gear tooth forces $F_{t}, F_{r}, \text{ and } F_{a}$, and bending stress $\sigma$.
+
+  Calculate tangential module from normal module, then pitch diameter and tangential velocity.
+
+  \begin{align*}
+    m_{t} &= \frac{m_{n}}{\cos 30^{\circ}} = \frac{0.00173}{\cos 30^{\circ}} = 0.002 \\
+    d &= mz = 0.002(18) = 0.036 \text{ m} \\
+    v_{t} &= \omega \frac{d}{2}  = (1800) \frac{2\pi}{60} \frac{0.036}{2} = 3.4 \text{ m/s}
+  \end{align*}
+
+  Transmitted power only depends on tangential force, after which we can calculate axial and radial forces.
+  \begin{align*}
+    F_{t} &= \frac{\text{Power}}{v_{t}} = \frac{0.5(746)}{3.4} = 104 \text{ N} \\
+    \tan \phi_{t} &= \frac{\tan \phi_{n}}{\cos \psi} = \frac{\tan 20^{\circ}}{\cos 30^{\circ}} = 0.42 \\
+    \phi_{t} &= 22.8^{\circ} \\
+    F_{r} &= F_{t}\tan \phi_{t} = 104 \tan 22.8^{\circ} = 43.7 \text{ N} \\
+    F_{a} &= F_{t} \tan \psi = 104 \tan 30^{\circ} = 60 \text{ N}
+  \end{align*}
+
+  \begin{align*}
+    \sigma &= \frac{F_{t}}{bY_{J}m}K_{v}K_{o}(0.93K_{m}) \\
+  \end{align*}
+
+  $b$ = 0.02 m
+
+  For 18-teeth to 54-teeth mesh, $Y_{J}$ = 0.99(0.42) = 0.416
+
+  Uniform-uniform input-output, $K_{o}$ = 1
+
+  For $K_{v}$, since $v_{t}$ = 3.57 m/s, let $Q$ = 6.
+  \begin{align*}
+     B &= 0.25(12 - 6)^{2/3} = 0.825 \\
+     A &= 50 + 56(1 - 0.825) = 59.8 \\
+     K_{v} &= \left( \frac{59.8 + \sqrt{200v_{t}}}{59.8} \right)^{0.825} = 1.36 \\
+  \end{align*}
+
+  For $K_{m}$, nothing specific about gears or mounting, let's go with the middle case for $b$ = 2 cm. $K_{m}$ = 1.6
+
+  We can finally calculate $\sigma$
+
+  \begin{align*}
+    \sigma &= \frac{F_{t}}{bY_{J}m}K_{v}K_{o}(0.93K_{m}) \\
+           &= \frac{104}{(0.02)(0.416)(0.002)}(1.36)(1)((0.93)1.6) \\
+           &= 1.26 \times 10^{7} = 12.6 \text{ MPa}
+  \end{align*}
+
+** Bevel Gears
 
 \begin{align}
         F_{t} &= \frac{T}{R_{\text{av}}} \\
