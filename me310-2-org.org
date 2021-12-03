@@ -7,7 +7,7 @@
 #+LATEX_COMPILER: pdflatex
 #+LATEX_HEADER: \usepackage{caption}
 #+LATEX_HEADER: \usepackage[svgnames]{xcolor}
-#+LATEX_HEADER: \usepackage[parfill,=v1]{parskip}
+# #+LATEX_HEADER: \usepackage[parfill]{parskip}
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{array}
 #+LATEX_HEADER: \usepackage{tikz}
@@ -17,6 +17,15 @@
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{siunitx}
 #+LATEX_HEADER: \usepackage{multirow}
+
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: % Paragraph indentation and separation for normal text
+#+LATEX_HEADER: \renewcommand{\@tufte@reset@par}{\setlength{\RaggedRightParindent}{0pt}  \setlength{\JustifyingParindent}{0pt}  \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
+#+LATEX_HEADER: \@tufte@reset@par
+#+LATEX_HEADER: % Paragraph indentation and separation for marginal text
+#+LATEX_HEADER: \renewcommand{\@tufte@margin@par}{\setlength{\RaggedRightParindent}{0pt} \setlength{\JustifyingParindent}{0pt} \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
+#+LATEX_HEADER: \makeatother
+
 
 #+BIBLIOGRAPHY: me310-2.bib
 
@@ -481,7 +490,7 @@ A steel shaft whose $S_y$ = 450 MPa has a diameter of 5 cm. The shaft rotates at
   To keep things simple, pick a square key and pick key length = 2 cm.
 
   \begin{align*}
-    T &= \frac{\text{Power}}{\omega} = \frac{40(746)}{600(2\pi/60)} \\
+    T &= \frac{H}{\omega} = \frac{40(746)}{600(2\pi/60)} \\
       &= 475 \text{ N-m}
   \end{align*}
 
@@ -1242,7 +1251,7 @@ The geometry factor also has to be modified by another multiplier which accounts
 
   Transmitted power only depends on tangential force, after which we can calculate axial and radial forces.
   \begin{align*}
-    F_{t} &= \frac{\text{Power}}{v_{t}} = \frac{0.5(746)}{3.4} = 104 \text{ N} \\
+    F_{t} &= \frac{H}{v_{t}} = \frac{0.5(746)}{3.4} = 104 \text{ N} \\
     \tan \phi_{t} &= \frac{\tan \phi_{n}}{\cos \psi} = \frac{\tan 20^{\circ}}{\cos 30^{\circ}} = 0.42 \\
     \phi_{t} &= 22.8^{\circ} \\
     F_{r} &= F_{t}\tan \phi_{t} = 104 \tan 22.8^{\circ} = 43.7 \text{ N} \\
@@ -1278,14 +1287,20 @@ The geometry factor also has to be modified by another multiplier which accounts
 
 ** Bevel Gears
 
-\begin{align}
-        F_{t} &= \frac{T}{R_{\text{av}}} \\
-        F &= \frac{T}{R_{\text{av}} cos \theta} \\
-        F_{a} &= F \sin \theta \sin \gamma = \frac{T}{R_{\text{av}}} \tan \theta \sin \gamma \\
-        F_{r} &= F \sin \theta \cos \gamma = \frac{T}{R_{\text{av}}} \tan \theta \cos \gamma
-      \end{align}
+[[./pictures/Gears/bevel-gear-forces.png]]
 
-Design Equations Same as spur gear equation with small modification
+\begin{align}
+  \begin{array}{ll}
+    d_{av} &= d - b \sin \gamma \\
+    v_{av} &= \omega \dfrac{d_{av}}{2} \\
+    F_{t} &= \dfrac{H}{v_t} \\
+    F_{a} &= F_{t} \tan \phi \sin \gamma \\
+    F_{r} &= F_{t} \tan \phi \cos \gamma
+  \end{array}
+\end{align}
+
+Design equations for bevel gears are similar to the spur gear equations with small modification.
+
 \begin{align}
     \sigma &= \frac{F_{t}}{bY_{J}m} K_{v} K_{o} K_{m} \\
     S_{e}^{\prime} &= S_{e}C_{L}C_{G}C_{S}k_{r}k_{t}k_{ms}
@@ -1293,100 +1308,143 @@ Design Equations Same as spur gear equation with small modification
 
 Geometry Factor: \(Y_{J}\)
 
+Because the tooth bevel gears do not have constant thickness, the geometry factors is modified.
+
+#+NAME: fig: geometry factor bevel
+#+CAPTION: Geometry factors for bevel gears
+[[./pictures/Gears/geometry-factor-bevel.png]]
+
 Mounting Factor: \(K_{m}\)
 
-| Mounting type         |                                               | Mounting Rigidity |
-|-----------------------+-----------------------------------------------+-------------------|
-| Both straddle-mounted | [[file:pictures/Gears/both-straddle.png]]     | 1.0 to 1.25       |
-| straddle-overhung     | [[file:pictures/Gears/straddle-overhung.png]] | 1.1 to 1.4        |
-| Both overhung         | [[file:pictures/Gears/both-overhung.png]]     | 1.25 to 1.5       |
+This factor accounts for increased stress from misalignment in the gears. In the case of bevel gears, this depends mainly on how the gears are supported. In a straddle mounting, a gear is fitted in between two bearings, providing the best support and highest rigidity. On the other hand, in an overhung mounting, a gear is fitted onto a free end of the shaft, which provides minimal rigidity.
 
-Worms and Worm Gears
+#+NAME: tab: bevel mounting factor
+#+CAPTION: Mounting factor $K_m$ for bevel gears
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Mounting type & & Mounting Rigidity \\
+    \midrule
+    Both straddle-mounted & \includegraphics[width=0.3\textwidth]{pictures/Gears/both-straddle} & 1.0 to 1.25 \\
+    straddle-overhung & \includegraphics[width=0.3\textwidth]{pictures/Gears/straddle-overhung} & 1.1 to 1.4 \\
+    Both overhung & \includegraphics[width=0.3\textwidth]{pictures/Gears/both-overhung} & 1.25 to 1.5 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-- Worm drives gear
+*** Example: Bevel Gearset Design
 
-- Sliding contact \(\rightarrow\) \(\eta\) = 30 - 50%
+  Identical bevel gears has a module of 0.005 m/teeth, 25 teeth, 2-cm face width, and a $20^{\circ}$ normal pressure angle. The gear quality is $Q = 7$. Both requires overhung mounting. The gears are made of ductile iron whose $S_{e}$ = 95 MPa. Determine the power rating of the gearset at 600 rpm.
 
-\begin{align}
-        \tan \alpha &= \frac{p_{worm}}{\pi D_{worm}} \\
-      \end{align}
+*** Solution: Bevel Gearset Design
 
-Worm Force Analysis
+  For the stress side,
+  \begin{align*}
+    d_{av} &= mz/1000 = 0.125 \text{ m} \\
+    v_{t} &= \omega \frac{d_{av}}{2} = 600 \frac{2\pi}{60} \frac{0.125}{2} = 3.93 \text{ m/s}
+  \end{align*}
+  For uniform-uniform loading, $K_{o} = 1$
+  \begin{align*}
+    B &= 0.25(12 - 7)^{2/3} = 0.731 \\
+    A &= 50 + 56(1 - 0.731) = 65 \\
+    K_{v} &= \left( \frac{65 + \sqrt{200(3.93)}}{65} \right)^{0.731} = 1.3
+  \end{align*}
+
+  For both-overhung mounting, $K_{m} = 1.5$
+
+  For 25-teeth pair, $Y_{J}$ = 0.22
+
+  Now, onto the strength side,
+
+  \begin{description}
+    \item[$C_L$] = 1 for bending
+    \item[$C_{s}$] = 0.75 for machined surface
+    \item[$C_{G}$] = 1
+  \end{description}
+
+  No requirement on the reliablility. Let's be generous, give it 90\% so that $k_{r} = 0.897$.
+
+  For normal operating temperature, $k_{t}$ = 1.
+
+  For one-way bending, $k_{ms}$ = 1.4.
+
+  Set the two sides equal ($N_{s}$ = 1), we have
+  \begin{gather*}
+    \frac{F_{t}}{(0.02)(0.22)(0.005)}(1.3)(1)(1.5) = 95 \times 10^{6} (1)(1)(0.75)(0.897)(1)(1.4) \\
+    F_{t} = 1009 \text{ N} \\
+    H = F_{t}v_{t} = 1009(3.93) = 3965 \text{ W} = 5.31 \text{ hp}
+  \end{gather*}
+
+** Worms and Worm Gears
+
+
+#+ATTR_LATEX: :width \textwidth
+[[./pictures/Gears/worm-gear-forces.png]]
 
 - Without friction
 
 \begin{align}
-        F_{wt} &= F \cos \theta \sin \alpha \\
-        F_{wr} &= F \sin \theta \\
-        F_{wa} &= F \cos \theta \cos \alpha
-      \end{align}
+  F_{wt} &= F \cos \phi_{n} \sin \lambda \\
+  F_{wr} &= F \sin \phi_{n} \\
+  F_{wa} &= F \cos \phi_{n} \cos \lambda
+\end{align}
 
 - With friction \(F_{f} = \mu F\)
 
 \begin{align}
-        F_{wt} &= F \cos \theta \sin \alpha + \mu F \cos \alpha = F_{ga} \\
-        F_{wr} &= F \sin \theta = F_{gr} \\
-        F_{wa} &= F \cos \theta \cos \alpha - \mu F \sin \alpha = F_{gt}
-      \end{align}
+  F_{wt} &= F \cos \phi_{n} \sin \lambda + \mu F \cos \lambda = F_{ga} \\
+  F_{wr} &= F \sin \phi_{n} = F_{gr} \\
+  F_{wa} &= F \cos \phi_{n} \cos \lambda - \mu F \sin \lambda = F_{gt}
+\end{align}
 
 Worm Efficiency
 
 - Worm and worm gear velocities can be related by
 
-\begin{align}
-    \frac{v_{g}}{v_{w}} = \tan \alpha
-  \end{align}
+\begin{align*}
+  \frac{v_{g}}{v_{w}} &= \tan \lambda \\
+  v_{s} &= \sqrt{v_{w}^{2} + v_{g}^{2}} = v_{g} \sqrt{1 + \tan^{2} \lambda}
+\end{align*}
 
 - Efficiency \(\eta\) is
 
 \begin{align}
-    \eta &= \frac{F_{gt}v_{g}}{F_{wt}v_{w}} \\
-         &= \frac{\cos \theta \cos \alpha - \mu \sin \alpha}{\cos \theta \sin \alpha + \mu \cos \alpha} \tan \alpha \\
-         &= \frac{\cos \theta - \mu \tan \alpha}{\cos \theta + \mu \cot \alpha}
-  \end{align}
+  \eta &= \frac{F_{gt}v_{g}}{F_{wt}v_{w}} \\
+       &= \frac{\cos \phi_{n} \cos \lambda - \mu \sin \lambda}{\cos \phi_{n} \sin \lambda + \mu \cos \lambda} \tan \lambda \\
+       &= \frac{\cos \phi_{n} - \mu \tan \lambda}{\cos \phi_{n} + \mu \cot \lambda}
+\end{align}
 
-Self-Locking
+*** Self locking
 
-- Thread will lock itself (not backdrivable) when \(F_{wt} \leqslant 0\)
+- Thread will lock itself (not backdrivable) when $F_{wt} \leqslant 0$
+
   \begin{align}
-              F_{wt} &= F \cos \theta \sin \alpha - \mu F \cos \alpha \leqslant 0 \\
-              \mu &\geqslant \cos \theta \tan \alpha
-            \end{align}
+    F_{wt} &= F \cos \phi_{n} \sin \lambda - \mu F \cos \lambda \leqslant 0 \\
+    \mu &\geqslant \cos \phi_{n} \tan \lambda
+  \end{align}
 
 - Desirable in cases where auto-braking is needed
 
 - In systems with large inertia, sudden stop can break the worm tooth
   \(\rightarrow\) alternative brake mechanism is needd
 
-Design Equation \begin{align}
-    F_{b} \geqslant F_{d} \\
-    F_{w} \geqslant F_{d}
-  \end{align}
+*** Design Equation
 
-- \(F_{b}\) :: allowable load due to tooth bending
+Worm gears have higher stresses than worm, so our main concern is designing the gear.
 
-- \(F_{w}\) :: allowable load due to wear
+\begin{align*}
+    F_{gt, allow} = \frac{C_{s}d^{0.8}bC_{m}C_{v}}{75.948}
+  \end{align*}
 
-- \(F_{d}\) :: dynamic load = \(F_{gt} \dfrac{6.1 + v_{g}}{6.1}\)
+  \begin{description}
+    \item[$C_s$] material factor
+    \item[$d$] gear diameter [mm]
+    \item[$b$] effective face width (actual width but less than 0.67$d_{w}$) [mm]
+    \item[$C_{m}$] ratio correction factor
+    \item[$C_{v}$] velocity factor
+  \end{description}
 
-Allowable Load due to Tooth Bending: \(F_{s}\) \begin{align}
-    F_{s} &= S_{e}^{\prime}ybp
-  \end{align}
-
-- \(y\) :: Lewis form factor
-
-  | \(\theta\) | \(y\) |
-  |------------+-------|
-  | 14.5       | 0.100 |
-  | 20         | 0.125 |
-  | 25         | 0.150 |
-  | 30         | 0.175 |
-
-- \(b\) :: face width of worm gear (should be
-  \(\leqslant 0.67D_{\text{pitch, worm}}\))
-
-- \(p\) :: circular pitch =
-  \(\dfrac{\pi D_{\text{pitch}} \cos \alpha}{z}\)
 
 Worm Gear Material Fatigue Strength, \(S_{e}^{\prime}\)
 
@@ -1408,20 +1466,68 @@ Allowable Load due to Wear For rough estimates: \begin{align}
 
 - \(K_{w}\) :: material and geometry factor
 
-Material and Geometry Factor: \(K_{w}\)
+**** $C_{s}$: Material factor
 
-| Material (Worm - Gear)             | \(K_{w}\) [KPa]         |                         |                         |
-|                                    | \(\alpha < 10^{\circ}\) | \(\alpha < 25^{\circ}\) | \(\alpha > 25^{\circ}\) |
-| Steel - Bronze                     | 414                     | 517                     | 620                     |
-| Hardened steel - Bronze            | 551                     | 689                     | 827                     |
-| Hardened steel - Chill-cast bronze | 827                     | 1034                    | 1241                    |
-| Cast iron - Bronze                 | 1034                    | 1275                    | 1551                    |
+For center distance $C < 7.62$ cm
 
-Example: Worm gear speed reducer A 2-hp, 1200-rpm motor drives a 60-rpm
-machanism by using a work gear reducer. The gear has \(D_{gear}\) = 20
-cm. The worm has \(\alpha\) = 12\(^{\circ}\), \(\theta\) =
-20\(^{\circ}\), and \(D_{worm}\) = 5 cm. Assume \(\mu\) = 0.03,
-determine
+\begin{align*}
+    C_{s} = 720 + 0.000633C^{3}
+\end{align*}
+
+For $C \geqslant 7.62$ cm
+
+Sand-cast gears:
+\begin{align*}
+    \begin{array}{lll}
+      C_{s} = 1000 &  & d \leqslant 6.35 \text{ cm} \\
+      C_{s} = 1856.104 - 467.5454 \log d &  & d > 6.35 \text{ cm}
+    \end{array}
+  \end{align*}
+
+Chilled-cast gears:
+\begin{align*}
+    \begin{array}{lll}
+      C_{s} = 1000 &  & d \leqslant 20.32 \text{ cm} \\
+      C_{s} = 2052.011 - 455.8259 \log d &  & d > 20.32 \text{ cm}
+    \end{array}
+  \end{align*}
+
+Centrifugally-cast gears:
+\begin{align*}
+    \begin{array}{lll}
+      C_{s} = 1000 &  & d \leqslant 63.5 \text{ cm} \\
+      C_{s} = 1053.811 - 179.7503 \log d &  & d > 63.5 \text{ cm}
+    \end{array}
+  \end{align*}
+
+**** $C_{m}$: Ratio correction factor
+
+Depends on reduction ratio, $RR = \omega_{i}/\omega_{o}$
+\begin{align*}
+    C_{m} = \left\{
+    \begin{array}{lll}
+      0.02 \sqrt{-RR^{2} + 40 RR - 76} + 0.46 &  & 3 < RR \leqslant 20 \\
+      0.0107 \sqrt{-RR^{2} + 56RR + 5145} &  & 20 < RR \leqslant 76 \\
+      1.1483 - 0.00658RR &  & RR > 76
+    \end{array} \right.
+  \end{align*}
+
+**** $C_{v}$: Velocity factor
+
+Depends on sliding velocity at mean worm diameter $v_{s}$:
+
+\begin{align*}
+    C_{v} = \left\{
+    \begin{array}{lll}
+      0.659 e^{-0.2165 v_{s}} &  & 0 < v_{s} \leqslant 3.556 \text{ m/s}\\
+      0.652 v_{s}^{-0.571} &  & 3.556 < v_{s} \leqslant 15.24 \text{ m/s}\\
+      1.098 v_{s}^{-0.774} &  & v_{s} > 15.24 \text{ m/s}
+    \end{array} \right.
+  \end{align*}
+
+**** Example: Worm gear speed reducer
+
+A 2-hp, 1200-rpm motor drives a 60-rpm machanism by using a work gear reducer. The gear has \(D_{gear}\) = 20 cm. The worm has \(\alpha\) = 12\(^{\circ}\), \(\theta\) = 20\(^{\circ}\), and \(D_{worm}\) = 5 cm. Assume \(\mu\) = 0.03, determine
 
 1. all force components according to the rated power
 
@@ -1429,29 +1535,79 @@ determine
 
 3. whether the drive is self-locking
 
-Solution
+4. safety factor of worm gear
 
-- Pitch line velocity of worm
+**** Solution: Worm gear speed reducer
 
-\begin{align}
-    v_{w} = \omega_{w} (D_{w}/2) = 3.14 \text{ m/s} \\
-    F_{wt} = \frac{P}{v_{w}} = \frac{2(746)}{3.14} = 475 \text{ N}
-  \end{align}
+  First, determine $v_{w}$ to determine $v_{g}$
+  \begin{align*}
+    v_{w} &= \omega_{w} (d_{w}/2) = 3.14 \text{ m/s} \\
+    v_{g} &= v_{w} \tan \lambda = 3.14 \tan 12^{\circ} \\
+          &= 0.667 \text{ m/s}
+  \end{align*}
 
-Solution
+  Power output at the worm gear is
 
-- Efficiency
+  \begin{align*}
+    \eta &= \frac{\cos \phi_{n} - \mu \tan \lambda}{\cos \phi_{n} + \mu \cot \lambda} = \frac{\cos 20^{\circ} - 0.1 \tan 12^{\circ}}{\cos 20^{\circ} + 0.1 \cot 12^{\circ}} = 0.65 \\
+    H_{g} &= 0.65(2)(746) = 970 \text{ W} \\
+    F_{gt} &= \frac{H_{g}}{v_{g}} = \frac{970}{0.667} \\
+         &= 1454 \text{ N}
+  \end{align*}
 
-\begin{align}
-    e = \frac{cos \theta - \mu \tan \alpha}{cos \theta + \mu \cot \alpha} = 0.86
-  \end{align} Delivered power = 0.86 \(\times\) 2(746) = 1283 W
+  The other forces can then be calculated.
+  \begin{align*}
+    F_{ga} &= F_{wt} = \frac{H_{w}}{v_{w}} = \frac{2(746)}{3.14} = 475 \text{ N}
+  \end{align*}
 
-- Self locking
+  To find $F_{wr} = F_{gr}$, we need first to find $F$, which we can solve from either $F_{gt}$ or $F_{ga}$
 
-\begin{align}
+  \begin{align*}
+    F_{ga} = 475 &= F \cos \phi_{n} \sin \lambda + \mu F \cos \lambda = F \left( \cos 20^{\circ} \sin 12^{\circ} + 0.1 \cos 12^{\circ} \right) \\
+    475 &= 0.293F \\
+    F &= 1620 \text{ N} \\
+    F_{gr} &= F \sin \phi_{n} = 1620 \sin 20^{\circ} = 554 \text{ N}
+  \end{align*}
+
+  Self locking
+
+  \begin{align*}
     \mu \geqslant \cos 20^{\circ} \tan 12^{\circ} \\
-    0.03 \geqslant 0.20
-  \end{align} Nope!
+    0.1 \geqslant 0.20
+  \end{align*}
+
+Nope!
+
+  Definition of safety factor
+  \begin{align*}
+    N_{s} &= \frac{F_{gt,allow}}{F_{gt}}
+  \end{align*}
+
+  Determine the allowable tangential force on worm gear and material factor
+  \begin{align*}
+    F_{gt,allow} &= \frac{C_{s}d^{0.8}bC_{m}C_{v}}{75.948} \\
+    C &= \frac{d_{g}}{2} + \frac{d_{w}}{2} = \frac{0.2 + 0.05}{2} = 0.125 \text{ m} \\
+    C_{s} &= 1000 \hspace{1cm}\text{(assume centrifugally-cast)}
+  \end{align*}
+
+  Ratio correction factor
+  \begin{align*}
+    RR &= 1200/60 = 20 \\
+    C_{m}&= 0.02 \sqrt{-20^{2} + 40(20) - 76} + 0.46 = 0.82
+  \end{align*}
+
+  Velocity factor
+  \begin{align*}
+    v_{s} &= v_{g}\sqrt{1+\tan^{2} \lambda} = 0.667 \sqrt{1 + \tan^{2} 12^{\circ}} = 0.682 \text{ m/s} \\
+    C_{v} &= 0.659e^{-0.2165(0.682)} = 0.569
+  \end{align*}
+
+  Finally, the safety factor
+
+  \begin{align*}
+    F_{gt,allow} &= 1000(200)^{0.8}(0.67(50))(0.82)(0.569)/75.948 = 14265 \text{ N} \\
+    N_{s} &= \frac{14265}{1454} = 9.81
+  \end{align*}
 
 ** Clutches + Brakes
 
