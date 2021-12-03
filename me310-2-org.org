@@ -1,6 +1,7 @@
 #+TITLE: Mechanical Design
 #+AUTHOR: Sappinandana Akamphon
 #+OPTIONS: H:4 title:nil toc:nil
+#+TODO: TODO(t) | DONE(d)
 
 #+LATEX_CLASS: tufte-book
 #+LATEX_CLASS_OPTIONS: [a4paper,openany]
@@ -1609,7 +1610,7 @@ Nope!
     N_{s} &= \frac{14265}{1454} = 9.81
   \end{align*}
 
-** Clutches + Brakes
+** Clutches and Brakes
 
 - Rely on friction to transfer torque
 
@@ -1640,20 +1641,17 @@ when engaged
 
 **** Band Brakes
 
-
 *** Brake Linings
-*** Materials
+**** Materials
 - Molded :: thermosetting polymer or rubber + heat resistant fibers
 
 - Woven :: fibers + brass or zinc woven into fabric + resin
 
 - Sintered metal :: metal powder + inorganic fillers molded and sintered
 
-*** Dry Linings
+**** Dry Linings
 
-
-*** Wet Linings
-
+**** Wet Linings
 
 *** Drum Brake
 *** Internal Drum Brake
@@ -1692,13 +1690,12 @@ when engaged
 
 *** External Drum Brake
 
-
 *** Torque Generated on the Drum
 
 - identical equations to internal drum brake, only need to be careful
   about the direction of actuating force
 
-*** Example: Braking torque of a drum brake
+**** Example: Braking torque of a drum brake
 
 
 - \(F\) = 2000 N
@@ -1709,7 +1706,8 @@ when engaged
 
   Determine the braking torque.
 
-*** Solution
+**** Solution
+
 First, we must determine \(p_{\max}\) on the right shoe. In this case,
 \(M_n\) and \(M_f\) go in opposite directions.
 
@@ -1717,61 +1715,61 @@ First, we must determine \(p_{\max}\) on the right shoe. In this case,
     Fc &= M_n - M_f \\
     M_n &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1]\end{align}
 
-*** Solution
 Let us first find \(M_n\) as a function of \(p_{\max}\)
 
 \begin{align}
     a &= \sqrt{ 0.112^2 + 0.05^2 } = 0.123 \text{ m} \\
     M_n &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1] \\
         &= \frac{p_{\max} (0.03)(0.15)(0.123)}{4 (\sin 90^{\circ})} \left[ 2(126^{\circ}(\frac{\pi}{180^{\circ}})) - \sin (2(126^{\circ})) \right] \\
-        &= 7.38 \times 10^{-4} p_{\max}\end{align}
+        &= 7.38 \times 10^{-4} p_{\max}
+\end{align}
 
-*** Solution
 Now find \(M_f\) as a function of \(p_{\max}\)
 
 \begin{align}
-    M_f &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right] \\
-        &= \frac{0.3 p_{\max} (0.03)(0.15)}{\sin 90^{\circ}} \left[ (0.15)(\cos 0 - \cos 126^{\circ}) + \right. \\
-         & \left. \frac{0.123}{4}(\cos 2(126^{\circ}) - \cos 2(0)) \right] \\
-        &= 2.67 \times 10^{-4} p_{\max}\end{align}
+  M_f &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right] \\
+      &= \frac{0.3 p_{\max} (0.03)(0.15)}{\sin 90^{\circ}} \left[ (0.15)(\cos 0 - \cos 126^{\circ}) + \right. \\
+      & \left. \frac{0.123}{4}(\cos 2(126^{\circ}) - \cos 2(0)) \right] \\
+      &= 2.67 \times 10^{-4} p_{\max}
+\end{align}
 
-*** Solution
 \begin{align}
-    Fc &= M_n - M_f \\
-    2000(0.212) &= p_{\max}(7.38 - 2.67) \times 10^{-4} \\
-    p_{\max} &= 9.00 \times 10^5 \text{ Pa}\end{align}
+  Fc &= M_n - M_f \\
+  2000(0.212) &= p_{\max}(7.38 - 2.67) \times 10^{-4} \\
+  p_{\max} &= 9.00 \times 10^5 \text{ Pa}
+\end{align}
 
-*** Solution
 Braking torque of the right shoe is
 
 \begin{align}
-    T_R &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\
-        &= \frac{(0.3)(0.15^2)(0.03)(9.00 \times 10^5)}{1} (\cos 0^{\circ} - \cos 126^{\circ}) \\
-        &= 289 \text{ N-m}\end{align}
+  T_R &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\
+      &= \frac{(0.3)(0.15^2)(0.03)(9.00 \times 10^5)}{1} (\cos 0^{\circ} - \cos 126^{\circ}) \\
+      &= 289 \text{ N-m}
+\end{align}
 
-*** Solution
 To calculate braking torque in left shoe, we also must calculate
 \(p_{\max}\). \(M_n\) and \(M_f\) are now both clockwise.
 
 \begin{align}
-    Fc &= M_n + M_f \\
-    2000(0.212) &= (7.38 + 2.67) \times 10^{-4} p_{\max} \\
-    p_{\max} &= 4.22 \times 10^5 \text{ Pa}\end{align}
+  Fc &= M_n + M_f \\
+  2000(0.212) &= (7.38 + 2.67) \times 10^{-4} p_{\max} \\
+  p_{\max} &= 4.22 \times 10^5 \text{ Pa}
+\end{align}
 
-*** Solution
 Braking torque of the left shoe is
 
 \begin{align}
-    T_L &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\
-        &= \frac{(0.3)(0.15^2)(0.03)(4.22 \times 10^5)}{1} (\cos 0^{\circ} - \cos 126^{\circ}) \\
-        &= 136 \text{ N-m}\end{align}
+  T_L &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\
+      &= \frac{(0.3)(0.15^2)(0.03)(4.22 \times 10^5)}{1} (\cos 0^{\circ} - \cos 126^{\circ}) \\
+      &= 136 \text{ N-m}
+\end{align}
 
-*** Solution
 Total braking torque is
 
 \begin{align}
-    T &= T_L + T_R \\
-        &= 289 + 136 = 425 \text{ N-m}\end{align}
+  T &= T_L + T_R \\
+    &= 289 + 136 = 425 \text{ N-m}
+\end{align}
 
 *** Band Brakes
 *** Principles of Band Brakes
@@ -1793,14 +1791,14 @@ Total braking torque is
     \ln \frac{F_1}{F_2} &= \mu \theta \\
     \frac{F_1}{F_2} &= e^{\mu\theta}\end{align}
 
-*** Example: An Exercise Bike
+**** Example: An Exercise Bike
 An exercise bike has an adjustable band brake on the wheel to provide
 different levels of resistance. What should the slack side belt tension
 be so that the biker can exercise with \(T\) = 50 N-m. Take
 \(\theta = 150^{\circ}\) and \(\mu = 0.2\), the bike wheel \(r = 50\)
 cm.
 
-*** Solution
+**** Solution
 \begin{align}
     \frac{F_1}{F_2} &= e^{\mu\theta} \\
     T &= (F_1 - F_2)r \\
@@ -1810,7 +1808,6 @@ cm.
 
 *** Disc Clutches and Brakes
 *** Working Principles
-
 
 *** Disc Wear
 
@@ -1877,14 +1874,14 @@ cm.
 
 2. Use uniform wear rate, unless for short-term application
 
-*** Example: Automotive Clutch
+**** Example: Automotive Clutch
 
 - Design a wet clutch to transfer the torque of 100 N-m using the
   material with \(\mu\) = 0.08 and \(p_{\max}\) = 1500 kPa. Space
   requirements only allow \(r_o \leqslant\) 60 mm. Determine the inner
   diameter and number of discs.
 
-*** Solution
+**** Solution
 
 - Use \(r_i\) = 30 mm,
 
@@ -1901,7 +1898,6 @@ cm.
 | self-energizing possible                     | no self-energizing                                                    |
 | very sensitive to \(\mu\)                    | not sensitive to \(\mu\)                                              |
 | requires larger force once \(\mu\) goes down | well-designed caliper compensate for wear and exert constant pressure |
-
 
 ** Flexible Mechanical Elements
 
@@ -2078,13 +2074,15 @@ sprocket has 20 teeth and the output has 39 teeth.
 
 ** Power Transmission Case Study
 
+**** Example: Design of a Conveyor Belt System
+
 Let us consider a design for a conveyor belt system. The conveyor belt
 needs to be moving at 60 cm/s. Both the driving and driven pulleys have
 the same diameter of 40 cm. The driving pulley is mounted on the same
 shaft as spur gear \(B\), which is driven by spur gear \(A\) connected
 directly to the driving motor.
 
-Spur gear \(A\) has \(D_{\text{pitch}}\) = 5 cm, \(z\) = 10 teeth, and
+Spur gear \(A\) has \(D_{\text{pitch},A}\) = 5 cm, \(z\) = 10 teeth, and
 pressure angle \(\theta\) = 20\(^{\circ}\). The motor is set to operate
 constantly at 500 rpm and providing the torque of 2 N-m.
 
@@ -2104,77 +2102,175 @@ Design the following:
 4. radial contact bearings for 9 \(\times 10^{7}\) revolutions, 90%
    reliability (series and bore size).
 
-1. To determine the number of teeth of spur gear \(B\), we need to
-   determine the required pitch line velocity. The belt must be moving
-   at 60 cm/s, which means the pulley must be rotating at
+**** Solution: Design of a Conveyor Belt System
 
-   \begin{align}
+1. To determine the number of teeth of spur gear \(B\), we need to determine the required pitch line velocity. The belt must be moving at 60 cm/s, which means the pulley must be rotating at
+
+   #+NAME: angular_velocity
+   #+BEGIN_SRC python :exports none
+from math import pi
+omega_a = 500 # in rpm
+r_a = 0.025
+rev_per_sec_a = 0.6/pi/0.2
+rpm_a = rev_per_sec_a * 60
+r_b = omega_a*r_a/rpm_a
+d_pitch = 0.05
+z_A = 10
+m = d_pitch/z_A
+z_B = 2*r_b/m
+T_A = 2
+T_B = T_A*z_B/z_A
+tension_diff = T_B / d_pitch
+return round(rev_per_sec_a,2), round(rpm_a,1), round(r_b,3), m, round(z_B,1), round(tension_diff)
+   #+END_SRC
+
+   #+RESULTS: angular_velocity
+   | 0.95 | 57.3 | 0.218 | 0.005 | 87.3 | 349 |
+
+   #+BEGIN_SRC latex :result value :var ang1=angular_velocity[0] ang2=angular_velocity[1]
+   \begin{align*}
      \omega_{\text{pulley}} &= \frac{0.6}{\pi (0.2)} \\
-                            &= \py{round(0.6/pi/0.2,2)} \text{ rev/s} = \py{round(0.6/pi/0.2*60,1)} \text{ rpm}
-   \end{align}
+                            &= ang1 \text{ rev/s} = ang2 \text{ rpm}
+   \end{align*}
+   #+END_SRC
 
-   since spur gear \(B\) is mounted on the same shaft as the pulley, it
-   must have the same \(\omega\). The pitch line velocities on two
-   meshing gears must be the same. Spur gear \(A\) rotates at 500 rpm,
-   therefore, the pitch radius of spur gear \(B\) is
+   #+RESULTS:
+   #+begin_export latex
+   \begin{align*}
+        \omega_{\text{pulley}} &= \frac{0.6}{\pi (0.2)} \\
+                               &= 0.95 \text{ rev/s} = 57.3 \text{ rpm}
+      \end{align*}
+   #+end_export
 
-   \begin{align}
-               r_{B} &= \frac{\omega_{A} r_{A}}{\omega_{B}} \\
-                          &= \py{round(500*2.5/57.3,1)}
-             \end{align} Its diameter, of course, is cm. Given that
-   meshing gears must also have the same module, the number of teeth on
-   \(B\) is
+   since spur gear \(B\) is mounted on the same shaft as the pulley, it must have the same \(\omega\). The pitch line velocities on two meshing gears must be the same. Spur gear \(A\) rotates at 500 rpm, therefore, the pitch radius of spur gear \(B\) is
 
-   \begin{align}
-               m &= \frac{D_{\text{pitch,A}}}{z_{A}} = {5}{10} = 0.5 \\
-                 &= \frac{43.6}{z_{B}} \\
-               z_{B} &= \py{43.6*2} \text{ teeth}
-             \end{align}
+   #+BEGIN_SRC latex :var r_b=angular_velocity[2]
+   \begin{align*}
+     r_{B} &= \frac{\omega_{A} r_{A}}{\omega_{B}} \\
+           &= r_b \text{ m}
+   \end{align*}
+   #+END_SRC
 
-2. Assuming no power loss, the power the belt-pulley system needs to
-   transfer is
-   \(P = T\omega = 2(500)(2\pi/60) = \py{round(2*500*2*pi/60,1)}\) W.
-   Required torque transfer of the belt is
-   \(T = P/\omega = 104.7/(57.3(2\pi/60)) = \py{round(104.7/57.3/2/pi*60,1)}\)
-   N-m. The tension difference on the two side needs to be
-   \begin{align}
-               T &= (F_{1} - F_{2})r_{\text{pulley}} \\
-               F_{1} - F_{2} &= \frac{T}{r_{\text{pulley}}} = \py{round(17.4/0.2)} \text{ N}
-             \end{align}
+   #+RESULTS:
+   #+begin_export latex
+   \begin{align*}
+        r_{B} &= \frac{\omega_{A} r_{A}}{\omega_{B}} \\
+              &= 0.218 \text{ m}
+      \end{align*}
+   #+end_export
 
-   We can now write an equation to determine the thickness \(b\) of the
-   belt
+   Its diameter, of course, is src_python[:results raw :var r_b =angular_velocity[2]]{return(r_b*2*100)} cm. Given that
+   meshing gears must also have the same module, the number of teeth on \(B\) is
 
-   \begin{align}
+   #+BEGIN_SRC latex :var module=angular_velocity[3] z_B=angular_velocity[4]
+   \begin{align*}
+     m &= \frac{D_{\text{pitch},A}}{z_{A}} = \frac{0.05}{10} = module \\
+       &= \frac{43.6}{z_{B}} \\
+     z_{B} &= z_B \text{ teeth}
+   \end{align*}
+   #+END_SRC
+
+   #+RESULTS:
+   #+begin_export latex
+   \begin{align*}
+        m &= \frac{D_{\text{pitch},A}}{z_{A}} = \frac{0.05}{10} = 0.005 \\
+          &= \frac{43.6}{z_{B}} \\
+        z_{B} &= 87.3 \text{ teeth}
+      \end{align*}
+   #+end_export
+
+2. Assuming no power loss, the power the belt-pulley system needs to transfer is $P = T\omega = 2(500)(2\pi/60)$ = src_python[:results raw]{return(round(2*500*2*3.1416/60,1))} W.
+
+   Required torque transfer of the belt is $T = P/\omega = 104.7/(57.3(2\pi/60))$ = src_python[:results raw]{return(round(104.7/57.3/2/3.1416*60,1))} N-m. The tension difference on the two side needs to be
+
+   #+BEGIN_SRC latex :var tension_diff=angular_velocity[5]
+   \begin{align*}
+     T &= (F_{1} - F_{2})r_{\text{pulley}} \\
+     F_{1} - F_{2} &= \frac{T}{r_{\text{pulley}}} = tension_diff \text{ N}
+   \end{align*}
+   #+END_SRC
+
+   #+RESULTS:
+   #+begin_export latex
+   \begin{align*}
+        T &= (F_{1} - F_{2})r_{\text{pulley}} \\
+        F_{1} - F_{2} &= \frac{T}{r_{\text{pulley}}} = 349 \text{ N}
+      \end{align*}
+   #+end_export
+
+   We can now write an equation to determine the thickness \(b\) of the belt
+
+   \begin{align*}
      \frac{F_{1} - F_{c}}{F_{2} - F_{c}} = e^{\mu \theta}
-   \end{align}
+   \end{align*}
 
   Set
 
-  \begin{align*}
-   F_{1} = (F_{1})_{a} = bF_{a}C_{v}C_{p} = b(6000)(1)(0.7) = 4200b
-   F_{2} = F_{1} - 87 = 4200b - 87
-    \mu = 0.5
-    \theta = \pi
-   F_{c} = (\gamma/g)bt \omega^{2} r^{2} = (9500/10)b(0.0013)(0.95(2\pi))^{2}(0.2)^{2} = \py{round(9500/10*0.0013*(0.95*2*pi)**2*0.2**2,2)}b
+  #+NAME: coeff
+  #+BEGIN_SRC python :exports none
+coeff = 9500/10*0.0013*(0.95*2*3.1416)**2*0.2**2
+return round(coeff,2)
+  #+END_SRC
+
+  #+RESULTS: coeff
+  : 1.76
+
+  #+BEGIN_SRC latex :var coeff=coeff
+\begin{align*}
+  F_{1} &= (F_{1})_{a} = bF_{a}C_{v}C_{p} = b(6000)(1)(0.7) = 4200b \\
+  F_{2} &= F_{1} - 87 = 4200b - 87 \\
+  \mu &= 0.5 \\
+  \theta &= \pi \\
+  F_{c} &= (\gamma/g)bt \omega^{2} r^{2} = (9500/10)b(0.0013)(0.95(2\pi))^{2}(0.2)^{2} \\
+        &= coeffb \\
+  \frac{4200b - 1.76b}{4200b - 87 - 1.76b} &= e^{0.5 \pi} \\
+  b &= 0.0261 = 2.61 \text{ cm}
+\end{align*}
+   #+END_SRC
+
+   #+RESULTS:
+   #+begin_export latex
+   \begin{align*}
+     F_{1} &= (F_{1})_{a} = bF_{a}C_{v}C_{p} = b(6000)(1)(0.7) = 4200b \\
+     F_{2} &= F_{1} - 87 = 4200b - 87 \\
+     \mu &= 0.5 \\
+     \theta &= \pi \\
+     F_{c} &= (\gamma/g)bt \omega^{2} r^{2} = (9500/10)b(0.0013)(0.95(2\pi))^{2}(0.2)^{2} \\
+           &= 1.76b
    \end{align*}
+   #+end_export
 
-   \begin{align}
-     \frac{4200b - 1.76b}{4200b - 87 - 1.76b} = e^{0.5 \pi} \\
-     b = 0.0261 = 2.61 \text{ cm}
-   \end{align}
 
-3. To design the shaft, we must first determine the loads on the shaft,
-   which are exerted by spur gear \(B\) and the pulley. Let us determine
-   the load from each component.
+1. To design the shaft, we must first determine the loads on the shaft, which are exerted by spur gear \(B\) and the pulley. Let us determine the load from each component.
 
    The load from the gear can simply be determined by
 
-   \begin{align}
-               F &= \frac{T}{r \cos \theta} \\
-                 &= \frac{17.4}{(0.2)(\cos 20^{\circ})} \\
-                 &= \py{round(17.4/0.2/cos(radians(20)),1)} \text{ N}
-             \end{align}
+   #+NAME: force
+   #+BEGIN_SRC python :exports none
+from math import cos,radians
+force = 17.4/0.2/cos(radians(20))
+return round(force,1)
+   #+END_SRC
+
+   #+RESULTS: force
+   : 92.6
+
+   #+BEGIN_SRC latex :var force=force
+   \begin{align*}
+     F &= \frac{T}{r \cos \theta} \\
+       &= \frac{17.4}{(0.2)(\cos 20^{\circ})} \\
+       &= force \text{ N}
+   \end{align*}
+   #+END_SRC
+
+   #+RESULTS:
+   #+begin_export latex
+   \begin{align*}
+        F &= \frac{T}{r \cos \theta} \\
+          &= \frac{17.4}{(0.2)(\cos 20^{\circ})} \\
+          &= 92.6 \text{ N}
+      \end{align*}
+   #+end_export
 
    So the force exerted on the shaft by gear \(B\) is 92.6 N in the
    direction 20\(^{\circ}\) downward from the tangential line between
@@ -2183,9 +2279,9 @@ Design the following:
    The load from the pulley is even simpler
 
    \begin{align}
-               F_{p} &= F_{1} + F_{2} = 4200(0.0261) + 4200(0.0261) - 87 \\
-                 &= \py{4200*0.0261+4200*0.0261 - 87} \text{ N}
-             \end{align}
+     F_{p} &= F_{1} + F_{2} = 4200(0.0261) + 4200(0.0261) - 87 \\
+           &= \py{4200*0.0261+4200*0.0261 - 87} \text{ N}
+   \end{align}
 
    The force exerted on the shaft by the pulley is 132 N to the right.
 
@@ -2219,7 +2315,7 @@ Design the following:
      r &= 0.0054 = 5.4 \text{ mm}
    \end{align}
 
-4. Since the problem is not symmetrical, we need to determine the
+2. Since the problem is not symmetrical, we need to determine the
    bearing under the higher load. This happens to the bearing closer to
    the higher force, which is the pulley. Taking the other bearing as a
    fulcrum, the radial load in the bearing on the pulley side is
