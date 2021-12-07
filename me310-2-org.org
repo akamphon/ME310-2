@@ -1917,47 +1917,124 @@ cm.
 
 - Important to check for wear, age, and loss of elasticity
 
+*** Belt -- General
+
+**** Belt - Pulley Geometry
+
+#+ATTR_LATEX: :width \textwidth
+[[./pictures/Flexible-Elements/belt-pulley-geometry.png]]
+
+\begin{align*}
+    \theta_d &= \pi - 2 \sin^{-1} \frac{D - d}{2C} \\
+    \theta_D &= \pi + 2 \sin^{-1} \frac{D - d}{2C} \\
+    L &= \sqrt{ 4C^2 - (D - d)^2 } + \frac{1}{2}(D \theta_D + d \theta_d)
+\end{align*}
+
+**** Cross Belt - Pulley Geometry
+
+#+ATTR_LATEX: :width \textwidth
+[[./pictures/Flexible-Elements/cross-belt-pulley-geometry.png]]
+
+\begin{align*}
+    \theta_d &= \pi + 2 \sin^{-1} \frac{D + d}{2C} \\
+    L &= \sqrt{ 4C^2 - (D + d)^2 } + \frac{1}{2}(D + d)\theta
+\end{align*}
+
+
 *** Flat Belts
-*** Belt Tension
+
+**** Belt Tension
 
 - For low speed belt drive
 
   \begin{align}
-      T = \left( F_1 - F_2 \right) r\end{align}
+    T = \left( F_1 - F_2 \right) r
+  \end{align}
 
 *** Belt Tension II
 
 - For high speed belt drive
 
   \begin{align}
-      \frac{F_1 - F_c}{F_2 - F_c} = e^{\mu \theta}\end{align}
+    \frac{F_1 - F_c}{F_2 - F_c} = e^{\mu \theta}
+  \end{align}
 
   where \(F_c = m \omega^2 r^2\) is the centrifugal force on the belt
   and \(m\) is the mass per length of belt
 
-*** Power Transmitted
-\[P = (F_1 - F_2) v\]
+*** Power and Torque Transmitted
+
+\begin{align}
+  \text{Power} &= (F_1 - F_2) v \\
+  T &= (F_{1} - F_{2})r
+\end{align}
 
 *** Maintaining Belt Tension
+
+[[./pictures/Flexible-Elements/belt-tensioner.jpg]]
+
 *** Belt Design
+
 \begin{align}
-    (F_1)_a &= b F_a C_p C_v \\\end{align} \begin{align}
+    (F_1)_a &= b F_a C_p C_v
+\end{align}
+
+\begin{align*}
     \left( F_1 \right)_a &= \text{allowable largest tension} \\
     b &= \text{belt width} \\
     F_a &= \text{manufacturer's allowed tension (N/m)} \\
     C_p &= \text{pulley correction factor} \\
-    C_v &= \text{velocity correction factor = 1 except leather belts}\end{align}
+    C_v &= \text{velocity correction factor = 1 except leather belts}
+\end{align*}
 
-*** Manufacturer's Allowed Tension: \(F_a\)
+**** Manufacturer's Allowed Tension: \(F_a\)
+
+[[./pictures/Flexible-Elements/belt-allowable-tension.png]]
 
 
-*** Pulley Correction Factor: \(C_p\)
+**** Pulley Correction Factor: \(C_p\)
 
+[[./pictures/Flexible-Elements/pulley-correction-factor.png]]
 
-*** Velocity Correction Factor: \(C_v\)
+- $C_p$ = 1 for urethane belts
 
+**** Velocity Correction Factor: \(C_v\)
+
+[[./pictures/Flexible-Elements/velocity-correction-factor.png]]
+
+**** Example: Flat belt design
+
+A polyamide A-3 flat belt 15 cm wide is used to transmit 15 hp power. The pulley rotational axes are parallel, the shafts are 2.5 m apart. The driving pulley diameter is 15 cm and rotates at 1750 rpm. The driven pulley diameter is 45 cm.
+
+1. Estimate the centrifugal tension $F_c$
+2. Estimate the allowable $F_1$ and $F_2$
+
+**** Solution: Flat belt design
+
+Find $F_c$
+
+   \begin{align*}
+   \gamma &= 11.4 \text{ kN/m}^3 \\
+   \rho &= \frac{\gamma}{g} = 11.4 \times 10^3 / 9.81 = 1.162 \times 10^3 \text{ kg/m}^3 \\
+   m &= \rho A = 1.162 \times 10^3 (3.3 \times 10^{-3})(0.15) = 0.575 \text{ kg/m} \\
+   F_c &= m \omega^2 r^2 = 0.575 \times (1750 (2\pi/60))^2 (0.15/2)^2 = 108.6 \text{ N}
+   \end{align*}
+
+For $(F_1)_a$ and $F_2$
+
+   \begin{align*}
+   F_a &= 18 \times 10^3 \text{ N/m} \\
+   (F_1)_a &= b F_a C_p C_v = 0.15(18 \times 10^3)(0.7)(1) = 1890 \text{ N} \\
+    T &= \frac{(F_1 - F_2)d}{2} \\
+    F_1 - F_2 &= \frac{2T}{d} = \frac{2(15(746)/(1750(2 \pi / 60)))}{0.15} = 814 \text{ N} \\
+    F_2 &= (F_1)_a - (F_1 - F_2) = 1890 - 814 = 1076 \text{ N} \\
+    %\text{Power} = (F_1 - F_2)v = 814(1750)(2\pi/60)(0.15/2) = 1.12 \times 10^4 \text{ W} = 15 \text{ hp}
+   \end{align*}
 
 *** V-Belts
+
+
+
 *** Why V Belts?
 
 - Increased tension forces belt further into groove, providing more
@@ -1966,32 +2043,39 @@ cm.
 - Increased torque capacity at a slightly lower efficiency
 
 *** Belt Tension
+
 \begin{align}
-    T = \left( F_1 - F_2 \right) r \\
-    \frac{F_1 - F_c}{F_2 - F_c} = e^{\frac{\mu \theta}{\sin \beta}}\end{align}
+  T = \left( F_1 - F_2 \right) r \\
+  \frac{F_1 - F_c}{F_2 - F_c} = e^{\frac{\mu \theta}{\sin \beta}}
+\end{align}
 
 *** V Belt Design Equation
+
 \begin{align}
-    N_s = \frac{P_a N}{P_{nom} K_s}\end{align}
+  N_s = \frac{P_a N}{P_{nom} K_s}
+\end{align}
 
-- \(N_s\): safety factor
+- \(N_s\) :: safety factor
 
-- \(P_a\): allowable power per belt
+- \(P_a\) :: allowable power per belt
 
-- \(N\): number of belts (integer)
+- \(N\) :: number of belts (integer)
 
-- \(P_{nom}\): nominal power = \((F_1 - F_2)v\)
+- \(P_{nom}\) :: nominal power = \((F_1 - F_2)v\)
 
-- \(K_s\): service factor
+- \(K_s\) :: service factor
 
 *** Allowable Power
 
+[[./pictures/Flexible-Elements/belt-power-rating.png]]
 
 *** Service Factor
 
+[[./pictures/Flexible-Elements/belt-service-factor.png]]
 
 *** Timing Belts
 
+[[./pictures/Flexible-Elements/timing-belt.jpg]]
 
 - No significant stretch or slip \(\rightarrow\) power where speed ratio
   is important
@@ -2004,21 +2088,52 @@ cm.
 
 - Same design equations as V-belts
 
-*** Example
-Design a urethane flat belt to connect two shafts. The driving pulley
-(\(d\) = 3 cm) is connected to a 1-kW motor. The driven pulley has \(D\)
-= 8 cm. The motor rotates at 500 rpm.
+**** Example: Design of Belts
 
-*** Solution
-Assuming that the conveyor will utilize full motor power. The belt
-tension difference is
+Design an F-1 polyamide flat belt to connect two shafts. The driving pulley ($d$ = 4 cm) is connected to a 1-kW motor. The driven pulley has $D$ = 8 cm. The shafts are 20 cm apart. The motor rotates at 500 rpm.
 
-\begin{align}
+**** Solution
+
+The required belt tension difference is
+
+\begin{align*}
     P &= \left( F_1 - F_2 \right)v \\
-    F_1 - F_2 &= \frac{2000}{0.1} = 20000 N\end{align}
+    F_1 - F_2 &= \frac{1000}{500\pi(0.04)(1/60)} = 955 \text{ N}
+\end{align*}
+
+Actual allowable tension is
+
+\begin{align*}
+    (F_1)_a = b(6000)(0.7)(1) = 4200b \text{ N}
+\end{align*}
+
+Centrifugal tension $F_c$ is
+
+\begin{align*}
+    F_c &= m \omega^2 r^2 \\
+        &= \frac{9500b(0.0013)}{10} \left( \frac{500(2\pi)}{60} \right)^2 (0.02)^2 \\
+        &= 1.35b \text{ N}
+\end{align*}
+
+Angle on small pulley $\theta_d$ is
+
+\begin{align*}
+    \theta_d &= \pi - 2 \sin^{-1} \frac{D - d}{2C} \\
+            &= \pi - 2 \sin^{-1} \frac{8 - 4}{2(20)} \\
+            &= 2.94 \text{ rad}
+\end{align*}
+
+\begin{align*}
+    \frac{(F_1)_a - F_c}{F_2 - F_c} &= e^{\mu \theta} \\
+    \frac{4200b - 1.35b}{4200b - 955 - 1.35b} &= e^{0.5(2.94)} \\
+    b &= 0.295 \text{ m}
+\end{align*}
+
+The belt must be at least 29.5 cm in width.
 
 *** Roller Chains
-*** Why Roller Chain (Chain Drives)?
+
+**** Why Roller Chain (Chain Drives)?
 
 - No slip \(\rightarrow\) constant ratio
 
