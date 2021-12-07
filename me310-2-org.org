@@ -1635,53 +1635,85 @@ when engaged
 *** Types of Clutches and Brakes
 **** Drum Brakes
 
+[[./pictures/Clutches-Brakes/drum-brake.jpg]]
 
 **** Disc Brakes
 
+[[./pictures/Clutches-Brakes/disc-brake.png]]
 
 **** Band Brakes
 
+[[./pictures/Clutches-Brakes/band-brake.jpg]]
+
 *** Brake Linings
 **** Materials
+\begin{marginfigure}
+  \centering
+  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/molded-lining.jpg}
+\end{marginfigure}
+
 - Molded :: thermosetting polymer or rubber + heat resistant fibers
 
+\begin{marginfigure}
+  \centering
+  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/woven-lining.jpg}
+\end{marginfigure}
+
 - Woven :: fibers + brass or zinc woven into fabric + resin
+
+\begin{marginfigure}
+  \centering
+  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/sintered-lining.jpg}
+\end{marginfigure}
 
 - Sintered metal :: metal powder + inorganic fillers molded and sintered
 
 **** Dry Linings
 
+\begin{figure*}
+  \centering
+  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/dry-materials.png}
+\end{figure*}
+
 **** Wet Linings
 
+[[./pictures/Clutches-Brakes/wet-materials.png]]
+
 *** Drum Brake
+
 *** Internal Drum Brake
 
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Forces and geometries of an internal drum brake.
+[[./pictures/Clutches-Brakes/internal-drum-brake.png]]
 
 \begin{align}
-    p &= \frac{p_{\max}}{(\sin \theta)_{\max}} \sin \theta \\
-    M_n &= \int_{\theta_1}^{\theta_2} dN (a \sin \theta) \\
-    dN &= p (r d\theta) b\end{align}
+  p &= \frac{p_{\max}}{(\sin \theta)_{\max}} \sin \theta \\
+  M_n &= \int_{\theta_1}^{\theta_2} dN (a \sin \theta) \\
+  dN &= p (r d\theta) b
+\end{align}
 
-*** Moment Generated on Drum by Normal Force
+***** Moment Generated on Drum by Normal Force
 \begin{align}
-    dN &= \frac{p_{\max} br \sin \theta d\theta}{(\sin \theta)_{\max}} \\
-    M_n &= \int_{\theta_1}^{\theta_2} \frac{p_{\max} bra \sin^2 \theta}{(\sin \theta)_{\max}} d\theta \\
-        &= \frac{p_{\max} bra}{(\sin \theta)_{\max}} \int_{\theta_1}^{\theta_2} \sin^2 \theta d\theta \\
-        &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1]\end{align}
+  dN &= \frac{p_{\max} br \sin \theta d\theta}{(\sin \theta)_{\max}} \\
+  M_n &= \int_{\theta_1}^{\theta_2} \frac{p_{\max} bra \sin^2 \theta}{(\sin \theta)_{\max}} d\theta \nonumber \\
+     &= \frac{p_{\max} bra}{(\sin \theta)_{\max}} \int_{\theta_1}^{\theta_2} \sin^2 \theta d\theta \nonumber \\
+     &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1]
+\end{align}
 
-*** Moment Generated on Drum by Friction
+***** Moment Generated on Drum by Friction
 \begin{align}
     M_f &= \int_{\theta_1}^{\theta_2} \mu dN (r - a \cos \theta) \\
         &= \int_{\theta_1}^{\theta_2} \frac{\mu p_{\max} \sin \theta r d\theta b (r - a \cos \theta)}{(\sin \theta)_{\max}} \\
         &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right]\end{align}
 
-*** Self-energizing Brake
+***** Self-energizing Brake
 
 - if \(M_f \geqslant M_n\), the brake is *self-energizing*
 
 - The shoe sticks to the drum without actuating force \(F\)
 
-*** Torque Generated on the Drum
+***** Torque Generated on the Drum
 \begin{align}
     T &= \int_{\theta_1}^{\theta_2} \mu r dN \\
         &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} \int_{\theta_1}^{\theta_2} \sin \theta d\theta \\
@@ -1690,12 +1722,16 @@ when engaged
 
 *** External Drum Brake
 
-*** Torque Generated on the Drum
+[[./pictures/Clutches-Brakes/external-drum-brake.png]]
+
+***** Torque Generated on the Drum
 
 - identical equations to internal drum brake, only need to be careful
   about the direction of actuating force
 
 **** Example: Braking torque of a drum brake
+
+[[./pictures/Clutches-Brakes/drum-example.png]]
 
 
 - \(F\) = 2000 N
@@ -1711,65 +1747,66 @@ when engaged
 First, we must determine \(p_{\max}\) on the right shoe. In this case,
 \(M_n\) and \(M_f\) go in opposite directions.
 
-\begin{align}
-    Fc &= M_n - M_f \\
-    M_n &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1]\end{align}
+\begin{align*}
+  Fc &= M_n - M_f \\
+  M_n &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1]
+\end{align*}
 
 Let us first find \(M_n\) as a function of \(p_{\max}\)
 
-\begin{align}
+\begin{align*}
     a &= \sqrt{ 0.112^2 + 0.05^2 } = 0.123 \text{ m} \\
     M_n &= \frac{p_{\max} bra}{4(\sin \theta)_{\max}} [2(\theta_2 - \theta_1) - \sin 2\theta_2 + \sin 2\theta_1] \\
         &= \frac{p_{\max} (0.03)(0.15)(0.123)}{4 (\sin 90^{\circ})} \left[ 2(126^{\circ}(\frac{\pi}{180^{\circ}})) - \sin (2(126^{\circ})) \right] \\
         &= 7.38 \times 10^{-4} p_{\max}
-\end{align}
+\end{align*}
 
 Now find \(M_f\) as a function of \(p_{\max}\)
 
-\begin{align}
+\begin{align*}
   M_f &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right] \\
       &= \frac{0.3 p_{\max} (0.03)(0.15)}{\sin 90^{\circ}} \left[ (0.15)(\cos 0 - \cos 126^{\circ}) + \right. \\
       & \left. \frac{0.123}{4}(\cos 2(126^{\circ}) - \cos 2(0)) \right] \\
       &= 2.67 \times 10^{-4} p_{\max}
-\end{align}
+\end{align*}
 
-\begin{align}
+\begin{align*}
   Fc &= M_n - M_f \\
   2000(0.212) &= p_{\max}(7.38 - 2.67) \times 10^{-4} \\
   p_{\max} &= 9.00 \times 10^5 \text{ Pa}
-\end{align}
+\end{align*}
 
 Braking torque of the right shoe is
 
-\begin{align}
+\begin{align*}
   T_R &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\
       &= \frac{(0.3)(0.15^2)(0.03)(9.00 \times 10^5)}{1} (\cos 0^{\circ} - \cos 126^{\circ}) \\
       &= 289 \text{ N-m}
-\end{align}
+\end{align*}
 
 To calculate braking torque in left shoe, we also must calculate
 \(p_{\max}\). \(M_n\) and \(M_f\) are now both clockwise.
 
-\begin{align}
+\begin{align*}
   Fc &= M_n + M_f \\
   2000(0.212) &= (7.38 + 2.67) \times 10^{-4} p_{\max} \\
   p_{\max} &= 4.22 \times 10^5 \text{ Pa}
-\end{align}
+\end{align*}
 
 Braking torque of the left shoe is
 
-\begin{align}
+\begin{align*}
   T_L &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\
       &= \frac{(0.3)(0.15^2)(0.03)(4.22 \times 10^5)}{1} (\cos 0^{\circ} - \cos 126^{\circ}) \\
       &= 136 \text{ N-m}
-\end{align}
+\end{align*}
 
 Total braking torque is
 
-\begin{align}
+\begin{align*}
   T &= T_L + T_R \\
     &= 289 + 136 = 425 \text{ N-m}
-\end{align}
+\end{align*}
 
 *** Band Brakes
 *** Principles of Band Brakes
@@ -1783,31 +1820,33 @@ Total braking torque is
 
 *** Belt Tension
 
+[[./pictures/Clutches-Brakes/band-brake.png]]
 
 \begin{align}
-    dF &= \mu dN \\
-    dN &= 2(F d\theta/2) = Fd\theta \\
-    \frac{dF}{F} &= \mu d\theta \\
-    \ln \frac{F_1}{F_2} &= \mu \theta \\
-    \frac{F_1}{F_2} &= e^{\mu\theta}\end{align}
+  dF &= \mu dN \nonumber \\
+  dN &= 2(F d\theta/2) = Fd\theta \nonumber \\
+  \frac{dF}{F} &= \mu d\theta \nonumber \\
+  \ln \frac{F_1}{F_2} &= \mu \theta \nonumber \\
+  \frac{F_1}{F_2} &= e^{\mu\theta}
+\end{align}
 
 **** Example: An Exercise Bike
-An exercise bike has an adjustable band brake on the wheel to provide
-different levels of resistance. What should the slack side belt tension
-be so that the biker can exercise with \(T\) = 50 N-m. Take
-\(\theta = 150^{\circ}\) and \(\mu = 0.2\), the bike wheel \(r = 50\)
-cm.
+An exercise bike has an adjustable band brake on the wheel to provide different levels of resistance. What should the slack side belt tension be so that the biker can exercise with \(T\) = 50 N-m. Take \(\theta = 150^{\circ}\) and \(\mu = 0.2\), the bike wheel \(r = 50\) cm.
 
 **** Solution
-\begin{align}
-    \frac{F_1}{F_2} &= e^{\mu\theta} \\
-    T &= (F_1 - F_2)r \\
-    T &= (e^{\mu \theta} - 1) F_2 r \\
-    F_2 &= \frac{50}{(e^{0.3(150(\pi/180))}) - 1)(0.5)} \\
-        &= 83.8 \text{ N}\end{align}
+
+\begin{align*}
+  \frac{F_1}{F_2} &= e^{\mu\theta} \\
+  T &= (F_1 - F_2)r \\
+  T &= (e^{\mu \theta} - 1) F_2 r \\
+  F_2 &= \frac{50}{(e^{0.3(150(\pi/180))}) - 1)(0.5)} \\
+                  &= 83.8 \text{ N}
+\end{align*}
 
 *** Disc Clutches and Brakes
 *** Working Principles
+
+[[./pictures/Clutches-Brakes/disc-brake-components.png]]
 
 *** Disc Wear
 
@@ -1824,14 +1863,12 @@ cm.
 
 2. Uniform wear: old disc
 
-*** Uniform Pressure
 \begin{align}
-    dF &= p dA \\
-    dT &= \mu rdF = \mu r p dA \\
+    dF &= p dA \nonumber \\
+    dT &= \mu rdF = \mu r p dA \nonumber \\
     T &= \int_{r_o}^{r_i} \int_0^{2\pi} \mu r p (rdrd\theta) \\
-        &= \frac{2}{3} \mu \pi p \left( r_o^3 - r_i^3 \right)\end{align}
-
-*** Uniform Pressure (cont.)
+        &= \frac{2}{3} \mu \pi p \left( r_o^3 - r_i^3 \right)
+\end{align}
 
 - Taking the actuating force \(F = p \pi (r_o^2 - r_i^2)\)
 
@@ -1852,13 +1889,12 @@ cm.
   \[pr = C = p_{\max}r_i\]
 
 *** Braking Torque
+
 \begin{align}
     dF &= pdA \\
     dT &= \mu r dF = \mu r p dA = \mu p_{\max} r_i dA \\
     T &= p_{\max} r_i \int_{r_o}^{r_i} \int_0^{2\pi} r dr d\theta \\
         &= \mu \pi p_{\max} r_i \left( r_o^2 - r_i^2 \right)\end{align}
-
-*** Braking Torque (cont)
 
 - Taking into account actuating force \(F\)
 
@@ -1885,14 +1921,16 @@ cm.
 
 - Use \(r_i\) = 30 mm,
 
-\begin{align}
-    N &= \frac{T}{\left[ \mu \pi p_{\max} r_i \left( r_o^2 - r_i^2 \right) \right]} \\
-        &= \frac{100}{\left[ (0.08)\pi(1500 \times 10^3)(0.03) \left( 0.06^2 - 0.03^2 \right) \right]}\end{align}
+\begin{align*}
+  N &= \frac{T}{\mu \pi p_{\max} r_i \left( r_o^2 - r_i^2 \right)} \\
+    &= \frac{100}{(0.08)\pi(1500 \times 10^3)(0.03) \left( 0.06^2 - 0.03^2 \right)}
+\end{align*}
 
 \(N\) = 4 and \(d_i = 2r_i\) = 60 mm
 
 *** Drum Brakes vs Disc Brakes
 
+#+ATTR_LATEX: :booktabs t :align p{5cm}p{5cm}
 | Drum                                         | Disc                                                                  |
 |----------------------------------------------+-----------------------------------------------------------------------|
 | self-energizing possible                     | no self-energizing                                                    |
@@ -2133,6 +2171,12 @@ The belt must be at least 29.5 cm in width.
 
 *** Roller Chains
 
+**** Roller Chain components
+
+#+NAME: roller chain components
+#+CAPTION: Components of a typical roller chain
+[[./pictures/Flexible-Elements/roller-chain-parts.jpg]]
+
 **** Why Roller Chain (Chain Drives)?
 
 - No slip \(\rightarrow\) constant ratio
@@ -2142,8 +2186,11 @@ The belt must be at least 29.5 cm in width.
 - Can drive multiple shafts from a single source
 
 *** Equations on Roller Chains
-\[D = \frac{p}{\sin \left( \dfrac{180^{\circ}}{N} \right)}\]
-\[V = N pn\]
+
+\begin{align}
+  D = \frac{p}{\sin \left( \dfrac{180^{\circ}}{N} \right)} \\
+  V = N pn
+\end{align}
 
 - \(N\) = number of sprocket teeth
 
@@ -2158,6 +2205,12 @@ The belt must be at least 29.5 cm in width.
 - Need to worry more about fatigue and wear on rollers
 
 - To minimize chordal speed variation. \(N \geqslant 17\)
+
+*** Standard Chain Dimensions
+
+#+NAME: chain catalog
+#+CAPTION: Dimensions of standard ANSI roller chain
+[[./pictures/Flexible-Elements/chain-ansi-dims.png]]
 
 *** Power Capacity
 
@@ -2179,13 +2232,25 @@ The belt must be at least 29.5 cm in width.
 
 *** Roller Chain Rated Capacity (1)
 
+#+NAME: chain rated capacity
+#+CAPTION: Rate power capacity for standard roller chains
+[[./pictures/Flexible-Elements/chain-rated-capacity.png]]
 
-*** Roller Chain Rated Capacity (2)
 
+**** Example
 
-*** Example
-Pick a roller chain for a motorcycle whose output is 15 hp. The driving
-sprocket has 20 teeth and the output has 39 teeth.
+Pick a roller chain for a motorcycle whose output is 15 hp. The driving sprocket has 20 teeth and the output has 39 teeth.
+
+**** Solution
+
+\begin{align*}
+    H_1 &= 0.004(20)^{1.08}(1000)^{0.9}(0.75)^{3-0.07(0.75)} \\
+        &= 21.8 \text{ hp} \\
+    H_2 &= \frac{1000(17)(20)^{1.5}(0.75)^{0.8}}{1000^{1.5}} \\
+        &= 38.2 \text{ hp}
+\end{align*}
+
+This means the chain can deliver the power with the safety factor of 21.8/15 = 1.45
 
 ** Power Transmission Case Study
 
@@ -2450,7 +2515,7 @@ return round(M_g,2)
    Next, bending moment \(M_{p}\) generaed by force on the pulley is
 
    #+NAME: M_p
-   #+BEGIN_SRC python
+   #+BEGIN_SRC python :exports none
 M_p = 132*0.1*(0.4-0.1)/0.4
 return round(M_p,2)
    #+END_SRC
