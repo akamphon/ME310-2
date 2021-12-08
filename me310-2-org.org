@@ -110,47 +110,32 @@ axial thrust loads. illustrates the cross-section of a vertical
 worm-gear speed reducer. In this figure, the shaft steps are used to
 axially locate the two tapered bearings and the spur gear.
 
-#+caption: A vertical worm-gear speed reducer. /(Courtesy of the Cleveland Gear Company.)/
+#+CAPTION: A vertical worm-gear speed reducer. /(Courtesy of the Cleveland Gear Company.)/
 [[file:pictures/Shafts/speed-reducer-layout.png]]
 
 *** Axial Layout of Components
 
-The axial positioning of components is often preset by the layout of the
-housing and other meshing components. Generally it is advisable to
-support any loading-carrying components between bearings. (TODO: NEED
-FIGURE) However, pulleys and sprockets tend to be mounted outside of the
-bearing pairs for ease of installation of the belt or chain. The length
-of the shaft should be kept as short as possible to minimize deflection
-and resultant load on the bearings.
+The axial positioning of components is often preset by the layout of the housing and other meshing components. Generally it is advisable to support any loading-carrying components between bearings. However, pulleys and sprockets tend to be mounted outside of the bearing pairs for ease of installation of the belt or chain. The length of the shaft should be kept as short as possible to minimize deflection and resultant load on the bearings.
 
-In most cases, a shaft will only require two bearings, but in cases with
-long shafts carrying multiple load-carrying components, it may be
-necessary to use more than two bearings for additional support. In such
-a case, particular care must be given to the alignment of the bearings.
+In most cases, a shaft will only require two bearings, but in cases with long shafts carrying multiple load-carrying components, it may be necessary to use more than two bearings for additional support. In such a case, particular care must be given to the alignment of the bearings.
 
 *** Supporting Axial Loads
 
-There are use cases where axial loads in shaft may be significant, in
-which case it is important to provide a means to transfer the axial
-loads into the shaft. The shaft would then transfer the loads to a
-bearing and to the ground. This is necessary for shafts mounted with
-components that generate axial loads like bevel and helical gears, or
-tapered roller bearings.
+There are use cases where axial loads in shaft may be significant, in which case it is important to provide a means to transfer the axial loads into the shaft. The shaft would then transfer the loads to a bearing and to the ground. This is necessary for shafts mounted with components that generate axial loads like bevel and helical gears, or tapered roller bearings.
 
-It is usually sufficient to have only one bearing carry the axial load.
-This allows for greater tolerances on shaft length dimensions and
-prevents binding from shaft thermal expansions, which is especially
-significant in long shafts. TODO: figures showing shaft that carries
-axial loads.
+It is usually sufficient to have only one bearing carry the axial load. This allows for greater tolerances on shaft length dimensions and prevents binding from shaft thermal expansions, which is especially significant in long shafts.
+
+#+CAPTION: Supports in shafts with axial loads.
+\begin{marginfigure}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/Shafts/axial-layout.png}
+\end{marginfigure}
+
 
 *** Support for Torque Transmission
 
 Most shafts serve to transfer torque from an input (gear, pulley,
-engine, motor, etc.) to an output gear or pulley. The shaft must be
-sized to support torsional stress and its resultant angle of twist. It
-is also important to provide a way to transmit the torque between the
-gear (or pulley) and the shaft itself. Common torque transfer methods
-are:
+engine, motor, etc.) to an output gear or pulley. The shaft must be sized to support torsional stress and its resultant angle of twist. It is also important to provide a way to transmit the torque between the gear (or pulley) and the shaft itself. Common torque transfer methods are:
 
 - Keys
 - Splines
@@ -165,32 +150,13 @@ components and their design process is covered in .
 
 *** Shaft Design for Stress
 
-It is not always necessary to evaluate stresses at every point; the same
-goes for shafts as well. Only a few potentially critical locations
-should be more than enough. Since the main types of load on shafts are
-torsion and bending, it follows that most critical locations on the
-shafts are on the outer surface--typically where the bending moment is
-large, the torque is large, and where stress concentrations exist.
+It is not always necessary to evaluate stresses at every point; the same goes for shafts as well. Only a few potentially critical locations should be more than enough. Since the main types of load on shafts are torsion and bending, it follows that most critical locations on the shafts are on the outer surface--typically where the bending moment is large, the torque is large, and where stress concentrations exist.
 
-In order to determine the bending moments, torques, and shear forces on
-a shaft, it is usually a good idea to draw shear and bending moment
-diagrams. Since most shafts are loaded by gears and pulleys, introducing
-forces in two planes, two diagrams are needed to determine the loads.
-Resultant moments can be obtained simply by adding the moments as
-vectors at points of interest. The normal stress due to bending will be
-highest on the outer surfaces and will contribute to fatigue on a
-rotating shaft.
+In order to determine the bending moments, torques, and shear forces on a shaft, it is usually a good idea to draw shear and bending moment diagrams. Since most shafts are loaded by gears and pulleys, introducing forces in two planes, two diagrams are needed to determine the loads. Resultant moments can be obtained simply by adding the moments as vectors at points of interest. The normal stress due to bending will be highest on the outer surfaces and will contribute to fatigue on a rotating shaft.
 
-Axial stresses on shafts from axial loads caused by helical gears or
-tapered roller bearings are typically negiligible compared to the
-bending stress. The axial stresses are also usually constant, meaning
-that they rarely contribute significantly to fatigue. However, axial
-stresses resulting from axial loads applied through other means should
-be explicitly considered.
+Axial stresses on shafts from axial loads caused by helical gears or tapered roller bearings are typically negiligible compared to the bending stress. The axial stresses are also usually constant, meaning that they rarely contribute significantly to fatigue. However, axial stresses resulting from axial loads applied through other means should be explicitly considered.
 
-Let us now consider the shaft stresses, which are usually the
-combination of normal stresses from bending and axial stresses, and
-shear stress from torsion.
+Let us now consider the shaft stresses, which are usually the combination of normal stresses from bending and axial stresses, and shear stress from torsion.
 
 \begin{align}
   \label{eq: shaft normal and shear stresses}
@@ -200,8 +166,7 @@ shear stress from torsion.
   \end{array}
 \end{align}
 
-If we assume a solid shaft with circular cross section, we can further
-simplify the expression to
+If we assume a solid shaft with circular cross section, we can further simplify the expression to
 
 \begin{align}
   \label{eq: shaft normal and shear stresses simplify}
@@ -211,8 +176,7 @@ simplify the expression to
   \end{array}
 \end{align}
 
-The stresses can be combined into stress amplitude and average stress
-using maximum distortion energy theory (MDET or von Mises) as
+The stresses can be combined into stress amplitude and average stress using maximum distortion energy theory (MDET or von Mises) as
 
 \begin{align}
   \label{eq: von mises shaft stress}
@@ -220,13 +184,9 @@ using maximum distortion energy theory (MDET or von Mises) as
   \sigma_{me} &= \left( \sigma_m^2 + 3\tau_m^2 \right)^{1/2} = \left[ \left( \dfrac{32 K_fM_m}{\pi d^3} \right)^2 + 3\left( \dfrac{16 K_{fs} T_m}{\pi d^3} \right)^2 \right]^{1/2}
 \end{align}
 
-The stress concentration factors for the average stress component in
-ductile materials can sometimes be ignored since the materilas can yield
-locally at the discontinuity.
+The stress concentration factors for the average stress component in ductile materials can sometimes be ignored since the materilas can yield locally at the discontinuity.
 
-These equivalent stresses can be evaluated in design equations to
-determine the safety factor \(N_s\) or the required diameter \(d\) using
-the the modified Goodman diagram as
+These equivalent stresses can be evaluated in design equations to determine the safety factor \(N_s\) or the required diameter \(d\) using the the modified Goodman diagram as
 
 \begin{align}
   \frac{1}{N_s} = \frac{\sigma_{ae}}{S_e} + \frac{\sigma_{me}}{S_{ut}}
@@ -690,36 +650,36 @@ First, let us determine the force on the bearing. Since spur gears don't
 generate any axial load, the forces will simply be the radial +
 tangential load, perpendicular to the shaft.
 
-\begin{align}
+\begin{align*}
     T &= \frac{P}{\omega} \\
       &= \frac{1500}{1000(2\pi / 60)} = 14.3 \text{ N-m} \\
     F &= \frac{T}{R_{\text{pitch}} \cos \theta} \\
       &= \frac{14.3}{0.1 \cos 20^{\circ}} = 152 \text{ N}
-\end{align}
+\end{align*}
 
 Since the gear is mounted in the middle, the force on each bearing is
 half of the force.
 
-\begin{align}
+\begin{align*}
     F_{bearing} = \frac{152}{2} = 76 \text{ N}
-\end{align}
+\end{align*}
 
 We can't determine the bearing pressure yet since we don't know the
 bearing length. We can determine the surface velocity, however.
 
-\begin{align}
+\begin{align*}
     v = \omega (D/2) = 1000 (2\pi / 60) (0.03/2) = 1.57 \text{ m/s}
-\end{align}
+\end{align*}
 
 We double-check that \(v < V_{nylon} (1.57 < 3.0)\) so nylon is an
 acceptable choice. The length of bearing, then should be
 
-\begin{align}
+\begin{align*}
   P_{bearing}v &< (PV)_{nylon} \\
   \frac{F_{bearing}}{DL}v &< 0.11 \times 10^6 \\
   \frac{76}{0.03L} 1.57 &< 1.1 \times 10^5 \\
   L &> 0.036 = 3.6 \text{ cm}
-\end{align}
+\end{align*}
 
 ** Rolling Contact Bearings
 *** Rolling Elements
@@ -801,11 +761,11 @@ First, we need to calculated \(F_e\).
 
 For radial ball bearing,
 
-\begin{align}
+\begin{align*}
   F_{e} &= F_r \left[ 1 + 0.87(e - 0.68) \right] \\
         &= 1500 \left[ 1 + 1.115(0.8 - 0.35) \right] \\
         &= 2276 \text{ N}
-\end{align}
+\end{align*}
 
 Required life for 8-hr-a-day service (assumed every day) = 30000 hrs
 
@@ -815,9 +775,9 @@ Life in revolutions
 
 For 95% reliability \(K_r\) = 0.63
 
-\begin{align}
+\begin{align*}
     C = 2276 \left( \frac{3.24 \times 10^9}{0.63 (9 \times 10^7)} \right)^{0.3} = 7661 \text{ N} = 7.66 \text{ kN}
-\end{align}
+\end{align*}
 
 For extra-light, light, and medium series, the required bore are 55, 35,
 and 30 mm, respectively
@@ -933,13 +893,14 @@ Planetary Gears: Torque, Forces, and Reduction Ratios
 
 Fixed ring:\\
 
-\begin{align}
+\begin{align*}
   \omega_{\text{carrier}} &= 9 \\
   \omega_{\text{planet}} &= (9) \frac{60/2 + 20/2}{20/2} = 36 \\
   \omega_{\text{sun}} &= (36) \frac{20}{30} = 24 \\
   e &= 9/24 = 0.375
-\end{align}
+\end{align*}
 
+#+ATTR_LATEX: :booktabs t
 | Fixed   | Input     | Planet | Output    | RR    |
 |---------+-----------+--------+-----------+-------|
 | Ring    | Carrier 9 | 36     | Sun 24    | 0.375 |
@@ -1684,7 +1645,7 @@ when engaged
 *** Internal Drum Brake
 
 #+ATTR_LATEX: :width \textwidth
-#+CAPTION: Forces and geometries of an internal drum brake.
+#+CAPTION: Forces and geometry of an internal drum brake.
 [[./pictures/Clutches-Brakes/internal-drum-brake.png]]
 
 \begin{align}
@@ -1703,9 +1664,10 @@ when engaged
 
 ***** Moment Generated on Drum by Friction
 \begin{align}
-    M_f &= \int_{\theta_1}^{\theta_2} \mu dN (r - a \cos \theta) \\
-        &= \int_{\theta_1}^{\theta_2} \frac{\mu p_{\max} \sin \theta r d\theta b (r - a \cos \theta)}{(\sin \theta)_{\max}} \\
-        &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right]\end{align}
+  M_f &= \int_{\theta_1}^{\theta_2} \mu dN (r - a \cos \theta) \nonumber \\
+      &= \int_{\theta_1}^{\theta_2} \frac{\mu p_{\max} \sin \theta r d\theta b (r - a \cos \theta)}{(\sin \theta)_{\max}} \nonumber \\
+      &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right]
+\end{align}
 
 ***** Self-energizing Brake
 
@@ -1715,13 +1677,14 @@ when engaged
 
 ***** Torque Generated on the Drum
 \begin{align}
-    T &= \int_{\theta_1}^{\theta_2} \mu r dN \\
-        &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} \int_{\theta_1}^{\theta_2} \sin \theta d\theta \\
-        &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (-\cos \theta)|_{\theta_1}^{\theta_2} \\
+    T &= \int_{\theta_1}^{\theta_2} \mu r dN \nonumber \\
+        &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} \int_{\theta_1}^{\theta_2} \sin \theta d\theta \nonumber \\
+        &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (-\cos \theta)|_{\theta_1}^{\theta_2} \nonumber \\
         &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\\end{align}
 
 *** External Drum Brake
 
+#+CAPTION: Forces and dimensions of an external drum brake.
 [[./pictures/Clutches-Brakes/external-drum-brake.png]]
 
 ***** Torque Generated on the Drum
@@ -1765,8 +1728,7 @@ Now find \(M_f\) as a function of \(p_{\max}\)
 
 \begin{align*}
   M_f &= \frac{\mu p_{\max} br}{(\sin \theta)_{\max}} \left[ r( \cos \theta_1 - \cos \theta_2) + \frac{a}{4}(\cos 2\theta_2 - \cos 2\theta_1) \right] \\
-      &= \frac{0.3 p_{\max} (0.03)(0.15)}{\sin 90^{\circ}} \left[ (0.15)(\cos 0 - \cos 126^{\circ}) + \right. \\
-      & \left. \frac{0.123}{4}(\cos 2(126^{\circ}) - \cos 2(0)) \right] \\
+      &= \frac{0.3 p_{\max} (0.03)(0.15)}{\sin 90^{\circ}} \left[ (0.15)(\cos 0 - \cos 126^{\circ}) + \frac{0.123}{4}(\cos 2(126^{\circ}) - \cos 2(0)) \right] \\
       &= 2.67 \times 10^{-4} p_{\max}
 \end{align*}
 
@@ -1816,7 +1778,8 @@ Total braking torque is
 - Similar to pulley-belt system
 
 \begin{align}
-    T = (F_1 - F_2)r\end{align}
+  T = (F_1 - F_2)r
+\end{align}
 
 *** Belt Tension
 
@@ -2230,7 +2193,7 @@ The belt must be at least 29.5 cm in width.
 
 - \(K_r\) = 29 for chain numbers 25,35; 3.4 for 41; and 17 for 40-240
 
-*** Roller Chain Rated Capacity (1)
+*** Roller Chain Rated Capacity
 
 #+NAME: chain rated capacity
 #+CAPTION: Rate power capacity for standard roller chains

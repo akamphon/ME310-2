@@ -8,61 +8,65 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces A vertical worm-gear speed reducer. \emph {(Courtesy of the Cleveland Gear Company.)}}}{10}{figure.caption.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Key and shaft cross section for example \ldots {}}}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Supports in shafts with axial loads.\relax }}{11}{figure.0.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3}{\ignorespaces Key and shaft cross section for example \ldots {}}}{18}{figure.caption.20}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Brass sliding contact bearing}}{24}{figure.caption.35}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Brass sliding contact bearing}}{24}{figure.caption.35}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4}{\ignorespaces PV Table for Metals}}{25}{figure.caption.39}%
+\contentsline {figure}{\numberline {5}{\ignorespaces PV Table for Metals}}{25}{figure.caption.39}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces PV Table for Nonmetals}}{25}{figure.caption.40}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces Bearing Series}}{28}{figure.caption.46}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7}{\ignorespaces Bearing table}}{29}{figure.caption.47}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8}{\ignorespaces Bearing rated capacity \(C\)}}{29}{figure.caption.49}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9}{\ignorespaces Bearing reliability factor \(K_r\)}}{30}{figure.caption.50}%
+\contentsline {figure}{\numberline {6}{\ignorespaces PV Table for Nonmetals}}{25}{figure.caption.40}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7}{\ignorespaces Bearing Series}}{28}{figure.caption.46}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {10}{\ignorespaces Geometry factor \(Y_J\) for spur gear design}}{36}{figure.caption.60}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Bearing table}}{29}{figure.caption.47}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {11}{\ignorespaces Velocity factor \(K_v\) as a function of pitch line velocity \(v_t\) for various gear quality number \(Q\)\relax }}{38}{figure.0.11}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Bearing rated capacity \(C\)}}{29}{figure.caption.49}%
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {12}{\ignorespaces Forces acting on a helical gear}}{41}{figure.caption.70}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {13}{\ignorespaces Geometry factor for helical gears}}{42}{figure.caption.71}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {14}{\ignorespaces Geometry factor multiplier for helical gears}}{43}{figure.caption.72}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {15}{\ignorespaces Geometry factors for bevel gears}}{46}{figure.caption.75}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Bearing reliability factor \(K_r\)}}{30}{figure.caption.50}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {16}{\ignorespaces Forces and geometries of an internal drum brake.}}{58}{figure.caption.101}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Geometry factor \(Y_J\) for spur gear design}}{36}{figure.caption.60}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {12}{\ignorespaces Velocity factor \(K_v\) as a function of pitch line velocity \(v_t\) for various gear quality number \(Q\)\relax }}{38}{figure.0.12}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {17}{\ignorespaces Components of a typical roller chain}}{77}{figure.caption.147}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Forces acting on a helical gear}}{41}{figure.caption.70}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {18}{\ignorespaces Dimensions of standard ANSI roller chain}}{78}{figure.caption.152}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Geometry factor for helical gears}}{42}{figure.caption.71}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {19}{\ignorespaces Rate power capacity for standard roller chains}}{79}{figure.caption.155}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Geometry factor multiplier for helical gears}}{43}{figure.caption.72}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {16}{\ignorespaces Geometry factors for bevel gears}}{46}{figure.caption.75}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {17}{\ignorespaces Forces and geometry of an internal drum brake.}}{58}{figure.caption.101}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {18}{\ignorespaces Forces and dimensions of an external drum brake.}}{59}{figure.caption.103}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {19}{\ignorespaces Components of a typical roller chain}}{77}{figure.caption.148}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {20}{\ignorespaces Dimensions of standard ANSI roller chain}}{78}{figure.caption.153}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {21}{\ignorespaces Rate power capacity for standard roller chains}}{79}{figure.caption.156}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \contentsfinish 
