@@ -6,6 +6,7 @@
 #+LATEX_CLASS: tufte-book
 #+LATEX_CLASS_OPTIONS: [a4paper,openany]
 #+LATEX_COMPILER: pdflatex
+#+LATEX_HEADER: \setcounter{tocdepth}{0}
 #+LATEX_HEADER: \usepackage{caption}
 #+LATEX_HEADER: \usepackage[svgnames]{xcolor}
 # #+LATEX_HEADER: \usepackage[parfill]{parskip}
@@ -59,6 +60,7 @@
 \frontmatter
 
 ** Preface
+
 This book is the second part of ME 310: Mechanical Design. In this book,
 power transmission components are covered.
 
@@ -268,16 +270,7 @@ print('\\end{align*}')
    &= 200.0\text{ N-m}
    \end{align*}
 
-   There is also 2040 N of force pulling at the pulley due to the combined
-   belt tension. The torque generates shear stress throughout the shaft,
-   with the maximum value at the surface. The belt tension creates
-   bending stresses, whose maximum values are are the top and bottom of
-   the shaft at the middle. This means that the critical points on the
-   shaft (without considering stress concentration from the key/keyseat)
-   are at the top and bottom of the shaft at the middle. In this
-   problem, we will take the bottom of the shaft at the middle. The
-   stress concentration of the keyseat is taken to be \(K_{f}\) = 2.14
-   in bending and \(K_{fs}\) = 3.0 in torsion.
+   There is also 2040 N of force pulling at the pulley due to the combined belt tension. The torque generates shear stress throughout the shaft, with the maximum value at the surface. The belt tension creates bending stresses, whose maximum values are are the top and bottom of the shaft at the middle. This means that the critical points on the shaft (without considering stress concentration from the key/keyseat) are at the top and bottom of the shaft at the middle. In this problem, we will take the bottom of the shaft at the middle. The stress concentration of the keyseat is taken to be \(K_{f}\) = 2.14 in bending and \(K_{fs}\) = 3.0 in torsion.
 
    #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results
 print('\\begin{align*}')
@@ -479,7 +472,7 @@ Interference fit refers to a type of joint that relies on friction between the h
 
    Similar to press fit in that there is no additional 'collet', but instead of 'pressing' the shaft onto the hub, either the shaft is cooled or the hub is heated (or both) before assembly. This eliminates the difficulty of assembly and allows for greater difference in the diameters of the shaft and hub.
 
-These interference fits do not require any machining on the shaft or hub, thus do not increase the stress concentration nor incur additional machine costs. However, they do have the following limitations to take into consideration.
+These interference fits do not require additional machining on the shaft or hub, which would otherwise increase the stress concentration and incur additional machine costs. However, they do have the following limitations to take into consideration.
 
 1. Materials, surface, and design restrictions: interference fits rely on friction, so the material, surface finishing, and shaft dimensions (diameter mostly) affect the magnitude of friction that can be generated. This limits your available choices.
 
@@ -587,17 +580,18 @@ Contact bearings are features that allow relative movements between two surfaces
 
 *** Sliding Contact Bearings
 
+In a sliding contact bearing, the shaft is directly in contact with the inner surface of the bearing. As the shaft rotates, this causes relative motions (sliding) between the shaft and the bearing--hence the name. Because of this sliding, friction plays a significant role in this type of bearings. Special care must be taken to select the materials of both the shaft and bearing so that it can withstand the conditions.
+
 #+CAPTION: Brass sliding contact bearing
 [[./pictures/Bearings/sliding-contact-bearing.jpg]]
 
-- Commonly used in low- to medium-speed applications
-
-
-- Lubrication is used to reduce wear and friction
+Because of friction, sliding contact bearings are typically used in low- to medium-speed applications. The bearings are also used with lubrication to reduce wear and improve its performance.
 
 *** Materials for Sliding Contact Bearing
 
-- Typically hard materials (shaft) on soft (bearing)
+Materials that are chosen for sliding contact bearings are, for the most part, softer that the shaft; it is usually easier to switch out worn bearings than worn shafts.
+
+Even though the bearings are designed for wear, we must make sure that
 
 - Materials:
 
