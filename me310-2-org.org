@@ -587,48 +587,48 @@ In a sliding contact bearing, the shaft is directly in contact with the inner su
 
 Because of friction, sliding contact bearings are typically used in low- to medium-speed applications. The bearings are also used with lubrication to reduce wear and improve its performance.
 
-*** Materials for Sliding Contact Bearing
+*** Materials Selection for Sliding Contact Bearing
 
 Materials that are chosen for sliding contact bearings are, for the most part, softer that the shaft; it is usually easier to switch out worn bearings than worn shafts.
 
-Even though the bearings are designed for wear, we must make sure that
+Even though the bearings are designed for wear, we must make sure that it can handle the contact pressure and the heat generation rate.
 
-- Materials:
-
-  - Polymers: nylon is king!
-
-  - Brass
-
-  - Ceramics
-
-- Check on bearing stress
-
-- Aluminum-on-aluminum is a no-no
-
-*** Bearing Contact Pressure
-
+First, the contact pressure from the shaft depends on the radial force exerted by the shaft and the effective area of contact. For a bearing of length $L$ and inner diameter $D$, the average contact pressure generated from the shaft with radial force $F$ is
 \begin{align}
-  P &= \frac{F}{DL} \\
+  P_{\text{avg}} &= \frac{F}{DL}
+\end{align}
+The maximum contact pressure is at the bottom of the contact area, where the surface vector is in the same direction as the radial force.
+\begin{align}
   P_{\max} &= \frac{4}{\pi} \frac{F}{DL}
 \end{align}
+Secondly, the heat generation rate depends on the friction and the surface velocity of the shaft. Friction depends on the radial force (similar to contact pressure), while the surface velocity can be calculated by
+\begin{equation}
+  v = \omega \frac{D}{2}
+\end{equation}
+The heat generation rate is friction force multiplied by the surface velocity. Since friction depends on the contact pressure, rate of heat generation is simply a function of contact pressure and surface velocity.
+\begin{equation}
+  \dot{Q} = f(PV)
+\end{equation}
+Therefore, in material catalogs that list properties for sliding contact bearings under $P$, $V$, and $PV$, the last one indicates the heat generation rate of the materials.
 
-*** PV Factor
-
-In selecting materials for sliding-contact bearings.
-
-- pressure \(\times\) velocity
-
-- tradeoff in choosing bearing materials
-
-- higher pressure \(\rightarrow\) low speed, and vice versa
-
+#+ATTR_LATEX: :width \textwidth :booktabs t
 #+CAPTION: PV Table for Metals
-[[./pictures/Bearings/pv-metal.png]]
+| \multirow{2}{*}{Material} | Static $P$ | Dynamic $P$ | $V$ |            $PV$ |
+|                           |        MPa |         MPa | m/s | MPa $\cdot$ m/s |
+|---------------------------+------------+-------------+-----+-----------------|
+| Bronze                    |         55 |          14 | 6.1 |             1.8 |
+| Lead-bronze               |         24 |         5.5 | 7.6 |             2.1 |
+| Copper-iron               |        138 |          28 | 1.1 |             1.2 |
+| Hardenable copper-iron    |        345 |          55 | 0.2 |             2.6 |
+| Iron                      |         69 |          21 | 2.0 |             1.0 |
+| Bronze-iron               |         72 |          17 | 4.1 |             1.2 |
+| Lead-iron                 |         28 |           7 | 4.1 |             1.8 |
+| Aluminum                  |         28 |          14 | 6.1 |             1.8 |
+# [[./pictures/Bearings/pv-metal.png]]
 
-
+#+ATTR_LATEX: :width \textwidth
 #+CAPTION: PV Table for Nonmetals
 [[./pictures/Bearings/pv-nonmetal.png]]
-
 
 *** Example: Sleeve Bearing for a Low-speed Shaft
 
