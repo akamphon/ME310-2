@@ -15,7 +15,7 @@
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usetikzlibrary{arrows,calc,decorations,shapes,shapes.arrows,shapes.misc,positioning,decorations.pathmorphing,patterns}
 #+LATEX_HEADER: \usepackage{pgfplots}
-#+LATEX_HEADER: \pgfplotsset{compat=1.16}
+#+LATEX_HEADER: \usepgfplotslibrary{fillbetween}
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{siunitx}
 #+LATEX_HEADER: \usepackage{multirow}
@@ -61,8 +61,7 @@
 
 ** Preface
 
-This book is the second part of ME 310: Mechanical Design. In this book,
-power transmission components are covered.
+This book is the second part of ME 310: Mechanical Design. In this book, power transmission components are covered.
 
 Sappinandana Akamphon
 
@@ -105,12 +104,7 @@ When additional strengthening is needed, typical alloy steels for heat treatment
 
 *** Shaft Layout
 
-Generally a shaft is a cylinder with segments of varying cross sections
-to accommodate components like gears, bearings, pulleys, etc. Shaft
-shoulders are normally used to axially locate elements and to take any
-axial thrust loads. illustrates the cross-section of a vertical
-worm-gear speed reducer. In this figure, the shaft steps are used to
-axially locate the two tapered bearings and the spur gear.
+Generally a shaft is a cylinder with segments of varying cross sections to accommodate components like gears, bearings, pulleys, etc. Shaft shoulders are normally used to axially locate elements and to take any axial thrust loads. illustrates the cross-section of a vertical worm-gear speed reducer. In this figure, the shaft steps are used to axially locate the two tapered bearings and the spur gear.
 
 #+CAPTION: A vertical worm-gear speed reducer. /(Courtesy of the Cleveland Gear Company.)/
 [[file:pictures/Shafts/speed-reducer-layout.png]]
@@ -573,10 +567,9 @@ The strength of weld can be applied to determine the torque capacity of shafts a
 
 - Non-contact: fluid film or magnetic
 
-** Contact Bearings
+** Sliding Contact Bearings
 
 Contact bearings are features that allow relative movements between two surfaces wherein the surfaces remain in contact with each other either directly or indirectly through some solid common medium.
-
 
 *** Sliding Contact Bearings
 
@@ -614,7 +607,7 @@ Therefore, in material catalogs that list properties for sliding contact bearing
 #+ATTR_LATEX: :width \textwidth :booktabs t
 #+CAPTION: PV Table for Metals
 | \multirow{2}{*}{Material} | Static $P$ | Dynamic $P$ | $V$ |            $PV$ |
-|                           |        MPa |         MPa | m/s | MPa $\cdot$ m/s |
+|                           |        MPa |         MPa | m/s | MPa\(\cdot\)m/s |
 |---------------------------+------------+-------------+-----+-----------------|
 | Bronze                    |         55 |          14 | 6.1 |             1.8 |
 | Lead-bronze               |         24 |         5.5 | 7.6 |             2.1 |
@@ -626,40 +619,69 @@ Therefore, in material catalogs that list properties for sliding contact bearing
 | Aluminum                  |         28 |          14 | 6.1 |             1.8 |
 # [[./pictures/Bearings/pv-metal.png]]
 
-#+ATTR_LATEX: :width \textwidth
+#+ATTR_LATEX: :width \textwidth :booktabs t
 #+CAPTION: PV Table for Nonmetals
-[[./pictures/Bearings/pv-nonmetal.png]]
+| \multirow{2}{*}{Material} |  $P$ |   Temperature |  $V$ |             $PV$ |
+|                           |  MPa | \(^{\circ}\)C |  m/s | MPa\(\cdot$\)m/s |
+|---------------------------+------+---------------+------+------------------|
+| Phenolics                 |   41 |            93 |   13 |             0.53 |
+| Nylon                     |   14 |            93 |  3.0 |             0.11 |
+| TFE                       |  3.5 |           260 | 0.25 |            0.035 |
+| Filled TFE                |   17 |           260 |  5.1 |             0.35 |
+| TFE fabric                |  414 |           260 | 0.76 |             0.88 |
+| Polycarbonate             |    7 |           104 |  5.1 |             0.11 |
+| Acetal                    |   14 |            93 |  3.0 |             0.11 |
+| Carbon (graphite)         |    4 |           400 |   13 |             0.53 |
+| Rubber                    | 0.35 |            66 |   20 |               -- |
+| Wood                      |   14 |            71 |   10 |             0.42 |
+# [[./pictures/Bearings/pv-nonmetal.png]]
+
+Combining the limit on contact pressure $P$, surface velocity $v$, and the product of the two $PV$, we can represent the *area of safety* using a plot as shown in Figure
+
+#+CAPTION: Area of safety for sliding contact bearing materials.
+#+NAME: fig: sliding contact materials
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis} [
+      width=\textwidth,
+      height=0.75\textwidth,
+      ymin=0,
+      xmin=0,xmax=3.5,
+      ]
+      \path[name path=axis] (axis cs:0,0) -- (axis cs:0.5,0);
+      \path[name path=axis1] (axis cs:0.5,0) -- (axis cs:3,0);
+      \addplot+[dashed, domain=0:0.5, no marks, name path=y]{4} node[midway, above]{$P_{\max}$};
+      \addplot+[domain=0.5:3, no marks, name path=pv] {2/x} node[midway, above right]{$PV$ = constant};
+      \addplot [fill=Blue, fill opacity=0.2] fill between[of=y and axis];
+      \addplot [fill=Blue, fill opacity=0.2] fill between[of=pv and axis1];
+      \addplot+[no marks, dashed] coordinates {(3,0)(3,2/3)} node[midway, right]{$v_{\max}$};
+    \end{axis}
+  \end{tikzpicture}
+\end{figure}
 
 *** Example: Sleeve Bearing for a Low-speed Shaft
 
-A 30-cm long shaft whose diameter \(D\) is 3 cm is operated at 1000 rpm.
-The shaft has a spur gear whose \(R_{\text{pitch}}\) = 10 cm mounted in
-the middle with a bearing at each end. The gear is transferring the
-power of 1.5 kW. The gear has pressure vessel \(\theta\) =
-20\(^{\circ}\). Determine the minimum bearing length \(L\) using nylon.
+A 30-cm long shaft whose diameter \(D\) is 3 cm is operated at 1000 rpm. The shaft has a spur gear whose \(R_{\text{pitch}}\) = 10 cm mounted in the middle with a bearing at each end. The gear is transferring the power of 1.5 kW. The gear has pressure vessel \(\theta\) = 20\(^{\circ}\). Determine the minimum bearing length \(L\) using nylon.
 
 *** Solution
 
-First, let us determine the force on the bearing. Since spur gears don't
-generate any axial load, the forces will simply be the radial +
-tangential load, perpendicular to the shaft.
+First, let us determine the force on the bearing. Since spur gears don't generate any axial load, the forces will simply be the radial + tangential load, perpendicular to the shaft.
 
 \begin{align*}
-    T &= \frac{P}{\omega} \\
-      &= \frac{1500}{1000(2\pi / 60)} = 14.3 \text{ N-m} \\
-    F &= \frac{T}{R_{\text{pitch}} \cos \theta} \\
-      &= \frac{14.3}{0.1 \cos 20^{\circ}} = 152 \text{ N}
+  T &= \frac{P}{\omega} \\
+    &= \frac{1500}{1000(2\pi / 60)} = 14.3 \text{ N-m} \\
+  F &= \frac{T}{R_{\text{pitch}} \cos \theta} \\
+    &= \frac{14.3}{0.1 \cos 20^{\circ}} = 152 \text{ N}
 \end{align*}
 
-Since the gear is mounted in the middle, the force on each bearing is
-half of the force.
+Since the gear is mounted in the middle, the force on each bearing is half of the force.
 
 \begin{align*}
     F_{bearing} = \frac{152}{2} = 76 \text{ N}
 \end{align*}
 
-We can't determine the bearing pressure yet since we don't know the
-bearing length. We can determine the surface velocity, however.
+We can't determine the bearing pressure yet since we don't know the bearing length. We can determine the surface velocity, however.
 
 \begin{align*}
     v = \omega (D/2) = 1000 (2\pi / 60) (0.03/2) = 1.57 \text{ m/s}
@@ -743,9 +765,7 @@ for angular ball bearings
 
 **** Radial Ball Bearing Selection
 
-Select a radial ball bearing for a shaft intended for a continuous
-8-hr-a-day operation at 1800 rpm with 95% reliability. Axial and radial
-loads are 1.2 kN and 1.5 kN, respectively.
+Select a radial ball bearing for a shaft intended for a continuous 8-hr-a-day operation at 1800 rpm with 95% reliability. Axial and radial loads are 1.2 kN and 1.5 kN, respectively.
 
 **** Solution
 
@@ -865,7 +885,7 @@ Gear Trains When large reduction is required
 Normal Gear Trains
 
 \begin{align}
-    e_{total} &= e_{1}e_{2}\cdots \\
+    e_{total} &= e_{1}e_{2}\cdots
   \end{align}
 
 Planetary/Epicyclic Gear Train
