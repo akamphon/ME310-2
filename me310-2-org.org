@@ -698,13 +698,14 @@ acceptable choice. The length of bearing, then should be
 \end{align*}
 
 ** Rolling Contact Bearings
-*** Rolling Elements
 
-- suitable for medium- to high-speed applications
+Another type of bearings avoids friction by introducing rolling elements between the inner surface (in contact with shaft) and outer surface (in contact with hub). The rolling elements can be spherical, cylindrical, or conical. Because these bearings eliminate friction almost entirely, they are suitable for medium to high-speed applications.
 
-- use balls or rollers to avoid friction
+*** Types of rolling contact bearings
 
-*** Rolling Element Types
+**** Ball bearings
+
+**** Roller bearings
 
 #+CAPTION: Bearing Series
 [[./pictures/Bearings/bearing-series.png]]

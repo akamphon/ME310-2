@@ -1,4 +1,4 @@
-% Created 2021-12-16 Thu 14:18
+% Created 2021-12-16 Thu 14:49
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,openany]{tufte-book}
 \usepackage[utf8]{inputenc}
@@ -74,7 +74,7 @@
 \frontmatter
 
 \chapter{Preface}
-\label{sec:org25f1281}
+\label{sec:orgd8237de}
 
 This book is the second part of ME 310: Mechanical Design. In this book, power transmission components are covered.
 
@@ -87,33 +87,33 @@ Sappinandana Akamphon
 \listoftables
 
 \chapter{Revisions}
-\label{sec:org7d7309f}
+\label{sec:orgd1c0471}
 \subsubsection{September 2019}
-\label{sec:org12af5ca}
+\label{sec:org62fdd65}
 
 Start of Mechanical Design: Power Transmission
 
 \subsubsection{January 2020}
-\label{sec:org97d9e15}
+\label{sec:orgfc7aebb}
 
 Began working on the chapters on shaft components, gears, brakes and clutches
 
 \subsubsection{October 2021}
-\label{sec:org9d9e195}
+\label{sec:orgc00cd5b}
 
 Completed chapters on gears, shafts,
 
 \mainmatter
 
 \chapter{Shaft and Shaft Components}
-\label{sec:org471bd7e}
+\label{sec:orgdb9b33f}
 
 Most engineering systems are powered by rotational machinery such as internal combustion engines and electrical motors. It is, thus, extremely important that we understand and properly design power tranmission mechanism from the rotational machinery power source to intended components. Shafts remains one of the most prevalent methods of transmitting rotational power, and so it is our first chapter into the world of power transmission design.
 
 By itself, shaft design is no more complex than other components under static or cyclic loadings already covered in the first book of this series. However, as shafts lie at the heart of most machine design applications, its final design will also depend on the design of other components that are to be mounted or connected to the shaft.
 
 \section{Shaft Materials}
-\label{sec:org0a1f5a8}
+\label{sec:orgd8bb5bf}
 
 There are two main concerns with designing a shaft: deflection and strength. Deflection is not affected by material strength. In fact, it depends only on the stiffness, represented by the Young's modulus. Since the Young's modulus is essentially the same for all steels, material choice matters little for deflection.
 
@@ -124,7 +124,7 @@ A good way to select a proper shaft material is to start with an inexpensive low
 When additional strengthening is needed, typical alloy steels for heat treatment include ANSI 340-50, 3140-50, 4140, 4340, 5140, and 8650. Shafts don't usually need surface hardening unless there is significant risk of wear from journal bearing, in which case surface hardening include carburizing grades of ANSI 1020, 4320, 4820, and 8620. \autocite{shigley2011shigley}
 
 \section{Shaft Layout}
-\label{sec:org7738928}
+\label{sec:org3e2007a}
 
 Generally a shaft is a cylinder with segments of varying cross sections to accommodate components like gears, bearings, pulleys, etc. Shaft shoulders are normally used to axially locate elements and to take any axial thrust loads. illustrates the cross-section of a vertical worm-gear speed reducer. In this figure, the shaft steps are used to axially locate the two tapered bearings and the spur gear.
 
@@ -135,14 +135,14 @@ Generally a shaft is a cylinder with segments of varying cross sections to accom
 \end{figure}
 
 \section{Axial Layout of Components}
-\label{sec:orgde13c05}
+\label{sec:org46a4920}
 
 The axial positioning of components is often preset by the layout of the housing and other meshing components. Generally it is advisable to support any loading-carrying components between bearings. However, pulleys and sprockets tend to be mounted outside of the bearing pairs for ease of installation of the belt or chain. The length of the shaft should be kept as short as possible to minimize deflection and resultant load on the bearings.
 
 In most cases, a shaft will only require two bearings, but in cases with long shafts carrying multiple load-carrying components, it may be necessary to use more than two bearings for additional support. In such a case, particular care must be given to the alignment of the bearings.
 
 \section{Supporting Axial Loads}
-\label{sec:org76503b2}
+\label{sec:orgebfab3e}
 
 There are use cases where axial loads in shaft may be significant, in which case it is important to provide a means to transfer the axial loads into the shaft. The shaft would then transfer the loads to a bearing and to the ground. This is necessary for shafts mounted with components that generate axial loads like bevel and helical gears, or tapered roller bearings.
 
@@ -156,7 +156,7 @@ It is usually sufficient to have only one bearing carry the axial load. This all
 
 
 \section{Support for Torque Transmission}
-\label{sec:org01cdad6}
+\label{sec:org0d1bc6b}
 
 Most shafts serve to transfer torque from an input (gear, pulley,
 engine, motor, etc.) to an output gear or pulley. The shaft must be sized to support torsional stress and its resultant angle of twist. It is also important to provide a way to transmit the torque between the gear (or pulley) and the shaft itself. Common torque transfer methods are:
@@ -175,7 +175,7 @@ applied, to prevent failure of more expensive components. Details of the
 components and their design process is covered in .
 
 \section{Shaft Design for Stress}
-\label{sec:org1635b49}
+\label{sec:orgae3625b}
 
 It is not always necessary to evaluate stresses at every point; the same goes for shafts as well. Only a few potentially critical locations should be more than enough. Since the main types of load on shafts are torsion and bending, it follows that most critical locations on the shafts are on the outer surface--typically where the bending moment is large, the torque is large, and where stress concentrations exist.
 
@@ -240,7 +240,7 @@ required diameter becomes
   d = \left( \frac{16N_s}{\pi} \left\{ \frac{2 K_f M_a}{S_e} + \frac{\sqrt{3} K_{fs} T_m}{S_{ut}} \right\} \right)^{1/3}\end{align}
 
 \subsection{Example: Shaft sizing}
-\label{sec:org804edc7}
+\label{sec:org5b892af}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Shafts/shaft-sizing.png}
@@ -258,7 +258,7 @@ using
 so that the safety factor \(N_{s}\) = 3.
 
 \subsection{Solution}
-\label{sec:org92ecca6}
+\label{sec:org9141461}
 
 \begin{enumerate}
 \item MDET: The torque loaded on the pulley by the belt is
@@ -314,7 +314,7 @@ r &=0.044\text{ m}
 The designed shaft has to follow the largest shaft that satisfy each of the condition, therefore the required radius is 4.4 cm.
 
 \section{Torque Trasmission Components}
-\label{sec:org8606d5a}
+\label{sec:orgb335bf0}
 
 For a designed shaft to properly transfer torque to its intended target, not only must the shaft be able to with stand the stresses resulting from the torque, but it must also be assembled with torque transmission components that are capable of transferring such torque. Some of the mechanisms currently in use can be categorized into:
 
@@ -325,12 +325,12 @@ For a designed shaft to properly transfer torque to its intended target, not onl
 \end{enumerate}
 
 \subsection{Mechanical Drive Assembly}
-\label{sec:orgf68d566}
+\label{sec:org2d9d85a}
 
 Mechanical drive assembly typically requires adjustments to the shaft and/or hub of the component to be assembled. The most common mechanical-drive assembly is the conventional key and keyway. Other assemblies are set screws, pins, and spline shafts.
 
 \subsubsection{Keys and Pins}
-\label{sec:org91b20c0}
+\label{sec:org841a5e0}
 
 Keys are axially inserted metal that provides interference between the shaft and hub, allowing torque trasmission between the two. Aligning keyways need to be cut into both the shaft and the hub.
 
@@ -350,7 +350,7 @@ Torque capacity of keys and pins can be calculated by
 \end{align*}
 
 \section{Limitation of Mechanical Drive Assembly}
-\label{sec:org660e677}
+\label{sec:org0133327}
 
 Mechanical drive assembly can provide relatively high torque transmission with relatively easy assembly. However, they have a few shortcomings to consider.
 
@@ -367,7 +367,7 @@ Tapered keys or pins have a slowly increasing cross section from one end to the 
 \end{enumerate}
 
 \subsection{Example: Key Sizing}
-\label{sec:org9c42f1d}
+\label{sec:org087f373}
 
 A steel shaft whose \(S_y\) = 450 MPa has a diameter of 5 cm. The shaft rotates at 600 rpm and transmits 40 hp through a gear. Select an appropriate key for the gear. Use safety factor = 3.
 
@@ -381,7 +381,7 @@ A steel shaft whose \(S_y\) = 450 MPa has a diameter of 5 cm. The shaft rotates 
 \end{figure}
 
 \subsection{Solution: Key Sizing}
-\label{sec:orgdce9c34}
+\label{sec:org094fc9c}
 
 To keep things simple, pick a square key and pick key length = 2 cm.
 
@@ -399,7 +399,7 @@ For the width (and height) of the key section,
 \end{align*}
 
 \section{Interference Fit Assemblies}
-\label{sec:orgb0b837a}
+\label{sec:orgc81f3b7}
 
 Interference fit refers to a type of joint that relies on friction between the hub and shaft to transfer torque. The friction results from the compression of the hub on the shaft, which means the diameter of the hole on the hub must be slightly smaller than that of the shaft. These type of assemblies are divided into 3 categories based on method of assembly.
 
@@ -432,7 +432,7 @@ These interference fits do not require additional machining on the shaft or hub,
 \end{enumerate}
 
 \section{Stresses in Interference Fits}
-\label{sec:orgc8809ec}
+\label{sec:org20ce04d}
 
 Assumed uniform pressure on shaft (i) and hub (o)
 
@@ -458,7 +458,7 @@ Tangential and radial stresses in shaft and hub are
 Combine \(\sigma_{t}\) and \(\sigma_{r}\) using MDET to determine failure
 
 \section{Torque Capacity of Interference Fits}
-\label{sec:orgf329bd8}
+\label{sec:org749e5a9}
 
 Depends on friction generated between shaft and hub \(\rightarrow\) pressure from interference fits
 
@@ -470,12 +470,12 @@ Depends on friction generated between shaft and hub \(\rightarrow\) pressure fro
 \end{align}
 
 \subsection{Example: Torque Capacity of an Interference Fit}
-\label{sec:orgd4957a6}
+\label{sec:org3a1630c}
 
 A solid shaft whose diameter is 5 cm is pressed onto a gear whose hub inner diameter is 4.99 cm and outer diameter is 6 cm. If both are made of the same steel whose \(E\) = 210 GPa and \(\nu\) = 0.3, determine the radial and tangential stresses, along with the torque capacity of the fit. Assume steel-on-steel \(\mu\) = 0.3, and the hub is 7 cm long.
 
 \subsection{Solution: Torque Capacity of an Interference Fit}
-\label{sec:org21b3f1f}
+\label{sec:org0b0a7bb}
 
 \begin{align*}
   p &= \frac{E(d_{\text{shaft}} - d_{\text{hub}})}{2d^{3}} \left[ \frac{(d_{o}^{2} - d^{2})(d^{2} - d_{i}^{2})}{d_{o}^{2} - d_{i}^{2}} \right] \\
@@ -489,7 +489,7 @@ A solid shaft whose diameter is 5 cm is pressed onto a gear whose hub inner diam
 
 
 \section{Weld Assembly}
-\label{sec:org1d2e075}
+\label{sec:org2d44fbb}
 
 In weld assemby, the shaft and hub of intended components are welded together. This provides a relatively quick and permanent connection between the components. However, weld assemblies also inherit the same disadvantages from welded joints as mentioned in chapter \ldots{}.
 
@@ -506,18 +506,18 @@ In weld assemby, the shaft and hub of intended components are welded together. T
 \end{enumerate}
 
 \section{Torque Capacity in Weld Assembly}
-\label{sec:org4e2631f}
+\label{sec:org716f145}
 
 The strength of weld can be applied to determine the torque capacity of shafts and their components in weld assembly. In most cases, weld joints in weld assembly are fillet welds and the corresponding equations apply.
 
 \chapter{Journal Bearings and Lubrication}
-\label{sec:org573dd17}
+\label{sec:org63b1618}
 
 \section{Overview of Bearings}
-\label{sec:orgd486b57}
+\label{sec:orga6b608c}
 
 \section{What are bearings?}
-\label{sec:org1aa4afc}
+\label{sec:orgb974700}
 
 \begin{itemize}
 \item A feature that allows relative motions between components
@@ -530,7 +530,7 @@ The strength of weld can be applied to determine the torque capacity of shafts a
 \end{itemize}
 
 \section{Two types of bearings}
-\label{sec:org3362890}
+\label{sec:org075674f}
 
 \begin{itemize}
 \item Contact: sliding or rolling
@@ -539,13 +539,12 @@ The strength of weld can be applied to determine the torque capacity of shafts a
 \end{itemize}
 
 \chapter{Sliding Contact Bearings}
-\label{sec:orgf608e96}
+\label{sec:org446aff6}
 
 Contact bearings are features that allow relative movements between two surfaces wherein the surfaces remain in contact with each other either directly or indirectly through some solid common medium.
 
-
 \section{Sliding Contact Bearings}
-\label{sec:org9267ce8}
+\label{sec:orgec661ea}
 
 In a sliding contact bearing, the shaft is directly in contact with the inner surface of the bearing. As the shaft rotates, this causes relative motions (sliding) between the shaft and the bearing--hence the name. Because of this sliding, friction plays a significant role in this type of bearings. Special care must be taken to select the materials of both the shaft and bearing so that it can withstand the conditions.
 
@@ -558,7 +557,7 @@ In a sliding contact bearing, the shaft is directly in contact with the inner su
 Because of friction, sliding contact bearings are typically used in low- to medium-speed applications. The bearings are also used with lubrication to reduce wear and improve its performance.
 
 \section{Materials Selection for Sliding Contact Bearing}
-\label{sec:org074f278}
+\label{sec:org9a9599f}
 
 Materials that are chosen for sliding contact bearings are, for the most part, softer that the shaft; it is usually easier to switch out worn bearings than worn shafts.
 
@@ -648,12 +647,12 @@ Combining the limit on contact pressure \(P\), surface velocity \(v\), and the p
 \end{figure}
 
 \section{Example: Sleeve Bearing for a Low-speed Shaft}
-\label{sec:org4ccdf3c}
+\label{sec:org7453114}
 
 A 30-cm long shaft whose diameter \(D\) is 3 cm is operated at 1000 rpm. The shaft has a spur gear whose \(R_{\text{pitch}}\) = 10 cm mounted in the middle with a bearing at each end. The gear is transferring the power of 1.5 kW. The gear has pressure vessel \(\theta\) = 20\(^{\circ}\). Determine the minimum bearing length \(L\) using nylon.
 
 \section{Solution}
-\label{sec:org902a464}
+\label{sec:org5bc5469}
 
 First, let us determine the force on the bearing. Since spur gears don't generate any axial load, the forces will simply be the radial + tangential load, perpendicular to the shaft.
 
@@ -687,18 +686,18 @@ acceptable choice. The length of bearing, then should be
 \end{align*}
 
 \chapter{Rolling Contact Bearings}
-\label{sec:org76afd17}
-\section{Rolling Elements}
-\label{sec:org1176f88}
+\label{sec:orged92f79}
 
-\begin{itemize}
-\item suitable for medium- to high-speed applications
+Another type of bearings avoids friction by introducing rolling elements between the inner surface (in contact with shaft) and outer surface (in contact with hub). The rolling elements can be spherical, cylindrical, or conical. Because these bearings eliminate friction almost entirely, they are suitable for medium to high-speed applications.
 
-\item use balls or rollers to avoid friction
-\end{itemize}
+\section{Types of rolling contact bearings}
+\label{sec:org5621186}
 
-\section{Rolling Element Types}
-\label{sec:org1a13f77}
+\subsection{Ball bearings}
+\label{sec:org5d56434}
+
+\subsection{Roller bearings}
+\label{sec:org0ba3fc9}
 
 \begin{figure}[htbp]
 \centering
@@ -713,7 +712,7 @@ acceptable choice. The length of bearing, then should be
 \end{figure}
 
 \section{Bearing Life Requirement}
-\label{sec:org4f7584c}
+\label{sec:org1e31e12}
 
 \begin{align}
     L &= L_R K_r \left( \frac{C}{F_e} \right)^{10/3} \\
@@ -745,7 +744,7 @@ acceptable choice. The length of bearing, then should be
 
 
 \section{Equivalent Load}
-\label{sec:org84a4568}
+\label{sec:org2f921be}
 Let \(e = F_a / F_r\)
 
 for radial ball bearings
@@ -773,16 +772,16 @@ for angular ball bearings
 \end{align}
 
 \section{Typical Bearing Design Life}
-\label{sec:org9a3dffe}
+\label{sec:orgd892fe3}
 
 
 \subsection{Radial Ball Bearing Selection}
-\label{sec:org9b8d3e8}
+\label{sec:orge4f0b91}
 
 Select a radial ball bearing for a shaft intended for a continuous 8-hr-a-day operation at 1800 rpm with 95\% reliability. Axial and radial loads are 1.2 kN and 1.5 kN, respectively.
 
 \subsection{Solution}
-\label{sec:org5367ed1}
+\label{sec:org36e278c}
 
 First, we need to calculated \(F_e\).
 
@@ -815,9 +814,9 @@ The models corresponding to the bore are L11, 207, and 306,
 respectively.
 
 \chapter{Gears}
-\label{sec:orgd6d33d5}
+\label{sec:orge3cf2b8}
 \section{Gear Overview}
-\label{sec:org4702093}
+\label{sec:org767dbe7}
 
 Why Gears?
 
@@ -903,7 +902,7 @@ contact
 \end{itemize}
 
 \section{Gear Trains}
-\label{sec:org5c59f4d}
+\label{sec:orgccd9289}
 
 Gear Trains When large reduction is required
 
@@ -965,7 +964,7 @@ Carrier & Sun 9 & 27 & Ring 5.4 & 1.667\\
 \end{center}
 
 \chapter{Spur Gears}
-\label{sec:orgfe8e92b}
+\label{sec:org035e57c}
 
 Spur gears have straight involute teeth. They transfer torque by applying forces perpendicular to their involute face. And because their teeth are perpendicular to their axis, spur gears do not generate axial loads--they generate only tangential and radial forces.
 
@@ -979,7 +978,7 @@ Spur gears have straight involute teeth. They transfer torque by applying forces
 The tangential force is perpendicular to gear teeth, leading to tooth bending
 
 \section{Spur Gear Stress}
-\label{sec:org22cd898}
+\label{sec:orgdebc16c}
 
 The equation for bending stress in spur gears is a modified lewis equation that takes into account the shapes, stress concentrations, and operating conditions of the gear.
 
@@ -1129,7 +1128,7 @@ AGMA recommends designers choose gears based on the level of precision they requ
 \end{table}
 
 \subsection{Gear Material Strength \(S_e^{\prime}\)}
-\label{sec:orgc48b59b}
+\label{sec:org13e0af1}
 
 Because they are used exclusively in rotational machinery, gears are constantly under repeated loadings. Thus, their main mode of failure is fatigue. Hence, whenever we consider the strength of gear material for design, endurance limits should be the first factor on our list.
 \begin{align}
@@ -1208,12 +1207,12 @@ interference
 \end{enumerate}
 
 \subsection{Example: Spur gear design for a conveyor belt}
-\label{sec:orga7b776b}
+\label{sec:org49e50aa}
 
 A pair of spur gears with face width \(b\) = 3 cm is used in a conveyor belt drive. The input motor has \(\omega_{\max}\) of 200 rad/s. The pinion has 18 teeth. The conveyor has moderate shock and should be driven at 100 rad/s. The gears have pressure angles \(\theta\) of 20\(^{\circ}\). Both pinion and gear has \(m\) = 1 cm. Determine the maximum power that the gears caan transmit continuously with 1\% chance of bending fatigue failure. Steel has \(S_{ut}\) = 400 MPa
 
 \subsection{Solution: spur gear design for a conveyor belt}
-\label{sec:org1223131}
+\label{sec:orgf2f052a}
 
 First, the bending fatigue stress is
 
@@ -1239,7 +1238,7 @@ We can then find the maximum allowable tangential force
 \end{align*}
 
 \section{Rack and Pinion}
-\label{sec:org7c1b656}
+\label{sec:org9d08ef6}
 
 Racks are essentially linear spur gears--the teeth line up on a straight rather than a circular path. When used with gears, the pairs can convert torque and rotational motion to force and linear motion. They are less expensive than power screws, but also less accurate and provide no mechanical advantages.
 
@@ -1254,13 +1253,13 @@ As they are considered linear spur gears, the forces acting on them are identica
 \end{align}
 
 \chapter{Helical Gears}
-\label{sec:orgb992890}
+\label{sec:orgc4a405d}
 
 Another type of gears have teeth that are slanted at a constant angle, forming helices about their axes of rotation. These are called \textbf{helical gears}.
 
 
 \subsection{Helical Gear Analysis}
-\label{sec:org25d3d90}
+\label{sec:org7d7042a}
 
 Geometrically, they can be analyze similarly to spur gears, the only different being that the teeth are at an angle of \(\psi\) with the gear axis.
 
@@ -1309,7 +1308,7 @@ The geometry factor also has to be modified by another multiplier which accounts
 \end{figure}
 
 \section{Example: Meshing helical gears}
-\label{sec:orgb14e543}
+\label{sec:org3e06b78}
 
 A pair of meshing helical gears is connected at the input side to a 0.5-hp motor at 1800 rpm and to an output shaft at 600 rpm. The input gear has 18 teeth, \(\phi_{n}\) = 20\(^{\circ}\), \(m_{n}\) = 0.00173, \(\psi\) = 30\(^{\circ}\), \(b\) = 2 cm. From the given information, determine the pitch line velocity \(v_{t}\), gear tooth forces \(F_{t}, F_{r}, \text{ and } F_{a}\), and bending stress \(\sigma\).
 
@@ -1358,7 +1357,7 @@ We can finally calculate \(\sigma\)
 \end{align*}
 
 \chapter{Bevel Gears}
-\label{sec:org68a6d43}
+\label{sec:orge2fd874}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Gears/bevel-gear-forces.png}
@@ -1410,12 +1409,12 @@ This factor accounts for increased stress from misalignment in the gears. In the
 \end{table}
 
 \section{Example: Bevel Gearset Design}
-\label{sec:org330fc5d}
+\label{sec:orgfe4ec15}
 
 Identical bevel gears has a module of 0.005 m/teeth, 25 teeth, 2-cm face width, and a \(20^{\circ}\) normal pressure angle. The gear quality is \(Q = 7\). Both requires overhung mounting. The gears are made of ductile iron whose \(S_{e}\) = 95 MPa. Determine the power rating of the gearset at 600 rpm.
 
 \section{Solution: Bevel Gearset Design}
-\label{sec:org3750fbc}
+\label{sec:orgd40b38f}
 
 For the stress side,
 \begin{align*}
@@ -1456,7 +1455,7 @@ Set the two sides equal (\(N_{s}\) = 1), we have
 \end{gather*}
 
 \chapter{Worms and Worm Gears}
-\label{sec:org397a39a}
+\label{sec:orgc2a45ab}
 
 \begin{center}
 \includegraphics[width=\textwidth]{./pictures/Gears/worm-gear-forces.png}
@@ -1504,7 +1503,7 @@ Worm Efficiency
 \end{align}
 
 \section{Self locking}
-\label{sec:org4f47863}
+\label{sec:org865f484}
 
 \begin{itemize}
 \item Thread will lock itself (not backdrivable) when \(F_{wt} \leqslant 0\)
@@ -1521,7 +1520,7 @@ Worm Efficiency
 \end{itemize}
 
 \section{Design Equation}
-\label{sec:org86769f8}
+\label{sec:orgc7c86b9}
 
 Worm gears have higher stresses than worm, so our main concern is designing the gear.
 
@@ -1565,7 +1564,7 @@ Allowable Load due to Wear For rough estimates: \begin{align}
 \end{description}
 
 \subsection{\(C_{s}\): Material factor}
-\label{sec:org1147661}
+\label{sec:orgd6bea6a}
 
 For center distance \(C < 7.62\) cm
 
@@ -1603,7 +1602,7 @@ Centrifugally-cast gears:
 \end{align*}
 
 \subsection{\(C_{m}\): Ratio correction factor}
-\label{sec:orga34474c}
+\label{sec:orge188f1b}
 
 Depends on reduction ratio, \(e = \omega_{i}/\omega_{o}\)
 \begin{align*}
@@ -1616,7 +1615,7 @@ Depends on reduction ratio, \(e = \omega_{i}/\omega_{o}\)
 \end{align*}
 
 \subsection{\(C_{v}\): Velocity factor}
-\label{sec:org3592096}
+\label{sec:org97a881a}
 
 Depends on sliding velocity at mean worm diameter \(v_{s}\):
 
@@ -1630,7 +1629,7 @@ Depends on sliding velocity at mean worm diameter \(v_{s}\):
 \end{align*}
 
 \subsection{Example: Worm gear speed reducer}
-\label{sec:org8720291}
+\label{sec:org65f7da3}
 
 A 2-hp, 1200-rpm motor drives a 60-rpm machanism by using a work gear reducer. The gear has \(D_{gear}\) = 20 cm. The worm has \(\alpha\) = 12\(^{\circ}\), \(\theta\) = 20\(^{\circ}\), and \(D_{worm}\) = 5 cm. Assume \(\mu\) = 0.03, determine
 
@@ -1645,7 +1644,7 @@ A 2-hp, 1200-rpm motor drives a 60-rpm machanism by using a work gear reducer. T
 \end{enumerate}
 
 \subsection{Solution: Worm gear speed reducer}
-\label{sec:org67643ac}
+\label{sec:orgb586fde}
 
 First, determine \(v_{w}\) to determine \(v_{g}\)
 
@@ -1722,7 +1721,7 @@ Finally, the safety factor
 \end{align*}
 
 \chapter{Clutches and Brakes}
-\label{sec:orgb6b40c4}
+\label{sec:org447f61f}
 
 \begin{itemize}
 \item Rely on friction to transfer torque
@@ -1731,7 +1730,7 @@ Finally, the safety factor
 \end{itemize}
 
 \section{Clutches vs Brakes}
-\label{sec:org6adf074}
+\label{sec:org17a22e7}
 when engaged
 
 \begin{description}
@@ -1741,7 +1740,7 @@ when engaged
 \end{description}
 
 \section{Considerations for Clutch and Brake}
-\label{sec:orge88d89f}
+\label{sec:org2669806}
 
 \begin{description}
 \item[{Actuating force}] force to engage clutch/brake
@@ -1751,32 +1750,32 @@ when engaged
 \end{description}
 
 \section{Types of Clutches and Brakes}
-\label{sec:orgdfde0e4}
+\label{sec:orgf876c3b}
 \subsection{Drum Brakes}
-\label{sec:org3718414}
+\label{sec:org7a37015}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/drum-brake.jpg}
 \end{center}
 
 \subsection{Disc Brakes}
-\label{sec:orgbc7e43f}
+\label{sec:orga2bdf09}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/disc-brake.png}
 \end{center}
 
 \subsection{Band Brakes}
-\label{sec:orgd5971dc}
+\label{sec:orgbe857ae}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/band-brake.jpg}
 \end{center}
 
 \section{Brake Linings}
-\label{sec:orgb64e91a}
+\label{sec:org7ab0f9c}
 \subsection{Materials}
-\label{sec:orgf49ff7b}
+\label{sec:org92e1436}
 \begin{marginfigure}
   \centering
   \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/molded-lining.jpg}
@@ -1805,7 +1804,7 @@ when engaged
 \end{description}
 
 \subsection{Dry Linings}
-\label{sec:org14ad2f2}
+\label{sec:org222dfd0}
 
 \begin{figure*}
   \centering
@@ -1813,17 +1812,17 @@ when engaged
 \end{figure*}
 
 \subsection{Wet Linings}
-\label{sec:orgf99ba2b}
+\label{sec:org0ef92a2}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/wet-materials.png}
 \end{center}
 
 \section{Drum Brake}
-\label{sec:org20f262e}
+\label{sec:orgedc57dc}
 
 \section{Internal Drum Brake}
-\label{sec:orgf6e7d8b}
+\label{sec:org7a4b121}
 
 \begin{figure}[htbp]
 \centering
@@ -1838,7 +1837,7 @@ when engaged
 \end{align}
 
 \subsubsection{Moment Generated on Drum by Normal Force}
-\label{sec:org7b99f29}
+\label{sec:orgb1f9107}
 \begin{align}
   dN &= \frac{p_{\max} br \sin \theta d\theta}{(\sin \theta)_{\max}} \\
   M_n &= \int_{\theta_1}^{\theta_2} \frac{p_{\max} bra \sin^2 \theta}{(\sin \theta)_{\max}} d\theta \nonumber \\
@@ -1847,7 +1846,7 @@ when engaged
 \end{align}
 
 \subsubsection{Moment Generated on Drum by Friction}
-\label{sec:org757cd39}
+\label{sec:org07c4e58}
 \begin{align}
   M_f &= \int_{\theta_1}^{\theta_2} \mu dN (r - a \cos \theta) \nonumber \\
       &= \int_{\theta_1}^{\theta_2} \frac{\mu p_{\max} \sin \theta r d\theta b (r - a \cos \theta)}{(\sin \theta)_{\max}} \nonumber \\
@@ -1855,7 +1854,7 @@ when engaged
 \end{align}
 
 \subsubsection{Self-energizing Brake}
-\label{sec:org1876831}
+\label{sec:orgf4cfa32}
 
 \begin{itemize}
 \item if \(M_f \geqslant M_n\), the brake is \textbf{self-energizing}
@@ -1864,7 +1863,7 @@ when engaged
 \end{itemize}
 
 \subsubsection{Torque Generated on the Drum}
-\label{sec:org779cb99}
+\label{sec:orgb230757}
 \begin{align}
     T &= \int_{\theta_1}^{\theta_2} \mu r dN \nonumber \\
         &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} \int_{\theta_1}^{\theta_2} \sin \theta d\theta \nonumber \\
@@ -1872,7 +1871,7 @@ when engaged
         &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\\end{align}
 
 \section{External Drum Brake}
-\label{sec:org5a6ef6f}
+\label{sec:org019e095}
 
 \begin{figure}[htbp]
 \centering
@@ -1881,7 +1880,7 @@ when engaged
 \end{figure}
 
 \subsubsection{Torque Generated on the Drum}
-\label{sec:org3565e07}
+\label{sec:orgd7340d8}
 
 \begin{itemize}
 \item identical equations to internal drum brake, only need to be careful
@@ -1889,7 +1888,7 @@ about the direction of actuating force
 \end{itemize}
 
 \subsection{Example: Braking torque of a drum brake}
-\label{sec:orgb77b2c0}
+\label{sec:orge07ca6c}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/drum-example.png}
@@ -1907,7 +1906,7 @@ about the direction of actuating force
 Determine the braking torque.
 
 \subsection{Solution}
-\label{sec:orgd6b34c7}
+\label{sec:orge97180c}
 
 First, we must determine \(p_{\max}\) on the right shoe. In this case,
 \(M_n\) and \(M_f\) go in opposite directions.
@@ -1973,9 +1972,9 @@ Total braking torque is
 \end{align*}
 
 \section{Band Brakes}
-\label{sec:org639669a}
+\label{sec:org6d8d870}
 \section{Principles of Band Brakes}
-\label{sec:orge5d8e08}
+\label{sec:org42352dc}
 
 \begin{itemize}
 \item Rely on friction between band and drum
@@ -1988,7 +1987,7 @@ Total braking torque is
 \end{align}
 
 \section{Belt Tension}
-\label{sec:org7dcadd6}
+\label{sec:orgdb8e7d6}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/band-brake.png}
@@ -2003,11 +2002,11 @@ Total braking torque is
 \end{align}
 
 \subsection{Example: An Exercise Bike}
-\label{sec:org6c14d23}
+\label{sec:org10551d7}
 An exercise bike has an adjustable band brake on the wheel to provide different levels of resistance. What should the slack side belt tension be so that the biker can exercise with \(T\) = 50 N-m. Take \(\theta = 150^{\circ}\) and \(\mu = 0.2\), the bike wheel \(r = 50\) cm.
 
 \subsection{Solution}
-\label{sec:org945cd0e}
+\label{sec:org7321fb0}
 
 \begin{align*}
   \frac{F_1}{F_2} &= e^{\mu\theta} \\
@@ -2018,16 +2017,16 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 \end{align*}
 
 \section{Disc Clutches and Brakes}
-\label{sec:orgb623ad9}
+\label{sec:org159fa86}
 \section{Working Principles}
-\label{sec:orga42b5b0}
+\label{sec:org691a270}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Clutches-Brakes/disc-brake-components.png}
 \end{center}
 
 \section{Disc Wear}
-\label{sec:org8bcc80f}
+\label{sec:org36225ca}
 
 \begin{itemize}
 \item new disc is rigid
@@ -2039,7 +2038,7 @@ higher velocity
 \end{itemize}
 
 \section{Torque Calculation}
-\label{sec:org545be65}
+\label{sec:org64a26e7}
 
 \begin{enumerate}
 \item Uniform pressure: new disc
@@ -2065,7 +2064,7 @@ higher velocity
 \end{itemize}
 
 \section{Uniform Rate of Wear}
-\label{sec:org10a16a9}
+\label{sec:org916cc68}
 
 \begin{itemize}
 \item Rate of Wear \(\propto\) Friction Work Rate
@@ -2078,7 +2077,7 @@ higher velocity
 \end{itemize}
 
 \section{Braking Torque}
-\label{sec:orge157b25}
+\label{sec:org9115f85}
 
 \begin{align}
     dF &= pdA \\
@@ -2099,7 +2098,7 @@ higher velocity
 \[T = \mu F N \left( \frac{r_o + r_i}{2} \right)\]
 
 \section{Usual Guideline for Disc Brakes/Clutches}
-\label{sec:org2b0df74}
+\label{sec:org2f4a42b}
 
 \begin{enumerate}
 \item \(0.45r_o < r_i < 0.8r_o\)
@@ -2108,7 +2107,7 @@ higher velocity
 \end{enumerate}
 
 \subsection{Example: Automotive Clutch}
-\label{sec:orgd1bcd09}
+\label{sec:org17a7d3e}
 
 \begin{itemize}
 \item Design a wet clutch to transfer the torque of 100 N-m using the
@@ -2118,7 +2117,7 @@ diameter and number of discs.
 \end{itemize}
 
 \subsection{Solution}
-\label{sec:org15eaf11}
+\label{sec:orgc9951a8}
 
 \begin{itemize}
 \item Use \(r_i\) = 30 mm,
@@ -2132,7 +2131,7 @@ diameter and number of discs.
 \(N\) = 4 and \(d_i = 2r_i\) = 60 mm
 
 \section{Drum Brakes vs Disc Brakes}
-\label{sec:org7944df6}
+\label{sec:org506234a}
 
 \begin{center}
 \begin{tabular}{p{5cm}p{5cm}}
@@ -2147,7 +2146,7 @@ requires larger force once \(\mu\) goes down & well-designed caliper compensate 
 \end{center}
 
 \chapter{Flexible Mechanical Elements}
-\label{sec:org6bdcae9}
+\label{sec:org348e3e5}
 
 \begin{itemize}
 \item belts
@@ -2160,7 +2159,7 @@ requires larger force once \(\mu\) goes down & well-designed caliper compensate 
 \end{itemize}
 
 \section{Why Flexible?}
-\label{sec:org2a0e07f}
+\label{sec:orgc8ed318}
 
 \begin{itemize}
 \item Torque capacity: Gears > Belts, Ropes, Chains
@@ -2171,10 +2170,10 @@ requires larger force once \(\mu\) goes down & well-designed caliper compensate 
 \end{itemize}
 
 \section{Belt -- General}
-\label{sec:orgfa9a0c2}
+\label{sec:orge6624c5}
 
 \subsection{Belt - Pulley Geometry}
-\label{sec:org67d5ab6}
+\label{sec:orgce78d74}
 
 \begin{center}
 \includegraphics[width=\textwidth]{./pictures/Flexible-Elements/belt-pulley-geometry.png}
@@ -2187,7 +2186,7 @@ requires larger force once \(\mu\) goes down & well-designed caliper compensate 
 \end{align*}
 
 \subsection{Cross Belt - Pulley Geometry}
-\label{sec:org0658565}
+\label{sec:orga63a00d}
 
 \begin{center}
 \includegraphics[width=\textwidth]{./pictures/Flexible-Elements/cross-belt-pulley-geometry.png}
@@ -2199,10 +2198,10 @@ requires larger force once \(\mu\) goes down & well-designed caliper compensate 
 \end{align*}
 
 \section{Flat Belts}
-\label{sec:org8eff810}
+\label{sec:orgfcf57df}
 
 \subsection{Belt Tension}
-\label{sec:org94a5bba}
+\label{sec:orga207d32}
 
 \begin{itemize}
 \item For low speed belt drive
@@ -2213,7 +2212,7 @@ requires larger force once \(\mu\) goes down & well-designed caliper compensate 
 \end{itemize}
 
 \section{Belt Tension II}
-\label{sec:orgee120f8}
+\label{sec:org9054742}
 
 \begin{itemize}
 \item For high speed belt drive
@@ -2227,7 +2226,7 @@ and \(m\) is the mass per length of belt
 \end{itemize}
 
 \section{Power and Torque Transmitted}
-\label{sec:orga82e295}
+\label{sec:orgcb8c7da}
 
 \begin{align}
   \text{Power} &= (F_1 - F_2) v \\
@@ -2235,14 +2234,14 @@ and \(m\) is the mass per length of belt
 \end{align}
 
 \section{Maintaining Belt Tension}
-\label{sec:org9f98051}
+\label{sec:org67b90d6}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/belt-tensioner.jpg}
 \end{center}
 
 \section{Belt Design}
-\label{sec:orgd10e8b4}
+\label{sec:orgbcaa17d}
 
 \begin{align}
     (F_1)_a &= b F_a C_p C_v
@@ -2257,7 +2256,7 @@ and \(m\) is the mass per length of belt
 \end{align*}
 
 \subsection{Manufacturer's Allowed Tension: \(F_a\)}
-\label{sec:org3b3abd6}
+\label{sec:org46a0dc4}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/belt-allowable-tension.png}
@@ -2265,7 +2264,7 @@ and \(m\) is the mass per length of belt
 
 
 \subsection{Pulley Correction Factor: \(C_p\)}
-\label{sec:org154124c}
+\label{sec:org70ebb29}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/pulley-correction-factor.png}
@@ -2276,14 +2275,14 @@ and \(m\) is the mass per length of belt
 \end{itemize}
 
 \subsection{Velocity Correction Factor: \(C_v\)}
-\label{sec:org675e434}
+\label{sec:org58d9a92}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/velocity-correction-factor.png}
 \end{center}
 
 \subsection{Example: Flat belt design}
-\label{sec:orgdf38c04}
+\label{sec:org4f128ec}
 
 A polyamide A-3 flat belt 15 cm wide is used to transmit 15 hp power. The pulley rotational axes are parallel, the shafts are 2.5 m apart. The driving pulley diameter is 15 cm and rotates at 1750 rpm. The driven pulley diameter is 45 cm.
 
@@ -2293,7 +2292,7 @@ A polyamide A-3 flat belt 15 cm wide is used to transmit 15 hp power. The pulley
 \end{enumerate}
 
 \subsection{Solution: Flat belt design}
-\label{sec:orgd803899}
+\label{sec:org883066f}
 
 Find \(F_c\)
 
@@ -2316,12 +2315,12 @@ F_a &= 18 \times 10^3 \text{ N/m} \\
 \end{align*}
 
 \section{V-Belts}
-\label{sec:org1d2095d}
+\label{sec:org1f255c8}
 
 
 
 \section{Why V Belts?}
-\label{sec:org638547b}
+\label{sec:org467a030}
 
 \begin{itemize}
 \item Increased tension forces belt further into groove, providing more
@@ -2331,7 +2330,7 @@ friction
 \end{itemize}
 
 \section{Belt Tension}
-\label{sec:org1b35cc5}
+\label{sec:org3cc57db}
 
 \begin{align}
   T = \left( F_1 - F_2 \right) r \\
@@ -2339,7 +2338,7 @@ friction
 \end{align}
 
 \section{V Belt Design Equation}
-\label{sec:org562a93d}
+\label{sec:org425d091}
 
 \begin{align}
   N_s = \frac{P_a N}{P_{nom} K_s}
@@ -2358,21 +2357,21 @@ friction
 \end{description}
 
 \section{Allowable Power}
-\label{sec:org989501e}
+\label{sec:orgee6064c}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/belt-power-rating.png}
 \end{center}
 
 \section{Service Factor}
-\label{sec:org120ae15}
+\label{sec:orgfc0177f}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/belt-service-factor.png}
 \end{center}
 
 \section{Timing Belts}
-\label{sec:org9e00b41}
+\label{sec:orga007fbd}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./pictures/Flexible-Elements/timing-belt.jpg}
@@ -2392,12 +2391,12 @@ is important
 \end{itemize}
 
 \subsection{Example: Design of Belts}
-\label{sec:orgd74aef9}
+\label{sec:orgb6cd8fe}
 
 Design an F-1 polyamide flat belt to connect two shafts. The driving pulley (\(d\) = 4 cm) is connected to a 1-kW motor. The driven pulley has \(D\) = 8 cm. The shafts are 20 cm apart. The motor rotates at 500 rpm.
 
 \subsection{Solution}
-\label{sec:org3ce5807}
+\label{sec:orgc4bc921}
 
 The required belt tension difference is
 
@@ -2437,10 +2436,10 @@ Angle on small pulley \(\theta_d\) is
 The belt must be at least 29.5 cm in width.
 
 \section{Roller Chains}
-\label{sec:org27d21fe}
+\label{sec:org0ae1c08}
 
 \subsection{Roller Chain components}
-\label{sec:orged2ef78}
+\label{sec:org94883d3}
 
 \begin{figure}[htbp]
 \centering
@@ -2449,7 +2448,7 @@ The belt must be at least 29.5 cm in width.
 \end{figure}
 
 \subsection{Why Roller Chain (Chain Drives)?}
-\label{sec:org76ee55e}
+\label{sec:org01acb09}
 
 \begin{itemize}
 \item No slip \(\rightarrow\) constant ratio
@@ -2460,7 +2459,7 @@ The belt must be at least 29.5 cm in width.
 \end{itemize}
 
 \section{Equations on Roller Chains}
-\label{sec:org22911e3}
+\label{sec:orgbc74724}
 
 \begin{align}
   D = \frac{p}{\sin \left( \dfrac{180^{\circ}}{N} \right)} \\
@@ -2476,7 +2475,7 @@ The belt must be at least 29.5 cm in width.
 \end{itemize}
 
 \section{Design Criteria}
-\label{sec:org703f60e}
+\label{sec:org97d945c}
 
 \begin{itemize}
 \item Roller chains rarely fail because of tensile stress
@@ -2487,7 +2486,7 @@ The belt must be at least 29.5 cm in width.
 \end{itemize}
 
 \section{Standard Chain Dimensions}
-\label{sec:orgff687f1}
+\label{sec:org702018f}
 
 \begin{figure}[htbp]
 \centering
@@ -2496,7 +2495,7 @@ The belt must be at least 29.5 cm in width.
 \end{figure}
 
 \section{Power Capacity}
-\label{sec:org3c2e1f0}
+\label{sec:org6baaae5}
 
 \begin{itemize}
 \item For link-plate limit
@@ -2521,7 +2520,7 @@ The belt must be at least 29.5 cm in width.
 \end{itemize}
 
 \section{Roller Chain Rated Capacity}
-\label{sec:org7d71461}
+\label{sec:org4e4ca89}
 
 \begin{figure}[htbp]
 \centering
@@ -2531,12 +2530,12 @@ The belt must be at least 29.5 cm in width.
 
 
 \subsection{Example}
-\label{sec:org54f4137}
+\label{sec:org5b6a4fb}
 
 Pick a roller chain for a motorcycle whose output is 15 hp. The driving sprocket has 20 teeth and the output has 39 teeth.
 
 \subsection{Solution}
-\label{sec:org3bd400a}
+\label{sec:org75d7bcb}
 
 \begin{align*}
     H_1 &= 0.004(20)^{1.08}(1000)^{0.9}(0.75)^{3-0.07(0.75)} \\
@@ -2548,10 +2547,10 @@ Pick a roller chain for a motorcycle whose output is 15 hp. The driving sprocket
 This means the chain can deliver the power with the safety factor of 21.8/15 = 1.45
 
 \chapter{Power Transmission Case Study}
-\label{sec:org7b6afe4}
+\label{sec:orgacd031a}
 
 \subsection{Example: Design of a Conveyor Belt System}
-\label{sec:org662790b}
+\label{sec:org4e1448b}
 
 Let us consider a design for a conveyor belt system. The conveyor belt
 needs to be moving at 60 cm/s. Both the driving and driven pulleys have
@@ -2582,7 +2581,7 @@ reliability (series and bore size).
 \end{enumerate}
 
 \subsection{Solution: Design of a Conveyor Belt System}
-\label{sec:orga238c7a}
+\label{sec:org4b70dc7}
 
 \begin{enumerate}
 \item To determine the number of teeth of spur gear \(B\), we need to determine the required pitch line velocity. The belt must be moving at 60 cm/s, which means the pulley must be rotating at
