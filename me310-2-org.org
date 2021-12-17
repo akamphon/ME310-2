@@ -697,11 +697,15 @@ acceptable choice. The length of bearing, then should be
   L &> 0.036 = 3.6 \text{ cm}
 \end{align*}
 
-** Rolling Contact Bearings
+** Rolling-Contact Bearings
 
 Another type of bearings avoids friction by introducing rolling elements between the inner surface (in contact with shaft) and outer surface (in contact with hub). The rolling elements can be spherical, cylindrical, or conical. Because these bearings eliminate friction almost entirely, they are suitable for medium to high-speed applications.
 
-*** Types of rolling contact bearings
+The study of this topic differs from others in that the bearings have already been designed. Our job is not so much a designer but instead a selector--we need to specify the required dimensions, required load, and life to select a suitable bearing for our needs.
+
+*** Bearing Types
+
+A rolling-contact baring has four essential parts--the outer ring, the inner ring, the balls or rolling elements, and the separator. The separator has the important fuction of separating the balls or rolling elements so they do not rub against one another.
 
 **** Ball bearings
 
