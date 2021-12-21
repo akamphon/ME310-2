@@ -4,7 +4,7 @@
 #+TODO: TODO(t) | DONE(d)
 
 #+LATEX_CLASS: tufte-book
-#+LATEX_CLASS_OPTIONS: [a4paper,openany]
+#+LATEX_CLASS_OPTIONS: [a4paper,openany,nobib]
 #+LATEX_COMPILER: pdflatex
 #+LATEX_HEADER: \setcounter{tocdepth}{0}
 #+LATEX_HEADER: \usepackage{caption}
@@ -27,7 +27,6 @@
 #+LATEX_HEADER: % Paragraph indentation and separation for marginal text
 #+LATEX_HEADER: \renewcommand{\@tufte@margin@par}{\setlength{\RaggedRightParindent}{0pt} \setlength{\JustifyingParindent}{0pt} \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
 #+LATEX_HEADER: \makeatother
-
 
 #+BIBLIOGRAPHY: me310-2.bib
 
@@ -130,8 +129,7 @@ It is usually sufficient to have only one bearing carry the axial load. This all
 
 *** Support for Torque Transmission
 
-Most shafts serve to transfer torque from an input (gear, pulley,
-engine, motor, etc.) to an output gear or pulley. The shaft must be sized to support torsional stress and its resultant angle of twist. It is also important to provide a way to transmit the torque between the gear (or pulley) and the shaft itself. Common torque transfer methods are:
+Most shafts serve to transfer torque from an input (gear, pulley, engine, motor, etc.) to an output gear or pulley. The shaft must be sized to support torsional stress and its resultant angle of twist. It is also important to provide a way to transmit the torque between the gear (or pulley) and the shaft itself. Common torque transfer methods are:
 
 - Keys
 - Splines
@@ -200,13 +198,11 @@ The required diameter \(d\) can be solved from the previous equation as
   d = \left( \frac{16N_s}{\pi} \left\{ \frac{1}{S_e} \left[ 4 \left( K_f M_a \right)^2 + 3 \left( K_{fs} T_a \right)^2 \right]^{1/2} + \frac{1}{S_{ut}} \left[ 4 \left( K_f M_m \right)^2 + 3 \left( K_{fs} T_m \right)^2 \right]^{1/2} \right\} \right)^{1/3}
 \end{align}
 
-In many applications, rotating shafts will be under constant bending and
-torsion, resulting in completely reverse bending stress (\(M_m = 0\))
-and constant torsional shear stress (\(T_a = 0\)). This means the
-required diameter becomes
+In many applications, rotating shafts will be under constant bending and torsion, resulting in completely reverse bending stress (\(M_m = 0\)) and constant torsional shear stress (\(T_a = 0\)). This means the required diameter becomes
 
 \begin{align}
-  d = \left( \frac{16N_s}{\pi} \left\{ \frac{2 K_f M_a}{S_e} + \frac{\sqrt{3} K_{fs} T_m}{S_{ut}} \right\} \right)^{1/3}\end{align}
+  d = \left( \frac{16N_s}{\pi} \left\{ \frac{2 K_f M_a}{S_e} + \frac{\sqrt{3} K_{fs} T_m}{S_{ut}} \right\} \right)^{1/3}
+\end{align}
 
 **** Example: Shaft sizing
 
@@ -621,19 +617,19 @@ Therefore, in material catalogs that list properties for sliding contact bearing
 
 #+ATTR_LATEX: :width \textwidth :booktabs t
 #+CAPTION: PV Table for Nonmetals
-| \multirow{2}{*}{Material} |  $P$ |   Temperature |  $V$ |             $PV$ |
-|                           |  MPa | \(^{\circ}\)C |  m/s | MPa\(\cdot$\)m/s |
-|---------------------------+------+---------------+------+------------------|
-| Phenolics                 |   41 |            93 |   13 |             0.53 |
-| Nylon                     |   14 |            93 |  3.0 |             0.11 |
-| TFE                       |  3.5 |           260 | 0.25 |            0.035 |
-| Filled TFE                |   17 |           260 |  5.1 |             0.35 |
-| TFE fabric                |  414 |           260 | 0.76 |             0.88 |
-| Polycarbonate             |    7 |           104 |  5.1 |             0.11 |
-| Acetal                    |   14 |            93 |  3.0 |             0.11 |
-| Carbon (graphite)         |    4 |           400 |   13 |             0.53 |
-| Rubber                    | 0.35 |            66 |   20 |               -- |
-| Wood                      |   14 |            71 |   10 |             0.42 |
+| \multirow{2}{*}{Material} |  $P$ |   Temperature |  $V$ |            $PV$ |
+|                           |  MPa | \(^{\circ}\)C |  m/s | MPa\(\cdot\)m/s |
+|---------------------------+------+---------------+------+-----------------|
+| Phenolics                 |   41 |            93 |   13 |            0.53 |
+| Nylon                     |   14 |            93 |  3.0 |            0.11 |
+| TFE                       |  3.5 |           260 | 0.25 |           0.035 |
+| Filled TFE                |   17 |           260 |  5.1 |            0.35 |
+| TFE fabric                |  414 |           260 | 0.76 |            0.88 |
+| Polycarbonate             |    7 |           104 |  5.1 |            0.11 |
+| Acetal                    |   14 |            93 |  3.0 |            0.11 |
+| Carbon (graphite)         |    4 |           400 |   13 |            0.53 |
+| Rubber                    | 0.35 |            66 |   20 |              -- |
+| Wood                      |   14 |            71 |   10 |            0.42 |
 # [[./pictures/Bearings/pv-nonmetal.png]]
 
 Combining the limit on contact pressure $P$, surface velocity $v$, and the product of the two $PV$, we can represent the *area of safety* using a plot as shown in Figure
@@ -648,6 +644,12 @@ Combining the limit on contact pressure $P$, surface velocity $v$, and the produ
       height=0.75\textwidth,
       ymin=0,
       xmin=0,xmax=3.5,
+      ticks=none,
+      axis x line*=bottom,
+      axis y line*=left,
+      axis line style={-latex},
+      xlabel={velocity $v$},
+      ylabel={contact pressure $P$},
       ]
       \path[name path=axis] (axis cs:0,0) -- (axis cs:0.5,0);
       \path[name path=axis1] (axis cs:0.5,0) -- (axis cs:3,0);
@@ -805,16 +807,13 @@ The models corresponding to the bore are L11, 207, and 306,
 respectively.
 
 ** Gears
+
+Gears are used to transfer high torque over short distances. Because gears are typically made of strong materials, they are able to transfer high amount of torque compared to their sizes. In this chapter, we will address the overall tpics on gears: gear types, gear train, and forces. Afterwards, we will be dealing with each type of gears--spur, helical, bevel, and worm--individually.
+
 *** Gear Overview
 
-Why Gears?
+Gears are used to transfer torque over short distances, and moreover, to convert power from low torque and high speed to high torque and low speed. This is especially useful since generating high torque is expensive while generating high speed is not.
 
-- Convert high speed and low torque to that requires low speed and high
-  torque
-
-- Speed: easy to get because voltage is easy
-
-- Torque: hard to get because it requires large current
 
 Principles of Gears
 
@@ -824,6 +823,15 @@ Principles of Gears
 
 - Do not need friction to operate
 
+*** Types of Gears
+
+/Spur gears/ have teeth that are parallel to the axis of rotation and are used to transmit motion between two parallel shafts. They are the simplest of the gears and will be used to explain gear tooth geometries and basic law of gearing.
+
+/Helical gears/ have teeth inclined to the axis of rotation. They can be used for the same applications as spur gears to lower the noise because of their more gradual teeth engagement. They are also sometimes used to transmit motion between two nonparallel shafts.
+
+/Bevel gears/ have teeth that formed on conical surfaces and are used to transfer torques between intersecting shafts.
+
+/Worms/ and /worm gears/ are used to transfer torque between nonparallel and nonintersecting shafts. The worm resembles a screw, while the worm gear resembles a helical gears. They are used when the speed ratios between the shafts are high.
 Basic Law of Gearing
 
 - Point of contact between two mating gears is always the same relative
@@ -832,16 +840,18 @@ Basic Law of Gearing
 - Any gear tooth profiles that follow the law of gearing will result in
   constant relative speed of rotation
 
-Gear Geometry
+*** Gear Geometry
 
-Module of a Gear, \(m\)
 
-- Term used to define gear tooth size
+The /pitch circle/ is the theoretical circle that all of the gear geometry is based. The diameter of this circle is called the /pitch diameter/. The pitch circles of a pair of mating gears are tangent to each other.
 
-- Defined as ratio of pitch diameter to number of teeth
+The /circular pitch p/ is the distance from a point on one tootht to a corresponding point on an adjacent tooth. Therefore the circular pitch is equal to the sum of the /tooth thickness/ and the /width of space/.
+
+The module of a Gear, \(m\), is the ratio of the pitch diameter to the number of teeth.
+
   \begin{align}
-              m = \frac{D_{\text{pitch}}}{z}
-            \end{align}
+    m = \frac{D_{\text{pitch}}}{z}
+  \end{align}
 
 - A pair of meshing gears must have the same modules!
 
