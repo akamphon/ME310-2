@@ -1642,33 +1642,29 @@ when engaged
 
 *** Brake Linings
 **** Materials
-\begin{marginfigure}
-  \centering
+#+BEGIN_marginfigure
   \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/molded-lining.jpg}
-\end{marginfigure}
+#+END_marginfigure
 
 - Molded :: thermosetting polymer or rubber + heat resistant fibers
 
-\begin{marginfigure}
-  \centering
+#+BEGIN_marginfigure
   \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/woven-lining.jpg}
-\end{marginfigure}
+#+END_marginfigure
 
 - Woven :: fibers + brass or zinc woven into fabric + resin
 
-\begin{marginfigure}
-  \centering
+#+BEGIN_marginfigure
   \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/sintered-lining.jpg}
-\end{marginfigure}
+#+END_marginfigure
 
 - Sintered metal :: metal powder + inorganic fillers molded and sintered
 
 **** Dry Linings
 
-\begin{figure*}
-  \centering
+#+BEGIN_figure*
   \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/dry-materials.png}
-\end{figure*}
+#+END_figure*
 
 **** Wet Linings
 
