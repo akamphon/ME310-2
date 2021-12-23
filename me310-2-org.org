@@ -3,12 +3,12 @@
 #+OPTIONS: H:4 title:nil toc:nil
 #+TODO: TODO(t) | DONE(d)
 
-#+LATEX_CLASS: tufte-book
-#+LATEX_CLASS_OPTIONS: [a4paper,openany,nobib]
+#+LATEX_CLASS: kaobook
+#+LATEX_CLASS_OPTIONS: [a4paper,openany]
 #+LATEX_COMPILER: pdflatex
-#+LATEX_HEADER: \setcounter{tocdepth}{0}
+#+LATEX_HEADER: \setcounter{tocdepth}{1}
 #+LATEX_HEADER: \usepackage{caption}
-#+LATEX_HEADER: \usepackage[svgnames]{xcolor}
+#+LATEX_HEADER: \usepackage[svgnames,usenames]{xcolor}
 # #+LATEX_HEADER: \usepackage[parfill]{parskip}
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{array}
@@ -20,20 +20,20 @@
 #+LATEX_HEADER: \usepackage{siunitx}
 #+LATEX_HEADER: \usepackage{multirow}
 
-#+LATEX_HEADER: \makeatletter
-#+LATEX_HEADER: % Paragraph indentation and separation for normal text
-#+LATEX_HEADER: \renewcommand{\@tufte@reset@par}{\setlength{\RaggedRightParindent}{0pt}  \setlength{\JustifyingParindent}{0pt}  \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
-#+LATEX_HEADER: \@tufte@reset@par
-#+LATEX_HEADER: % Paragraph indentation and separation for marginal text
-#+LATEX_HEADER: \renewcommand{\@tufte@margin@par}{\setlength{\RaggedRightParindent}{0pt} \setlength{\JustifyingParindent}{0pt} \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
-#+LATEX_HEADER: \makeatother
+# #+LATEX_HEADER: \makeatletter
+# #+LATEX_HEADER: % Paragraph indentation and separation for normal text
+# #+LATEX_HEADER: \renewcommand{\@tufte@reset@par}{\setlength{\RaggedRightParindent}{0pt}  \setlength{\JustifyingParindent}{0pt}  \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
+# #+LATEX_HEADER: \@tufte@reset@par
+# #+LATEX_HEADER: % Paragraph indentation and separation for marginal text
+# #+LATEX_HEADER: \renewcommand{\@tufte@margin@par}{\setlength{\RaggedRightParindent}{0pt} \setlength{\JustifyingParindent}{0pt} \setlength{\parindent}{0pt} \setlength{\parskip}{\baselineskip}}
+# #+LATEX_HEADER: \makeatother
 
 #+BIBLIOGRAPHY: me310-2.bib
 
 \begin{titlepage}
   \newgeometry{top=1cm,left=1cm} %defines the geometry for the titlepage
-  \pagecolor{Grey!50!Black}
-  \includegraphics[scale=0.2]{pictures/logo-tu} \\
+  \pagecolor{LightGrey!50!Black}
+  \includegraphics[height=0.2\textheight]{pictures/logo-tu} \\
   \noindent
   \color{white}
   \makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
@@ -424,8 +424,8 @@ A steel shaft whose $S_y$ = 450 MPa has a diameter of 5 cm. The shaft rotates at
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
-    \node[circle, draw, fill=LightGrey!20, minimum height=2cm](shaft){};
-    \node at (shaft.north) [draw, fill=LightGrey!80, minimum height=5mm, minimum width=5mm](key){};
+    \node[circle, draw, fill=gray!20, minimum height=2cm](shaft){};
+    \node at (shaft.north) [draw, fill=gray!80, minimum height=5mm, minimum width=5mm](key){};
   \end{tikzpicture}
 \end{figure}
 
@@ -655,8 +655,8 @@ Combining the limit on contact pressure $P$, surface velocity $v$, and the produ
       \path[name path=axis1] (axis cs:0.5,0) -- (axis cs:3,0);
       \addplot+[dashed, domain=0:0.5, no marks, name path=y]{4} node[midway, above]{$P_{\max}$};
       \addplot+[domain=0.5:3, no marks, name path=pv] {2/x} node[midway, above right]{$PV$ = constant};
-      \addplot [fill=Blue, fill opacity=0.2] fill between[of=y and axis];
-      \addplot [fill=Blue, fill opacity=0.2] fill between[of=pv and axis1];
+      \addplot [fill=blue, fill opacity=0.2] fill between[of=y and axis];
+      \addplot [fill=blue, fill opacity=0.2] fill between[of=pv and axis1];
       \addplot+[no marks, dashed] coordinates {(3,0)(3,2/3)} node[midway, right]{$v_{\max}$};
     \end{axis}
   \end{tikzpicture}
