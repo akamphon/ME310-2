@@ -4,11 +4,11 @@
 #+TODO: TODO(t) | DONE(d)
 
 #+LATEX_CLASS: kaobook
-#+LATEX_CLASS_OPTIONS: [a4paper,openany]
+#+LATEX_CLASS_OPTIONS: [a4paper,openany,svgnames]
 #+LATEX_COMPILER: pdflatex
 #+LATEX_HEADER: \setcounter{tocdepth}{1}
 #+LATEX_HEADER: \usepackage{caption}
-#+LATEX_HEADER: \usepackage[svgnames,usenames]{xcolor}
+# #+LATEX_HEADER: \usepackage[svgnames,table]{xcolor}
 # #+LATEX_HEADER: \usepackage[parfill]{parskip}
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{array}
@@ -32,7 +32,7 @@
 
 \begin{titlepage}
   \newgeometry{top=1cm,left=1cm} %defines the geometry for the titlepage
-  \pagecolor{LightGrey!50!Black}
+  \pagecolor{Grey!50!Black}
   \includegraphics[height=0.2\textheight]{pictures/logo-tu} \\
   \noindent
   \color{white}
@@ -61,6 +61,8 @@
 ** Preface
 
 This book is the second part of ME 310: Mechanical Design. In this book, power transmission components are covered.
+
+\vspace{5cm}
 
 Sappinandana Akamphon
 
@@ -1188,7 +1190,7 @@ As they are considered linear spur gears, the forces acting on them are identica
 Another type of gears have teeth that are slanted at a constant angle, forming helices about their axes of rotation. These are called *helical gears*.
 
 
-**** Helical Gear Analysis
+*** Helical Gear Analysis
 
 Geometrically, they can be analyze similarly to spur gears, the only different being that the teeth are at an angle of $\psi$ with the gear axis.
 
@@ -2244,7 +2246,11 @@ Pick a roller chain for a motorcycle whose output is 15 hp. The driving sprocket
 
 This means the chain can deliver the power with the safety factor of 21.8/15 = 1.45
 
-** Power Transmission Case Study
+** Power Transmission System Design
+
+In previous chapters, we have discussed the design of individual power transmission components. At last, in this final chapter, we are putting them all together, exploring the design of power transmission systems.
+
+*** Power Transmission System Design Considerations
 
 **** Example: Design of a Conveyor Belt System
 
