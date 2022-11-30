@@ -984,15 +984,19 @@ Overload Factor: \(K_{O}\)
 
 This factor takes into account the shock and impact loading during operation, which can cause a sharp increase in the stress. We consider the source of shock and impact loading from both the power source (input) and the driven machine (output).
 
-#+ATTR_LATEX: :booktabs t :align lp{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}
-#+CAPTION: Overload factor $K_O$ for spur gear design
-| \multirow{2}{*}{Power source} | \multicolumn{4}{c}{Driven Machine} |             |                |             |
-|                               |                            Uniform | Light shock | Moderate shock | Heavy shock |
-|-------------------------------+------------------------------------+-------------+----------------+-------------|
-| Uniform                       |                               1.00 |        1.25 |           1.50 |        1.75 |
-| Light shock                   |                               1.20 |        1.40 |           1.75 |        2.25 |
-| Moderate shock                |                               1.30 |        1.70 |           2.00 |        2.75 |
-
+\begin{table}[htbp]
+  \begin{tabular}{lp{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}}
+    \toprule
+    \multirow{2}{*}{Power source} & \multicolumn{4}{c}{Driven Machine} \\
+                                  &                            Uniform & Light shock & Moderate shock & Heavy shock \\
+    \midrule
+    Uniform                       &                               1.00 &        1.25 &           1.50 &        1.75 \\
+    Light shock                   &                               1.20 &        1.40 &           1.75 &        2.25 \\
+    Moderate shock                &                               1.30 &        1.70 &           2.00 &        2.75 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Overload factor $K_O$ for spur gear design}
+\end{table}
 
 Power sources can be categorized based on their shock/impact loading generated, along with some examples, as follows.
 
@@ -1017,12 +1021,16 @@ Mounting Factor: \(K_{m}\)
 The factor accounts for the increase in stress when tooth faces do not align perfectly. This can happen due to inaccurate mountings, the use of normal (rather than precision) gears, or off-center mountings.
 
 #+ATTR_LATEX: :booktabs t :align p{6cm}cccc
-| \multirow{2}{6cm}{Characteristics of Support}                 | \multicolumn{4}{c}{Face Width (cm)} |     |      |     |
-|                                                               | 0 to 5 cm                           |  15 | 22.5 |  40 |
-|---------------------------------------------------------------+-------------------------------------+-----+------+-----|
-| Accurate mountings, small bearing clearances, precision gears | 1.3                                 | 1.4 |  1.5 | 1.8 |
-| Less rigid moutings, standard gears, full face contact        | 1.6                                 | 1.7 |  1.8 | 2.2 |
-| Less than full face contact                                   | \multicolumn{4}{c}{Over 2.2}        |     |      |     |
+\begin{tabular}{p{6cm}cccc}
+  \toprule
+  \multirow{2}{6cm}{Characteristics of Support}                 & \multicolumn{4}{c}{Face Width (cm)} \\
+                                                              & 0 to 5 cm                           &  15 & 22.5 &  40 \\
+  \midrule
+  Accurate mountings, small bearing clearances, precision gears & 1.3                                 & 1.4 &  1.5 & 1.8 \\
+  Less rigid moutings, standard gears, full face contact        & 1.6                                 & 1.7 &  1.8 & 2.2 \\
+  Less than full face contact                                   & \multicolumn{4}{c}{Over 2.2} \\
+  \bottomrule
+\end{tabular}
 
 Velocity Factor: \(K_{v}\)
 
