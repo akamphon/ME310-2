@@ -1625,14 +1625,14 @@ Clutches are mechanical power transmission devices made to easily engage and dis
 
 - Brakes :: \(\omega_{in} = \omega_{out} = 0\)
 
-*** Considerations for Clutch and Brake
+**** Considerations for Clutch and Brake
 
 - Actuating force :: force to engage clutch/brake
 - Transmitted torque :: torque through mechanism
 - Energy loss :: energy dissipated before mechanism is fully engaged
 - Temperature rise :: temperature increase from energy loss
 
-*** Types of Clutches and Brakes
+**** Types of Clutches and Brakes
 **** Drum Brakes
 
 [[./pictures/Clutches-Brakes/drum-brake.jpg]]
@@ -1645,7 +1645,7 @@ Clutches are mechanical power transmission devices made to easily engage and dis
 
 [[./pictures/Clutches-Brakes/band-brake.jpg]]
 
-*** Brake Linings
+**** Brake Linings
 **** Materials
 #+BEGIN_marginfigure
   [[./pictures/Clutches-Brakes/molded-lining.jpg]]
@@ -1677,7 +1677,7 @@ Clutches are mechanical power transmission devices made to easily engage and dis
 
 *** Drum Brake
 
-*** Internal Drum Brake
+**** Internal Drum Brake
 
 #+ATTR_LATEX: :width \textwidth
 #+CAPTION: Forces and geometry of an internal drum brake.
@@ -1717,7 +1717,7 @@ Clutches are mechanical power transmission devices made to easily engage and dis
         &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (-\cos \theta)|_{\theta_1}^{\theta_2} \nonumber \\
         &= \frac{\mu r^2 bp_{\max}}{(\sin \theta)_{\max}} (\cos \theta_1 - \cos \theta_2) \\\end{align}
 
-*** External Drum Brake
+**** External Drum Brake
 
 #+CAPTION: Forces and dimensions of an external drum brake.
 [[./pictures/Clutches-Brakes/external-drum-brake.png]]
@@ -1806,7 +1806,7 @@ Total braking torque is
 \end{align*}
 
 *** Band Brakes
-*** Principles of Band Brakes
+**** Principles of Band Brakes
 
 - Rely on friction between band and drum
 
@@ -1816,7 +1816,7 @@ Total braking torque is
   T = (F_1 - F_2)r
 \end{align}
 
-*** Belt Tension
+**** Belt Tension
 
 [[./pictures/Clutches-Brakes/band-brake.png]]
 
@@ -1842,11 +1842,11 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 \end{align*}
 
 *** Disc Clutches and Brakes
-*** Working Principles
+**** Working Principles
 
 [[./pictures/Clutches-Brakes/disc-brake-components.png]]
 
-*** Disc Wear
+**** Disc Wear
 
 - new disc is rigid
 
@@ -1855,7 +1855,7 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 
 - after a while, pressure is no longer uniform, but wear becomes uniform
 
-*** Torque Calculation
+**** Torque Calculation
 
 1. Uniform pressure: new disc
 
@@ -1876,7 +1876,7 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 
   \[T = \frac{2\mu F N \left( r_o^3 - r_i^3 \right)}{3 \left( r_o^2 - r_i^2 \right)}\]
 
-*** Uniform Rate of Wear
+**** Uniform Rate of Wear
 
 - Rate of Wear \(\propto\) Friction Work Rate
 
@@ -1886,7 +1886,7 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 
   \[pr = C = p_{\max}r_i\]
 
-*** Braking Torque
+**** Braking Torque
 
 \begin{align}
     dF &= pdA \\
@@ -1959,7 +1959,7 @@ Weakness:
 - Shortened bearing life
 - Tendency to climb
 
-*** Flat Belt Assembly
+**** Flat Belt Assembly
 
 - Typically paired with crowned pulleys
 - Keep belt centered
@@ -1977,7 +1977,7 @@ Weakness:
 #
 # - Centrifugal force is neglibible
 
-*** Belt Tension
+**** Belt Tension
 
 - For high speed belt drive
 
@@ -1988,7 +1988,7 @@ Weakness:
     where $F_c = m \omega^2 r^2$ is the centrifugal force on the belt
     and $m$ is the *mass per length* of belt
 
-*** Force Balance on Pulley
+**** Force Balance on Pulley
 
 #+ATTR_LATEX: :height 0.5\textheight
 [[./pictures/Flexible-Elements/forces-on-pulley.png]]
@@ -1999,7 +1999,7 @@ Weakness:
   F_{i} &= \frac{F_{1} + F_{2}}{2} + F_{c}
 \end{align*}
 
-*** Initial Belt Tension $F_{i}$
+**** Initial Belt Tension $F_{i}$
 
 \begin{align*}
   \frac{F_{i}}{T/d} &= \frac{(F_{1} + F_{2})/2 - F_{c}}{(F_{1} - F_{2})/2} = \frac{F_{1} + F_{2} - 2F_{c}}{F_{1} - F_{2}} \\
@@ -2011,7 +2011,7 @@ Weakness:
 
 - Note: $F_{i} = 0 \rightarrow T = 0$
 
-*** Tight and Slack Side Tensions
+**** Tight and Slack Side Tensions
 
 \begin{align*}
   F_{1} &= F_{c} + F_{i} + \frac{T}{d} = F_{c} + F_{i} + F_{i} \frac{e^{\mu\theta} - 1}{e^{\mu\theta} + 1} \\
@@ -2028,7 +2028,7 @@ Weakness:
 #
 # [[./pictures/belt-tensioner.jpg]]
 
-*** Belt Design
+**** Belt Design
 
 \begin{align*}
     (F_1)_a &= b F_a C_p C_v \\
@@ -2041,20 +2041,20 @@ Weakness:
     C_v &= \text{velocity correction factor = 1 except leather belts}
 \end{align*}
 
-*** Manufacturer's Allowed Tension: $F_a$
+**** Manufacturer's Allowed Tension: $F_a$
 
 #+ATTR_HTML: :width 80%
 #+ATTR_LATEX: :width \textwidth
 [[./pictures/Flexible-Elements/belt-allowable-tension.png]]
 
-*** Pulley Correction Factor: $C_p$
+**** Pulley Correction Factor: $C_p$
 
 #+ATTR_LATEX: :width \textwidth
 [[./pictures/Flexible-Elements/pulley-correction-factor.png]]
 
 - $C_p$ = 1 for urethane belts
 
-*** Velocity Correction Factor: $C_v$
+**** Velocity Correction Factor: $C_v$
 
 #+ATTR_LATEX: :width \textwidth
 [[./pictures/Flexible-Elements/velocity-correction-factor.png]]
@@ -2125,21 +2125,21 @@ For $F_1$ and $F_2$
 
 
 
-*** Why V Belts?
+**** Why V Belts?
 
 - Increased tension forces belt further into groove, providing more
   friction
 
 - Increased torque capacity at a slightly lower efficiency
 
-*** Belt Tension
+**** Belt Tension
 
 \begin{align}
   T = \left( F_1 - F_2 \right) r \\
   \frac{F_1 - F_c}{F_2 - F_c} = e^{\frac{\mu \theta}{\sin \beta}}
 \end{align}
 
-*** V Belt Design Equation
+**** V Belt Design Equation
 
 \begin{align}
   N_s = \frac{P_a N}{P_{nom} K_s}
@@ -2155,11 +2155,11 @@ For $F_1$ and $F_2$
 
 - \(K_s\) :: service factor
 
-*** Allowable Power
+**** Allowable Power
 
 [[./pictures/Flexible-Elements/belt-power-rating.png]]
 
-*** Service Factor
+**** Service Factor
 
 [[./pictures/Flexible-Elements/belt-service-factor.png]]
 
@@ -2237,7 +2237,7 @@ The belt must be at least 29.5 cm in width.
 
 - Can drive multiple shafts from a single source
 
-*** Equations on Roller Chains
+**** Equations on Roller Chains
 
 \begin{align}
   D = \frac{p}{\sin \left( \dfrac{180^{\circ}}{N} \right)} \\
@@ -2250,7 +2250,7 @@ The belt must be at least 29.5 cm in width.
 
 - \(n\) = sprocket speed in revolution/min
 
-*** Design Criteria
+**** Design Criteria
 
 - Roller chains rarely fail because of tensile stress
 
@@ -2258,13 +2258,13 @@ The belt must be at least 29.5 cm in width.
 
 - To minimize chordal speed variation. \(N \geqslant 17\)
 
-*** Standard Chain Dimensions
+**** Standard Chain Dimensions
 
 #+NAME: chain catalog
 #+CAPTION: Dimensions of standard ANSI roller chain
 [[./pictures/Flexible-Elements/chain-ansi-dims.png]]
 
-*** Power Capacity
+**** Power Capacity
 
 - For link-plate limit
 
@@ -2282,7 +2282,7 @@ The belt must be at least 29.5 cm in width.
 
 - \(K_r\) = 29 for chain numbers 25,35; 3.4 for 41; and 17 for 40-240
 
-*** Roller Chain Rated Capacity
+**** Roller Chain Rated Capacity
 
 #+NAME: chain rated capacity
 #+CAPTION: Rate power capacity for standard roller chains
