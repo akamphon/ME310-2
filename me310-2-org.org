@@ -128,7 +128,6 @@ It is usually sufficient to have only one bearing carry the axial load. This all
   \includegraphics[width=\textwidth]{pictures/Shafts/axial-layout.png}
 \end{marginfigure}
 
-
 *** Support for Torque Transmission
 
 Most shafts serve to transfer torque from an input (gear, pulley, engine, motor, etc.) to an output gear or pulley. The shaft must be sized to support torsional stress and its resultant angle of twist. It is also important to provide a way to transmit the torque between the gear (or pulley) and the shaft itself. Common torque transfer methods are:
@@ -206,7 +205,7 @@ In many applications, rotating shafts will be under constant bending and torsion
   d = \left( \frac{16N_s}{\pi} \left\{ \frac{2 K_f M_a}{S_e} + \frac{\sqrt{3} K_{fs} T_m}{S_{ut}} \right\} \right)^{1/3}
 \end{align}
 
-**** Example: Shaft sizing
+***** Example: Shaft sizing
 
 [[./pictures/Shafts/shaft-sizing.png]]
 
@@ -219,11 +218,11 @@ using
 
 so that the safety factor \(N_{s}\) = 3.
 
-**** Solution
+***** Solution
 
 1. MDET: The torque loaded on the pulley by the belt is
 
-   #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results
+   #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results :cache yes
 from math import *
 import sympy as sym
 import sympy.printing as pt
@@ -264,7 +263,7 @@ print('\\end{align*}')
 
    There is also 2040 N of force pulling at the pulley due to the combined belt tension. The torque generates shear stress throughout the shaft, with the maximum value at the surface. The belt tension creates bending stresses, whose maximum values are are the top and bottom of the shaft at the middle. This means that the critical points on the shaft (without considering stress concentration from the key/keyseat) are at the top and bottom of the shaft at the middle. In this problem, we will take the bottom of the shaft at the middle. The stress concentration of the keyseat is taken to be \(K_{f}\) = 2.14 in bending and \(K_{fs}\) = 3.0 in torsion.
 
-   #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results
+   #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results :cache yes
 print('\\begin{align*}')
 print('\\sigma &= K_{f}\\frac{My}{I} = ' + str(K_f) + '\\frac{ ' + str(F) + '(' + str(L) + ')(r)}{4 \\pi r^{4}/4} \\\\')
 print('&= \\frac{' + str(round(sigma)) + '}{r^{3}} \\text{ Pa} \\\\')
@@ -305,7 +304,7 @@ print('\\end{align*}')
 
 2. Soderberg: using the criteria, we must calculate the minimum and maximum bending moments and torques, which will then be used to determine the stress amplitudes and average stresses. We already determine the maximum bending moment and torque, which we used to determine the corresponding stresses for MDET. We now only need to find out the minimum bending moment and torque. The minimum bending moment occurs when the shaft rotates by half a revolution, for which the beam willbe under a compressive stress of the same magnitude.
 
-   #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results
+   #+BEGIN_SRC python :session shaft-ex-1 :results output raw :exports results :cache yes
 print('\\begin{align*}')
 print('\\sigma_{\\min} &= -\\frac{' + str(round(sigma)) + '}{r^{3}} \\\\')
 print('\\sigma_{a} &= \\frac{\\sigma_{\\max} - \\sigma_{\\min}}{2} \\\\')
@@ -418,7 +417,7 @@ Mechanical drive assembly can provide relatively high torque transmission with r
 
 4. Uneven distribution of mass: uniform distribution of mass about the shaft is extremely important for shaft stability especially in high speed application. Usually components such as gears, pulleys, sprockets, etc. are designed to be axisymmetric for this reason. However, the required machining and insertion of keys or pins will introduce asymmetry to the shaft assembly.
 
-**** Example: Key Sizing
+***** Example: Key Sizing
 
 A steel shaft whose $S_y$ = 450 MPa has a diameter of 5 cm. The shaft rotates at 600 rpm and transmits 40 hp through a gear. Select an appropriate key for the gear. Use safety factor = 3.
 
@@ -431,7 +430,7 @@ A steel shaft whose $S_y$ = 450 MPa has a diameter of 5 cm. The shaft rotates at
   \end{tikzpicture}
 \end{figure}
 
-**** Solution: Key Sizing
+***** Solution: Key Sizing
 
   To keep things simple, pick a square key and pick key length = 2 cm.
 
@@ -512,11 +511,11 @@ Depends on friction generated between shaft and hub $\rightarrow$ pressure from 
     &= \frac{\pi}{2}\mu pld^{2}
 \end{align}
 
-**** Example: Torque Capacity of an Interference Fit
+***** Example: Torque Capacity of an Interference Fit
 
 A solid shaft whose diameter is 5 cm is pressed onto a gear whose hub inner diameter is 4.99 cm and outer diameter is 6 cm. If both are made of the same steel whose $E$ = 210 GPa and $\nu$ = 0.3, determine the radial and tangential stresses, along with the torque capacity of the fit. Assume steel-on-steel $\mu$ = 0.3, and the hub is 7 cm long.
 
-**** Solution: Torque Capacity of an Interference Fit
+***** Solution: Torque Capacity of an Interference Fit
 
 \begin{align*}
   p &= \frac{E(d_{\text{shaft}} - d_{\text{hub}})}{2d^{3}} \left[ \frac{(d_{o}^{2} - d^{2})(d^{2} - d_{i}^{2})}{d_{o}^{2} - d_{i}^{2}} \right] \\
@@ -527,7 +526,6 @@ A solid shaft whose diameter is 5 cm is pressed onto a gear whose hub inner diam
   \sigma_{t,\text{hub}} &= 64.2 \frac{0.06^{2} + 0.05^{2}}{0.06^{2} - 0.05^{2}} = 356 \text{ MPa} \\
   T &= \frac{\pi}{2}\mu pld^{2} = \frac{\pi}{2}(0.3) 64.2 \times 10^{6} (0.07)(0.05^{2}) = 5294 \text{ N-m}
 \end{align*}
-
 
 *** Weld Assembly
 
@@ -664,11 +662,11 @@ Combining the limit on contact pressure $P$, surface velocity $v$, and the produ
   \end{tikzpicture}
 \end{figure}
 
-*** Example: Sleeve Bearing for a Low-speed Shaft
+***** Example: Sleeve Bearing for a Low-speed Shaft
 
 A 30-cm long shaft whose diameter \(D\) is 3 cm is operated at 1000 rpm. The shaft has a spur gear whose \(R_{\text{pitch}}\) = 10 cm mounted in the middle with a bearing at each end. The gear is transferring the power of 1.5 kW. The gear has pressure vessel \(\theta\) = 20\(^{\circ}\). Determine the minimum bearing length \(L\) using nylon.
 
-*** Solution
+***** Solution
 
 First, let us determine the force on the bearing. Since spur gears don't generate any axial load, the forces will simply be the radial + tangential load, perpendicular to the shaft.
 
@@ -959,9 +957,9 @@ The equation for bending stress in spur gears is a modified lewis equation that 
 
 - Consider tooth as a cantilever beam
 
-\begin{align}
-  \sigma = \frac{F_{t}}{bY_{J}m} K_{O} K_{m} K_{v}
-\end{align}
+  \begin{align}
+    \sigma = \frac{F_{t}}{bY_{J}m} K_{O} K_{m} K_{v}
+  \end{align}
 
 - \(F_{t}\) :: tangential force
 
@@ -1150,11 +1148,11 @@ Aside from the strength criteria governed by the given equations. There are more
 
 6. Avoid exact ratio \(\rightarrow\) hunting tooth
 
-**** Example: Spur gear design for a conveyor belt
+***** Example: Spur gear design for a conveyor belt
 
 A pair of spur gears with face width \(b\) = 3 cm is used in a conveyor belt drive. The input motor has \(\omega_{\max}\) of 200 rad/s. The pinion has 18 teeth. The conveyor has moderate shock and should be driven at 100 rad/s. The gears have pressure angles \(\theta\) of 20\(^{\circ}\). Both pinion and gear has \(m\) = 1 cm. Determine the maximum power that the gears caan transmit continuously with 1% chance of bending fatigue failure. Steel has \(S_{ut}\) = 400 MPa
 
-**** Solution: spur gear design for a conveyor belt
+***** Solution: spur gear design for a conveyor belt
 
 First, the bending fatigue stress is
 
@@ -1334,11 +1332,11 @@ This factor accounts for increased stress from misalignment in the gears. In the
   \end{tabular}
 \end{table}
 
-*** Example: Bevel Gearset Design
+***** Example: Bevel Gearset Design
 
   Identical bevel gears has a module of 0.005 m/teeth, 25 teeth, 2-cm face width, and a $20^{\circ}$ normal pressure angle. The gear quality is $Q = 7$. Both requires overhung mounting. The gears are made of ductile iron whose $S_{e}$ = 95 MPa. Determine the power rating of the gearset at 600 rpm.
 
-*** Solution: Bevel Gearset Design
+***** Solution: Bevel Gearset Design
 
 For the stress side,
 \begin{align*}
@@ -1529,7 +1527,7 @@ Depends on sliding velocity at mean worm diameter $v_{s}$:
   \end{array} \right.
 \end{align*}
 
-**** Example: Worm gear speed reducer
+***** Example: Worm gear speed reducer
 
 A 2-hp, 1200-rpm motor drives a 60-rpm machanism by using a work gear reducer. The gear has \(D_{gear}\) = 20 cm. The worm has \(\alpha\) = 12\(^{\circ}\), \(\theta\) = 20\(^{\circ}\), and \(D_{worm}\) = 5 cm. Assume \(\mu\) = 0.03, determine
 
@@ -1541,7 +1539,7 @@ A 2-hp, 1200-rpm motor drives a 60-rpm machanism by using a work gear reducer. T
 
 4. safety factor of worm gear
 
-**** Solution: Worm gear speed reducer
+***** Solution: Worm gear speed reducer
 
 First, determine $v_{w}$ to determine $v_{g}$
 
@@ -1619,12 +1617,9 @@ Finally, the safety factor
 
 ** Clutches and Brakes
 
-- Rely on friction to transfer torque
-
-- Easy to engage/disengage
-
 *** Clutches vs Brakes
-when engaged
+
+Clutches are mechanical power transmission devices made to easily engage and disengage a drive shaft from a driven shaft. Brakes, on the other hand, are mechanical device that prevents motion by absorbing kinetic energy from moving systems, typically converting them to heat by way of friction. At first it seems strange that the two would be mentioned in the same chapter, but further investigation should lead to a realization that they are both friction mechanical devices that are easy to engage and disengage from a rotating source. In another word, when engaged
 
 - Clutches :: \(\omega_{in} = \omega_{out} \neq 0\)
 
@@ -1653,19 +1648,19 @@ when engaged
 *** Brake Linings
 **** Materials
 #+BEGIN_marginfigure
-  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/molded-lining.jpg}
+  [[./pictures/Clutches-Brakes/molded-lining.jpg]]
 #+END_marginfigure
 
 - Molded :: thermosetting polymer or rubber + heat resistant fibers
 
 #+BEGIN_marginfigure
-  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/woven-lining.jpg}
+  [[./pictures/Clutches-Brakes/woven-lining.jpg]]
 #+END_marginfigure
 
 - Woven :: fibers + brass or zinc woven into fabric + resin
 
 #+BEGIN_marginfigure
-  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/sintered-lining.jpg}
+  [[./pictures/Clutches-Brakes/sintered-lining.jpg]]
 #+END_marginfigure
 
 - Sintered metal :: metal powder + inorganic fillers molded and sintered
@@ -1673,7 +1668,7 @@ when engaged
 **** Dry Linings
 
 #+BEGIN_figure*
-  \includegraphics[width=\textwidth]{./pictures/Clutches-Brakes/dry-materials.png}
+  [[./pictures/Clutches-Brakes/dry-materials.png]]
 #+END_figure*
 
 **** Wet Linings
@@ -1732,7 +1727,7 @@ when engaged
 - identical equations to internal drum brake, only need to be careful
   about the direction of actuating force
 
-**** Example: Braking torque of a drum brake
+***** Example: Braking torque of a drum brake
 
 [[./pictures/Clutches-Brakes/drum-example.png]]
 
@@ -1745,7 +1740,7 @@ when engaged
 
 Determine the braking torque.
 
-**** Solution
+***** Solution
 
 First, we must determine \(p_{\max}\) on the right shoe. In this case,
 \(M_n\) and \(M_f\) go in opposite directions.
@@ -1833,10 +1828,10 @@ Total braking torque is
   \frac{F_1}{F_2} &= e^{\mu\theta}
 \end{align}
 
-**** Example: An Exercise Bike
+***** Example: An Exercise Bike
 An exercise bike has an adjustable band brake on the wheel to provide different levels of resistance. What should the slack side belt tension be so that the biker can exercise with \(T\) = 50 N-m. Take \(\theta = 150^{\circ}\) and \(\mu = 0.2\), the bike wheel \(r = 50\) cm.
 
-**** Solution
+***** Solution
 
 \begin{align*}
   \frac{F_1}{F_2} &= e^{\mu\theta} \\
@@ -1913,14 +1908,14 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 
 2. Use uniform wear rate, unless for short-term application
 
-**** Example: Automotive Clutch
+***** Example: Automotive Clutch
 
 - Design a wet clutch to transfer the torque of 100 N-m using the
   material with \(\mu\) = 0.08 and \(p_{\max}\) = 1500 kPa. Space
   requirements only allow \(r_o \leqslant\) 60 mm. Determine the inner
   diameter and number of discs.
 
-**** Solution
+***** Solution
 
 - Use \(r_i\) = 30 mm,
 
@@ -1950,106 +1945,132 @@ An exercise bike has an adjustable band brake on the wheel to provide different 
 
 - used in transmission of power over long distances
 
-*** Why Flexible?
-
-- Torque capacity: Gears > Belts, Ropes, Chains
-
-- Flexible elements are better against vibration and shock loads
-
-- Important to check for wear, age, and loss of elasticity
-
-*** Belt -- General
-
-**** Belt - Pulley Geometry
-
-#+ATTR_LATEX: :width \textwidth
-[[./pictures/Flexible-Elements/belt-pulley-geometry.png]]
-
-\begin{align*}
-  \theta_d &= \pi - 2 \sin^{-1} \frac{D - d}{2C} \\
-  \theta_D &= \pi + 2 \sin^{-1} \frac{D - d}{2C} \\
-  L &= \sqrt{ 4C^2 - (D - d)^2 } + \frac{1}{2}(D \theta_D + d \theta_d)
-\end{align*}
-
-**** Cross Belt - Pulley Geometry
-
-#+ATTR_LATEX: :width \textwidth
-[[./pictures/Flexible-Elements/cross-belt-pulley-geometry.png]]
-
-\begin{align*}
-  \theta_d &= \pi + 2 \sin^{-1} \frac{D + d}{2C} \\
-  L &= \sqrt{ 4C^2 - (D + d)^2 } + \frac{1}{2}(D + d)\theta
-\end{align*}
-
 *** Flat Belts
 
-**** Belt Tension
+Uses: light-duty + long-distance power transmission
 
-- For low speed belt drive
+Strength:
+- High performance (less friction involved)
+- Easy to install
+- Flat surface means less wear and energy loss from friction
 
-  \begin{align}
-    T = \left( F_1 - F_2 \right) r
-  \end{align}
+Weakness:
+- Need high belt tension
+- Shortened bearing life
+- Tendency to climb
 
-*** Belt Tension II
+*** Flat Belt Assembly
+
+- Typically paired with crowned pulleys
+- Keep belt centered
+
+#+ATTR_LATEX: :height 0.8\textheight
+ [[./pictures/Flexible-Elements/crowned-pulley.jpg]]
+
+# ** Belt Tension
+#
+# - For low speed belt drive
+#
+# \begin{align*}
+#     \frac{F_1}{F_2} = e^{\mu \theta}
+# \end{align*}
+#
+# - Centrifugal force is neglibible
+
+*** Belt Tension
 
 - For high speed belt drive
 
-  \begin{align}
-    \frac{F_1 - F_c}{F_2 - F_c} = e^{\mu \theta}
-  \end{align}
+    \begin{align*}
+        \frac{F_1 - F_c}{F_2 - F_c} = e^{\mu \theta}
+    \end{align*}
 
-  where \(F_c = m \omega^2 r^2\) is the centrifugal force on the belt
-  and \(m\) is the mass per length of belt
+    where $F_c = m \omega^2 r^2$ is the centrifugal force on the belt
+    and $m$ is the *mass per length* of belt
 
-*** Power and Torque Transmitted
+*** Force Balance on Pulley
 
-\begin{align}
-  \text{Power} &= (F_1 - F_2) v \\
-  T &= (F_{1} - F_{2})r
-\end{align}
+#+ATTR_LATEX: :height 0.5\textheight
+[[./pictures/Flexible-Elements/forces-on-pulley.png]]
 
-*** Maintaining Belt Tension
+\begin{align*}
+  F_{1} - F_{2} &= \frac{2T}{d} \\
+  F_{1} + F_{2} &= 2F_{i} + 2F_{c} \\
+  F_{i} &= \frac{F_{1} + F_{2}}{2} + F_{c}
+\end{align*}
 
-[[./pictures/Flexible-Elements/belt-tensioner.jpg]]
+*** Initial Belt Tension $F_{i}$
+
+\begin{align*}
+  \frac{F_{i}}{T/d} &= \frac{(F_{1} + F_{2})/2 - F_{c}}{(F_{1} - F_{2})/2} = \frac{F_{1} + F_{2} - 2F_{c}}{F_{1} - F_{2}} \\
+                    &= \frac{(F_{1} - F_{c}) + (F_{2} - F_{c})}{(F_{1} - F_{c}) - (F_{2} - F_{c})} \\
+                    &= \frac{(F_{1} - F_{c})/(F_{2} - F_{c}) + 1}{(F_{1} - F_{c})/(F_{2} - F_{c}) - 1} \\
+                    &= \frac{e^{\mu\theta} + 1}{e^{\mu\theta} - 1} \\
+  F_{i} &= \frac{T}{d}\frac{e^{\mu \theta} + 1}{e^{\mu \theta} - 1}
+\end{align*}
+
+- Note: $F_{i} = 0 \rightarrow T = 0$
+
+*** Tight and Slack Side Tensions
+
+\begin{align*}
+  F_{1} &= F_{c} + F_{i} + \frac{T}{d} = F_{c} + F_{i} + F_{i} \frac{e^{\mu\theta} - 1}{e^{\mu\theta} + 1} \\
+        &= F_{c} + F_{i}\frac{\left( e^{\mu\theta} + 1 + e^{\mu\theta} - 1 \right)}{e^{\mu\theta} + 1} \\
+        &= F_{c} + F_{i}\frac{2e^{\mu\theta}}{e^{\mu\theta} + 1} \\
+  F_{2} &= F_{c} + F_{i}\frac{2}{e^{\mu\theta} + 1} \\
+\end{align*}
+
+- Power transmitted
+
+  $$H = (F_1 - F_2) v$$
+
+# ** Maintaining Belt Tension
+#
+# [[./pictures/belt-tensioner.jpg]]
 
 *** Belt Design
 
-\begin{align}
-    (F_1)_a &= b F_a C_p C_v
-\end{align}
-
+\begin{align*}
+    (F_1)_a &= b F_a C_p C_v \\
+\end{align*}
 \begin{align*}
     \left( F_1 \right)_a &= \text{allowable largest tension} \\
     b &= \text{belt width} \\
-    F_a &= \text{manufacturer's allowed tension (N/m)} \\
+    F_a &= \text{manufacturer's allowed tension per width (N/m)} \\
     C_p &= \text{pulley correction factor} \\
     C_v &= \text{velocity correction factor = 1 except leather belts}
 \end{align*}
 
-**** Manufacturer's Allowed Tension: \(F_a\)
+*** Manufacturer's Allowed Tension: $F_a$
 
+#+ATTR_HTML: :width 80%
+#+ATTR_LATEX: :width \textwidth
 [[./pictures/Flexible-Elements/belt-allowable-tension.png]]
 
+*** Pulley Correction Factor: $C_p$
 
-**** Pulley Correction Factor: \(C_p\)
-
+#+ATTR_LATEX: :width \textwidth
 [[./pictures/Flexible-Elements/pulley-correction-factor.png]]
 
 - $C_p$ = 1 for urethane belts
 
-**** Velocity Correction Factor: \(C_v\)
+*** Velocity Correction Factor: $C_v$
 
+#+ATTR_LATEX: :width \textwidth
 [[./pictures/Flexible-Elements/velocity-correction-factor.png]]
 
-**** Example: Flat belt design
+- $C_v$ = 1 for polyamide and urethane belts
+
+***** Example: Flat belt design
 
 A polyamide A-3 flat belt 15 cm wide is used to transmit 15 hp power. The pulley rotational axes are parallel, the shafts are 2.5 m apart. The driving pulley diameter is 15 cm and rotates at 1750 rpm. The driven pulley diameter is 45 cm.
 
 1. Estimate the centrifugal tension $F_c$
-2. Estimate the allowable $F_1$ and $F_2$
+2. Determine the required initial tension $F_{i}$
+3. Estimate the allowable $F_1$ and $F_2$
+# 4. Determine $N_s$
 
-**** Solution: Flat belt design
+***** Solution: Flat belt design
 
 Find $F_c$
 
@@ -2060,17 +2081,46 @@ Find $F_c$
    F_c &= m \omega^2 r^2 = 0.575 \times (1750 (2\pi/60))^2 (0.15/2)^2 = 108.6 \text{ N}
    \end{align*}
 
-For $(F_1)_a$ and $F_2$
+First, find $\theta$ on the smaller pulley (smaller pulley = smaller angle)
+\begin{align*}
+    \theta_{d} &= \pi - 2\sin^{-1}\frac{D-d}{2C} \\
+               &= \pi - 2\sin^{-1}\frac{45 - 15}{2(250)} \\
+               &= 3.02 \text{ rad}
+\end{align*}
 
-   \begin{align*}
-   F_a &= 18 \times 10^3 \text{ N/m} \\
-   (F_1)_a &= b F_a C_p C_v = 0.15(18 \times 10^3)(0.7)(1) = 1890 \text{ N} \\
-    T &= \frac{(F_1 - F_2)d}{2} \\
-    F_1 - F_2 &= \frac{2T}{d} = \frac{2(15(746)/(1750(2 \pi / 60)))}{0.15} = 814 \text{ N} \\
-    F_2 &= (F_1)_a - (F_1 - F_2) = 1890 - 814 = 1076 \text{ N} \\
-    %\text{Power} = (F_1 - F_2)v = 814(1750)(2\pi/60)(0.15/2) = 1.12 \times 10^4 \text{ W} = 15 \text{ hp}
-   \end{align*}
+Next, find input torque $T$
+\begin{align*}
+    T &= \frac{H}{\omega} = \frac{15(746)}{1750\frac{2\pi}{60}} \\
+      &= 61.1 \text{ N-m}
+\end{align*}
 
+Finally,
+\begin{align*}
+    F_{i} &= \frac{T}{d}\frac{e^{\mu\theta} + 1}{e^{\mu\theta} - 1} \\
+          &= \frac{61.1}{0.15}\frac{e^{0.8(3.02)} + 1}{e^{0.8(3.02)} - 1} \\
+          &= 487 \text{ N}
+\end{align*}
+
+For $F_1$ and $F_2$
+
+\begin{align*}
+    F_{1} &= F_{c} + F_{i} \frac{2e^{\mu\theta}}{e^{\mu\theta}+1} \\
+         &= 108.6 + 487\frac{2e^{0.8(3.02)}}{e^{0.8(3.02)}+ 1} \\
+         &= 1003 \text{ N} \\
+    F_{2} &= F_{c} + F_{i} \frac{2}{e^{\mu\theta}+1} \\
+         &= 108.6 + 487\frac{2}{e^{0.8(3.02)}+ 1} \\
+         &= 188.4 \text{ N}
+\end{align*}
+
+# ** Solution: Flat belt design (4)
+#
+# For a belt, safety factor is
+# \begin{align*}
+#     N_{s} &= \frac{(F_{1})_{a}}{F_{1}} \\
+#     (F_{1})_{a} &= bF_{a}C_{p}C_{v} = 0.15(18 \times 10^{3})(0.7)(1) \\
+#                &= 1890 \text{ N} \\
+#     N_{s} &= \frac{1890}{1003} = 1.88
+# \end{align*}
 *** V-Belts
 
 
@@ -2128,11 +2178,11 @@ For $(F_1)_a$ and $F_2$
 
 - Same design equations as V-belts
 
-**** Example: Design of Belts
+***** Example: Design of Belts
 
 Design an F-1 polyamide flat belt to connect two shafts. The driving pulley ($d$ = 4 cm) is connected to a 1-kW motor. The driven pulley has $D$ = 8 cm. The shafts are 20 cm apart. The motor rotates at 500 rpm.
 
-**** Solution
+***** Solution
 
 The required belt tension difference is
 
@@ -2239,11 +2289,11 @@ The belt must be at least 29.5 cm in width.
 [[./pictures/Flexible-Elements/chain-rated-capacity.png]]
 
 
-**** Example
+***** Example
 
 Pick a roller chain for a motorcycle whose output is 15 hp. The driving sprocket has 20 teeth and the output has 39 teeth.
 
-**** Solution
+***** Solution
 
 \begin{align*}
     H_1 &= 0.004(20)^{1.08}(1000)^{0.9}(0.75)^{3-0.07(0.75)} \\
@@ -2260,17 +2310,11 @@ In previous chapters, we have discussed the design of individual power transmiss
 
 *** Power Transmission System Design Considerations
 
-**** Example: Design of a Conveyor Belt System
+***** Example: Design of a Conveyor Belt System
 
-Let us consider a design for a conveyor belt system. The conveyor belt
-needs to be moving at 60 cm/s. Both the driving and driven pulleys have
-the same diameter of 40 cm. The driving pulley is mounted on the same
-shaft as spur gear \(B\), which is driven by spur gear \(A\) connected
-directly to the driving motor.
+Let us consider a design for a conveyor belt system. The conveyor belt needs to be moving at 60 cm/s. Both the driving and driven pulleys have the same diameter of 40 cm. The driving pulley is mounted on the same shaft as spur gear \(B\), which is driven by spur gear \(A\) connected directly to the driving motor.
 
-Spur gear \(A\) has \(D_{\text{pitch},A}\) = 5 cm, \(z\) = 10 teeth, and
-pressure angle \(\theta\) = 20\(^{\circ}\). The motor is set to operate
-constantly at 500 rpm and providing the torque of 2 N-m.
+Spur gear \(A\) has \(D_{\text{pitch},A}\) = 5 cm, \(z\) = 10 teeth, and pressure angle \(\theta\) = 20\(^{\circ}\). The motor is set to operate constantly at 500 rpm and providing the torque of 2 N-m.
 
 Design the following:
 
@@ -2288,12 +2332,12 @@ Design the following:
 4. radial contact bearings for 9 \(\times 10^{7}\) revolutions, 90%
    reliability (series and bore size).
 
-**** Solution: Design of a Conveyor Belt System
+***** Solution: Design of a Conveyor Belt System
 
 1. To determine the number of teeth of spur gear \(B\), we need to determine the required pitch line velocity. The belt must be moving at 60 cm/s, which means the pulley must be rotating at
 
    #+NAME: angular_velocity
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 from math import pi
 omega_a = 500 # in rpm
 r_a = 0.025
@@ -2345,7 +2389,7 @@ return round(rev_per_sec_a,2), round(rpm_a,1), round(r_b,3), m, round(z_B,1), ro
       \end{align*}
    #+end_export
 
-   Its diameter, of course, is src_python[:results raw :var r_b =angular_velocity[2]]{return(r_b*2*100)} cm. Given that
+   Its diameter, of course, is src_python[:results raw :var r_b =angular_velocity[2] :cache yes]{return(r_b*2*100)} cm. Given that
    meshing gears must also have the same module, the number of teeth on \(B\) is
 
    #+BEGIN_SRC latex :var module=angular_velocity[3] z_B=angular_velocity[4]
@@ -2365,9 +2409,9 @@ return round(rev_per_sec_a,2), round(rpm_a,1), round(r_b,3), m, round(z_B,1), ro
       \end{align*}
    #+end_export
 
-2. Assuming no power loss, the power the belt-pulley system needs to transfer is $H = T\omega = 2(500)(2\pi/60)$ = src_python[:results raw]{return(round(2*500*2*3.1416/60,1))} W.
+2. Assuming no power loss, the power the belt-pulley system needs to transfer is $H = T\omega = 2(500)(2\pi/60)$ = src_python[:results raw :cache yes]{return(round(2*500*2*3.1416/60,1))} W.
 
-   Required torque transfer of the belt is $T = P/\omega = 104.7/(57.3(2\pi/60))$ = src_python[:results raw]{return(round(104.7/57.3/2/3.1416*60,1))} N-m. The tension difference on the two side needs to be
+   Required torque transfer of the belt is $T = P/\omega = 104.7/(57.3(2\pi/60))$ = src_python[:results raw :cache yes]{return(round(104.7/57.3/2/3.1416*60,1))} N-m. The tension difference on the two side needs to be
 
    #+BEGIN_SRC latex :var tension_diff=angular_velocity[5]
    \begin{align*}
@@ -2433,7 +2477,7 @@ return round(coeff,2)
    The load from the gear can simply be determined by
 
    #+NAME: force
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 from math import cos,radians
 force = 17.4/0.2/cos(radians(20))
 return round(force,1)
@@ -2464,7 +2508,7 @@ return round(force,1)
    The load from the pulley is even simpler
 
    #+NAME: sum_force
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 sum_force = 4200*0.0261 + 4200*0.0261 - 87
 return sum_force
    #+END_SRC
@@ -2495,7 +2539,7 @@ return sum_force
    First, bending moment \(M_{g}\) generated by force in the gear is
 
    #+NAME: M_g
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 M_g = 92.6*0.1*(0.4-0.1)/0.4
 return round(M_g,2)
    #+END_SRC
@@ -2521,7 +2565,7 @@ return round(M_g,2)
    Next, bending moment \(M_{p}\) generaed by force on the pulley is
 
    #+NAME: M_p
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 M_p = 132*0.1*(0.4-0.1)/0.4
 return round(M_p,2)
    #+END_SRC
@@ -2547,7 +2591,7 @@ return round(M_p,2)
    The maximum bending moment occurs in the middle, where
 
    #+NAME: M_max
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 M_max = (6.95 + 9.9)*2/3
 return round(M_max,1)
    #+END_SRC
@@ -2582,13 +2626,10 @@ return round(M_max,1)
 4. Since the problem is not symmetrical, we need to determine the bearing under the higher load. This happens to the bearing closer to the higher force, which is the pulley. Taking the other bearing as a fulcrum, the radial load in the bearing on the pulley side is
 
    #+NAME: F_r
-   #+BEGIN_SRC python :exports none
+   #+BEGIN_SRC python :exports none :cache yes
 F_r = (132*3 + 92.6)/4
 return round(F_r,1)
    #+END_SRC
-
-   #+RESULTS: F_r
-   : 122.2
 
    #+BEGIN_SRC latex :var F_r=F_r
    \begin{align*}
@@ -2605,7 +2646,7 @@ return round(F_r,1)
       \end{align*}
    #+end_export
 
-   With \(L = 9 \times 10^{7}\) and \(K_{r} = 1\), $F_{e} = F_{r} =$ src_python[:results raw :var F_r=F_r]{return(F_r)} = $C$. This is smaller than the smallest bore which is 10mm for all series. We therefore should pick the smallest
+   With \(L = 9 \times 10^{7}\) and \(K_{r} = 1\), $F_{e} = F_{r} =$ src_python[:results raw :var F_r=F_r :cache yes]{return(F_r)} = $C$. This is smaller than the smallest bore which is 10mm for all series. We therefore should pick the smallest
    bore (10 mm) as our choice.
 
 \backmatter
